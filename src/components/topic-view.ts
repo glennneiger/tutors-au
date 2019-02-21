@@ -1,5 +1,6 @@
 import {inject} from 'aurelia-framework';
-import {Course, CourseInterface, Lo, Topic} from "../services/course";
+import {CourseInterface} from "../services/course";
+import {Lo, Topic} from "../services/lo";
 
 @inject(CourseInterface)
 export class TopicView {

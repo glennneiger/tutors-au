@@ -1,5 +1,6 @@
 import {inject} from 'aurelia-framework';
-import {Course, CourseInterface, Lo} from "../services/course";
+import {CourseInterface} from "../services/course";
+import {Course, Lo} from "../services/lo";
 
 @inject(CourseInterface)
 export class CourseView {
