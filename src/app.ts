@@ -25,23 +25,17 @@ export class App {
         title: 'TopicView'
       },
       {
-        route: 'book/:topicId/:bookId?',
-        moduleId: PLATFORM.moduleName('./components/book'),
+        route: 'lab/:domain/:folder?/:topicId/:labId',
+        moduleId: PLATFORM.moduleName('./components/lab-view'),
         name: 'tbook',
         title: 'TopicView'
       },
-      // {
-      //   route: ':domain?/:folder?',
-      //   moduleId: PLATFORM.moduleName('./components/start'),
-      //   name: 'start',
-      //   title: 'TopicView'
-      // }
+      {
+        route: ':start',
+        moduleId: PLATFORM.moduleName('./components/start'),
+        name: 'start',
+        title: 'TopicView'
+      }
     ]);
-  }
-
-  async attached() {
-    if (localStorage.tutors !== 'null') {
-      await this.courseInterface.getCourse(localStorage.tutors);
-    }
   }
 }

@@ -25,21 +25,15 @@ export class CourseInterface {
   }
 
   async getCourse(url: string) {
-    // if (url == "") {
-    //   if (this.course) {
-    //     return this.course;
-    //   }
-    //   if (localStorage.tutors !== 'null') {
-    //     this.courseUrl = localStorage.tutors;
-    //   }
-    // } else {
-    //   this.courseUrl = url;
-    //   window.localStorage.tutors = url;
-    // }
     const response = await this.http.fetch('https://' + this.courseUrl + '/index.json');
     const lo = await response.json();
+    this.courseUrl = url;
     this.course = new Course(lo, 'https://' + this.courseUrl);
-
     return this.course;
+  }
+
+  setCourse(course) {
+    this.course = course;
+    this.course = new Course(course, "/");
   }
 }

@@ -15,11 +15,10 @@ export class Card {
     this.link = this.lo.link;
     switch (this.lo.type) {
       case 'topic':
-        //this.link = `/#/topic/${this.lo.folder}`;
         this.link = `/#/topic/${this.courseInterface.courseUrl}/${this.lo.folder}`;
         break;
       case 'lab':
-        this.link = `/#/book/${this.lo.link}`;
+        this.link = `/#/lab/${this.courseInterface.courseUrl}/${this.lo.folder}`;
         break;
     }
   }
