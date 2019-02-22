@@ -8,7 +8,7 @@ export class LabView {
   course: Course;
   topic: Topic;
   lab : Lab;
-  properties: Lo;
+  test : string;
 
   constructor(private courseInterface: CourseInterface) {
   }
@@ -16,8 +16,9 @@ export class LabView {
   async activate(params) {
     this.course = await this.courseInterface.getCourseFromParams(params);
     this.topic = this.course.topicIndex.get(params.topicId);
-    this.lab = this.topic.getLab(params.labId)
-    this.properties = this.topic.properties;
+    this.lab = await this.courseInterface.getLab(this.topic, params.labId)
+    console.log (this.lab.chapters[1]);
+    this.test = this.lab.chapters.join();
   }
 
   attached() {

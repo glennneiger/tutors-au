@@ -1,6 +1,6 @@
 import {HttpClient} from "aurelia-fetch-client";
 import {inject} from 'aurelia-framework';
-import {Course} from "./lo";
+import {Course, Lab, Topic} from "./lo";
 
 @inject(HttpClient)
 export class CourseInterface {
@@ -30,6 +30,15 @@ export class CourseInterface {
     this.courseUrl = url;
     this.course = new Course(lo, 'https://' + this.courseUrl);
     return this.course;
+  }
+
+  async getLab(topic: Topic, labId: string) {
+    const url = `https://${this.courseUrl}/${topic.properties.folder}/${labId}/index.json`
+    const response = await this.http.fetch(url);
+    const obj = await response.json();
+    const lab = new Lab(obj);
+    topic.labs.push(lab);
+    return lab;
   }
 
   setCourse(course) {

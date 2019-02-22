@@ -1,3 +1,6 @@
+import {HttpClient} from "aurelia-fetch-client";
+import {inject} from 'aurelia-framework';
+
 export interface Lo {
   title: string,
   type: string,
@@ -31,7 +34,7 @@ export class Chapter {
 
 export class Lab {
   properties: Lo;
-  chapters: string[];
+  chapters: string[] = [];
 
   constructor(lo) {
     this.properties = lo;
@@ -41,15 +44,19 @@ export class Lab {
   }
 }
 
+
 export class Topic {
   properties: Lo;
   units: Lo[];
   panelVideos: Lo[];
   panelTalks: Lo[];
   standardLos: Lo[];
+  courseUrl: string;
+  labs: Lab[] = [];
 
   constructor(lo: Lo, url: string) {
     this.properties = lo;
+    this.courseUrl = url;
     fixLinks(this.properties, url);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');
@@ -57,9 +64,8 @@ export class Topic {
     this.standardLos = lo.los.filter(lo => lo.type !== 'unit' && lo.type !== 'panelvideo' && lo.type !== 'paneltalk');
   }
 
-  getLab (labId: string) : Lab {
+  async getLab (labId: string) {
     console.log (labId);
-    
     return null;
   }
 }
