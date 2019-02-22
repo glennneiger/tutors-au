@@ -6,13 +6,13 @@ import {Course, Lo} from "../services/lo";
 export class CourseView {
 
   course: Course;
-  properties : Lo;
+  properties: Lo;
 
   constructor(private courseInterface: CourseInterface) {
   }
 
   async activate(params) {
-    this.course = await this.courseInterface.getCourse();
+    this.course = await this.courseInterface.getCourseFromParams(params);
     this.properties = this.course.properties;
   }
 }

@@ -1,0 +1,14 @@
+<template>
+  <require from="./card"></require>
+  <div repeat.for="video of videos">
+    <div class="uk-card uk-card-default uk-box-shadow-xlarge">
+      <div class="uk-card-header">
+        <h5 class="uk-card-title"> ${video.title} </h5>
+      </div>
+      <div class="uk-card-media-top">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/${video.videoid}"
+                allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+      </div>
+    </div>
+  </div>
+</template>

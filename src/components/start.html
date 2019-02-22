@@ -1,0 +1,16 @@
+<template>
+  <require from="../resources/elements/header"></require>
+
+  <div class="uk-container">
+    <form>
+      <fieldset class="uk-fieldset">
+        <legend class="uk-legend">Enter Course URL</legend>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="Input" value.bind="courseUrl">
+        </div>
+        <p uk-margin>
+          <a class="uk-button uk-button-default" click.trigger="open()">Open</a>
+        </p>
+      </fieldset>
+    </form>
+</template>

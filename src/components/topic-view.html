@@ -1,12 +1,15 @@
 <template>
   <require from="../resources/elements/header"></require>
   <require from="../resources/elements/card"></require>
-  <require from="../resources/elements/standard-los"></require>
+  <require from="../resources/elements/standard"></require>
+  <require from="../resources/elements/units"></require>
+  <require from="../resources/elements/panel-videos"></require>
 
   <header properties.one-way="properties"></header>
 
   <div class="uk-container uk-padding-small">
-    <standard-los los.bind="topic.standardLos"></standard-los>
+    <panel-videos videos.one-way="topic.panelVideos"></panel-videos>
+    <units units.one-way="topic.units"></units>
+    <standard los.one-way="topic.standardLos"></standard>
   </div>
-
 </template>
