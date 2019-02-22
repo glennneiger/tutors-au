@@ -6,21 +6,16 @@
       </div>
       <div class="uk-navbar-right">
         <ul class="uk-subnav uk-background-secondary uk-subnav-pill" uk-switcher="connect: .switcher-container">
-          {% for chapter in lab.chapters %}
-          <div repeat.for="chapter of los">
-          <li><a href="#">{{ chapter.shortTitle }}</a></li>
-          {% endfor %}
+          <div repeat.for="chapter of lab.chapters">
+            <li><a href="#">${chapter.shortTitle}</a></li>
+          </div>
         </ul>
       </div>
     </nav>
   </div>
 
   <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      {% for chapter in lo.chapters %}
-      <li> {{ chapter.content }}</li>
-      {% endfor %}
-    </ul>
+    <div innerhtml="${test}"></div>
   </div>
 
 
