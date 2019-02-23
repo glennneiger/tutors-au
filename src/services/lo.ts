@@ -34,7 +34,7 @@ export class Chapter {
 
 export class Lab {
   properties: Lo;
-  chapters: string[] = [];
+  chapters: Chapter[] = [];
 
   constructor(lo) {
     this.properties = lo;

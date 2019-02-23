@@ -8,7 +8,7 @@ export class LabView {
   course: Course;
   topic: Topic;
   lab : Lab;
-  test : string;
+  test  = "";
 
   constructor(private courseInterface: CourseInterface) {
   }
@@ -17,8 +17,9 @@ export class LabView {
     this.course = await this.courseInterface.getCourseFromParams(params);
     this.topic = this.course.topicIndex.get(params.topicId);
     this.lab = await this.courseInterface.getLab(this.topic, params.labId)
-    console.log (this.lab.chapters[1]);
-    this.test = this.lab.chapters.join();
+    this.lab.chapters[1].content.forEach(str => {
+      this.test = this.test.concat(str);
+    })
   }
 
   attached() {
