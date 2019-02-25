@@ -25,7 +25,7 @@ export class App {
         title: 'TopicView'
       },
       {
-        route: 'lab/:domain/:folder?/:topicId/:labId',
+        route: 'lab/:domain/:folder?/:topicId/:labId/:stepId?',
         moduleId: PLATFORM.moduleName('./components/lab-view'),
         name: 'tbook',
         title: 'TopicView'

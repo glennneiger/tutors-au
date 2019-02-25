@@ -16,7 +16,7 @@ export class CourseInterface {
     this.courseUrl = '';
     if (params.domain) {
       this.courseUrl = `${params.domain}`;
-      if (params.folder) {
+      if (params.folder && !params.folder.startsWith("topic")) {
         this.courseUrl = `${this.courseUrl}/${params.folder}`;
       }
       await this.getCourse(this.courseUrl);

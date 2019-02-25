@@ -30,6 +30,7 @@ export class Chapter {
   title: string;
   shortTitle: string;
   content: string[];
+  contentMd: string[];
 }
 
 export class Lab {

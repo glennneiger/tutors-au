@@ -5,18 +5,15 @@
       <div class="uk-navbar-left">
       </div>
       <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill" uk-switcher="connect: .switcher-container">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
           <div repeat.for="chapter of lab.chapters">
-            <li><a href="#">${chapter.shortTitle}</a></li>
+            <li><a href="#lab/${url}/${chapter.shortTitle}">${chapter.shortTitle}</a></li>
           </div>
         </ul>
       </div>
     </nav>
   </div>
-
   <div class="uk-container uk-container-expand">
-    <div innerhtml="${test}"></div>
+    <div innerhtml="${content}"></div>
   </div>
-
-
 </template>
