@@ -1,6 +1,6 @@
 import {HttpClient} from "aurelia-fetch-client";
 import {inject} from 'aurelia-framework';
-import {Course, Lab, Topic} from "./lo";
+import {Course, FullTopic, Lab, Topic} from "./lo";
 
 @inject(HttpClient)
 export class CourseInterface {
@@ -12,32 +12,29 @@ export class CourseInterface {
     this.http = http;
   }
 
-  async getCourseFromParams(params) {
-    this.courseUrl = '';
-    if (params.domain) {
-      this.courseUrl = `${params.domain}`;
-      if (params.folder && !params.folder.startsWith("topic")) {
-        this.courseUrl = `${this.courseUrl}/${params.folder}`;
-      }
-      await this.getCourse(this.courseUrl);
-      return this.course;
-    }
+  async fetch(url: string) {
+    const response = await this.http.fetch('https://' + url + '/index.json');
+    const lo = await response.json();
+    return lo;
   }
 
   async getCourse(url: string) {
-    const response = await this.http.fetch('https://' + this.courseUrl + '/index.json');
-    const lo = await response.json();
     this.courseUrl = url;
+    const lo = await this.fetch(url);
     this.course = new Course(lo, 'https://' + this.courseUrl);
     return this.course;
   }
 
-  async getLab(topic: Topic, labId: string) {
-    const url = `https://${this.courseUrl}/${topic.properties.folder}/${labId}/index.json`
-    const response = await this.http.fetch(url);
-    const obj = await response.json();
-    const lab = new Lab(obj);
-    topic.labs.push(lab);
+  async getTopic(url: string) {
+    this.courseUrl = url;
+    const lo = await this.fetch(url);
+    const topic = new FullTopic(lo, 'https://' + url);
+    return topic;
+  }
+
+  async getLab(url: string) {
+    const lo = await this.fetch(url);
+    const lab = new Lab(lo);
     return lab;
   }
 

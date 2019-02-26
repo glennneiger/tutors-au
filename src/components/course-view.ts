@@ -12,7 +12,9 @@ export class CourseView {
   }
 
   async activate(params) {
-    this.course = await this.courseInterface.getCourseFromParams(params);
+    console.log(params);
+    this.course = await this.courseInterface.getCourse(params.courseurl);
     this.properties = this.course.properties;
+
   }
 }

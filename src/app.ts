@@ -14,18 +14,19 @@ export class App {
     config.title = 'Tutors';
     config.map([
       {
-        route: ['course/:domain/:folder?'],
+        route: ['course/*courseurl'],
         moduleId: PLATFORM.moduleName('./components/course-view'),
         title: 'Module'
       },
       {
-        route: 'topic/:domain/:folder?/:topicId',
+        route : ['topic/*topicurl'],
         moduleId: PLATFORM.moduleName('./components/topic-view'),
         name: 'topic',
         title: 'TopicView'
       },
       {
-        route: 'lab/:domain/:folder?/:topicId/:labId/:stepId?',
+//        route: 'lab/:domain/:folder?/:topicId/:labId/:stepId?',
+        route: 'lab/*laburl/:step?',
         moduleId: PLATFORM.moduleName('./components/lab-view'),
         name: 'tbook',
         title: 'TopicView'

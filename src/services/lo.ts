@@ -26,6 +26,7 @@ function fixLinks(lo: Lo, url: string) {
   });
 }
 
+
 export class Chapter {
   title: string;
   shortTitle: string;
@@ -45,8 +46,7 @@ export class Lab {
   }
 }
 
-
-export class Topic {
+export class FullTopic {
   properties: Lo;
   units: Lo[];
   panelVideos: Lo[];
@@ -54,16 +54,34 @@ export class Topic {
   standardLos: Lo[];
   courseUrl: string;
   labs: Lab[] = [];
+  los: Lo[] = [];
 
   constructor(lo: Lo, url: string) {
     this.properties = lo;
     this.courseUrl = url;
+    this.properties.img = `${url}/${lo.img}`;
     fixLinks(this.properties, url);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');
     this.panelTalks = lo.los.filter(lo => lo.type == 'paneltalk');
     this.standardLos = lo.los.filter(lo => lo.type !== 'unit' && lo.type !== 'panelvideo' && lo.type !== 'paneltalk');
   }
+
+  async getLab(labId: string) {
+    console.log(labId);
+    return null;
+  }
+}
+
+export class Topic {
+  properties: Lo;
+  courseUrl: string;
+
+  constructor(lo: Lo, url: string) {
+    this.properties = lo;
+    this.courseUrl = url;
+    this.properties.img = `${url}/${lo.img}`;
+   }
 
   async getLab (labId: string) {
     console.log (labId);
