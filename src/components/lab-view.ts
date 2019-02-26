@@ -14,7 +14,7 @@ export class LabView {
   lab: Lab;
   content = "";
   url = "";
-  currentChapter : Chapter;
+  currentChapter: Chapter;
 
   constructor(private courseInterface: CourseInterface) {
   }
@@ -32,11 +32,8 @@ export class LabView {
       this.currentChapter = this.lab.chapters.find(ch => ch.shortTitle == lastSegment);
     }
 
-    this.content = "";
-    this.currentChapter.contentMd.forEach(str => {
-      this.content = this.content.concat(str + '\n');
-    });
-    this.content = md.render(this.content);
+    const filtered = this.currentChapter.contentMd.replace('img\/', `https://${this.url}/img/`);
+    this.content = md.render(filtered);
   }
 
   attached() {

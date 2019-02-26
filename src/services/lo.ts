@@ -30,8 +30,9 @@ function fixLinks(lo: Lo, url: string) {
 export class Chapter {
   title: string;
   shortTitle: string;
-  content: string[];
-  contentMd: string[];
+  // content: string[];
+  contentMd = "";
+  // contentTest = "";
 }
 
 export class Lab {
