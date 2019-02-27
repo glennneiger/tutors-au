@@ -7,6 +7,9 @@ const path = require('path');
 const md = require('markdown-it')()
   .use(require('markdown-it-highlightjs'), {})
 
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}
 
 @inject(CourseInterface)
 export class LabView {
@@ -15,8 +18,17 @@ export class LabView {
   content = "";
   url = "";
   currentChapter: Chapter;
+  navbarHtml = "";
 
   constructor(private courseInterface: CourseInterface) {
+  }
+
+  refreshav () {
+    this.navbarHtml = "";
+    this.lab.chapters.forEach (chapter => {
+      const active = chapter == this.currentChapter? "class= uk-active":"";
+      this.navbarHtml = this.navbarHtml.concat (`<li ${active}> <a href="#lab/${this.url}/${chapter.shortTitle}"> ${chapter.shortTitle} </a> </li>`)
+    })
   }
 
   async activate(params) {
@@ -32,7 +44,9 @@ export class LabView {
       this.currentChapter = this.lab.chapters.find(ch => ch.shortTitle == lastSegment);
     }
 
-    const filtered = this.currentChapter.contentMd.replace('img\/', `https://${this.url}/img/`);
+    const filtered = replaceAll( this.currentChapter.contentMd, 'img\\/', `https://${this.url}/img/`);
+
+    this.refreshav();
     this.content = md.render(filtered);
   }
 
