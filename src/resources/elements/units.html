@@ -1,18 +1,28 @@
 <template>
-  <require from="./card"></require>
+  <require from="./unit"></require>
 
   <div repeat.for="unit of units">
-    <div class="uk-card uk-card-body uk-background-default">
-      <h3 class="uk-card-title"> ${unit.title} </h3>
-      <hr>
-      <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
-        <div repeat.for="lo of unit.los">
-          <div>
-            <card lo.one-way="lo"></card>
-          </div>
-        </div>
-      </div>
-    </div>
+      <unit unit.one-way="unit"></unit>
     <hr class="uk-divider-icon">
   </div>
 </template>
+
+<!--<template>-->
+  <!--<require from="./card"></require>-->
+
+  <!--<div repeat.for="unit of units">-->
+    <!--<div class="uk-card uk-card-body uk-background-default">-->
+      <!--<h3 class="uk-card-title"> ${unit.title} </h3>-->
+      <!--<hr>-->
+      <!--<div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">-->
+        <!--<div repeat.for="lo of unit.los">-->
+          <!--<div>-->
+            <!--<card lo.one-way="lo"></card>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<hr class="uk-divider-icon">-->
+  <!--</div>-->
+<!--</template>-->
+

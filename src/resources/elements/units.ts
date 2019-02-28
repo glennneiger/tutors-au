@@ -3,4 +3,5 @@ import {bindable} from 'aurelia-framework';
 
 export class Units {
   @bindable units: Lo[];
+  panelVideos : Lo[];
 }
