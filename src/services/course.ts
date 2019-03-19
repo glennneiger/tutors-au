@@ -1,25 +1,16 @@
-import {HttpClient} from "aurelia-fetch-client";
-import {inject} from 'aurelia-framework';
-import {Course, FullTopic, Lab, Topic} from "./lo";
-const path = require('path');
+import { Lo } from './lo';
+import { Topic } from './topic';
+import { HttpClient } from 'aurelia-fetch-client';
 
-@inject(HttpClient)
-export class CourseInterface {
+export class Course {
+  properties: Lo;
+  topicIndex = new Map();
+  topics: Topic[] = [];
+  url: string;
 
-  course: Course;
-  courseUrl = '';
-
-  topic: FullTopic;
-  topicUrl = '';
-
-  lab: Lab;
-  labUrl = '';
-
-  courses = new Map<string, Course>();
-  topics = new Map<string, FullTopic>();
-  labs = new Map<string, Lab>();
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, url) {
+    this.url = url;
+  }
 
   async fetch(url: string) {
     const response = await this.http.fetch('https://' + url + '/index.json');
@@ -27,48 +18,16 @@ export class CourseInterface {
     return lo;
   }
 
-  async getCourse(url: string) {
-    this.courseUrl = url;
-    this.course = this.courses.get(url);
-    if (!this.course) {
-      const lo = await this.fetch(url);
-      this.course = new Course(lo,  this.courseUrl);
-      this.courses.set(url, this.course);
+  async fetchCourse() {
+    const lo = await this.fetch(this.url);
+    this.properties = lo as Lo;
+    this.url = this.url;
+    for (let lo of this.properties.topics) {
+      const topicUrl = this.url + '/' + lo.folder;
+      const topicLo = await this.fetch(topicUrl);
+      const topic = new Topic(topicLo, this.url);
+      this.topics.push(topic);
+      this.topicIndex.set(topic.properties.folder, topic);
     }
-    return this.course;
-  }
-
-  async getTopic(url: string) {
-    this.topicUrl = url;
-    this.topic = this.topics.get(url);
-    if (!this.topic) {
-      const lo = await this.fetch(url);
-      this.topic = new FullTopic(lo, url);
-      this.topics.set(url, this.topic);
-      const courseUrl = url.substring(0, url.lastIndexOf('/'));
-      this.topic.course = await this.getCourse(courseUrl);
-    }
-    return this.topic;
-  }
-
-  async getLab(url: string) {
-    this.lab = this.labs.get(url);
-    if (!this.lab) {
-      const lo = await this.fetch(url);
-      this.lab = new Lab(lo);
-      this.labs.set(url, this.lab)
-      let topicUrl = url.substring(0, url.lastIndexOf('/'));
-      const unit = path.basename(topicUrl);
-      if (unit.startsWith('unit')) {
-        topicUrl = topicUrl.substring(0, topicUrl.lastIndexOf('/'));
-      }
-      this.lab.topic = await this.getTopic(topicUrl);
-    }
-    return this.lab;
-  }
-
-  setCourse(course) {
-    this.course = course;
-    this.course = new Course(course, "/");
   }
 }

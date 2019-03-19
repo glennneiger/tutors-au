@@ -1,7 +1,8 @@
 import {inject} from 'aurelia-framework';
-import {CourseInterface} from "../services/course";
 import {RouterConfiguration, Router} from 'aurelia-router';
-import {Course, Lo} from "../services/lo";
+import {Lo} from "../services/lo";
+import {CourseRepo} from "../services/course-repo";
+import {Course} from "../services/course";
 
 
 const readUploadedFileAsText = (inputFile) => {
@@ -20,7 +21,7 @@ const readUploadedFileAsText = (inputFile) => {
   });
 };
 
-@inject(CourseInterface, Router)
+@inject(CourseRepo, Router)
 export class Start {
 
   courseUrl: string;
@@ -30,7 +31,7 @@ export class Start {
   course: Course;
   properties: Lo;
 
-  constructor(private courseInterface: CourseInterface, private router: Router) {
+  constructor(private courseRepo: CourseRepo, private router: Router) {
   }
 
   fileSelected() {
@@ -43,8 +44,8 @@ export class Start {
       const fileContents = await readUploadedFileAsText(file);
       const json = JSON.parse(fileContents.toString());
       console.log(json);
-      this.courseInterface.setCourse(json);
-      this.course = this.courseInterface.course;
+      // this.courseInterface.setCourse(json);
+      // this.course = this.courseInterface.course;
       this.properties = this.course.properties;
       console.log(fileContents);
     } catch (e) {

@@ -1,21 +1,17 @@
-import {inject} from 'aurelia-framework';
-import {CourseInterface} from "../services/course";
-import {Course, FullTopic, Lo, Topic} from "../services/lo";
+import { inject } from 'aurelia-framework';
+import { Lo } from '../services/lo';
+import { CourseRepo } from '../services/course-repo';
+import { Topic } from '../services/topic';
 
-@inject(CourseInterface)
+@inject(CourseRepo)
 export class TopicView {
-
-  course: Course;
-  topic: FullTopic;
+  topic: Topic;
   properties: Lo;
 
-  constructor(private courseInterface: CourseInterface) {
-  }
+  constructor(private courseRepo: CourseRepo) {}
 
   async activate(params) {
-    this.topic = await this.courseInterface.getTopic(params.topicurl);
+    this.topic = await this.courseRepo.fetchTopic(params.topicurl);
     this.properties = this.topic.properties;
   }
 }
-
-

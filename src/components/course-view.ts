@@ -1,19 +1,17 @@
-import {inject} from 'aurelia-framework';
-import {CourseInterface} from "../services/course";
-import {Course, Lo} from "../services/lo";
+import { inject } from 'aurelia-framework';
+import { Lo } from '../services/lo';
+import { CourseRepo } from '../services/course-repo';
+import { Course } from '../services/course';
 
-@inject(CourseInterface)
+@inject(CourseRepo)
 export class CourseView {
-
   course: Course;
   properties: Lo;
 
-  constructor(private courseInterface: CourseInterface) {
-  }
+  constructor(private courseRepo: CourseRepo) {}
 
   async activate(params) {
-    console.log(params);
-    this.course = await this.courseInterface.getCourse(params.courseurl);
+    this.course = await this.courseRepo.fetchCourse(params.courseurl);
     this.properties = this.course.properties;
   }
 }
