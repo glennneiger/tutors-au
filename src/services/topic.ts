@@ -8,14 +8,14 @@ export function fixLinks(lo: Lo, url: string) {
     lo.link = `https://${url}/${lo.link}`;
   }
   for (let sublo of lo.los) {
-    sublo.img = `https://${url}/${lo.folder}/${sublo.img}`;
+    sublo.img = `https://${url}/${sublo.folder}/${sublo.img}`;
     if ('http' != sublo.link.substr(0, 4)) {
-      sublo.link = `https://${url}/${lo.folder}/${sublo.link}`;
+      sublo.link = `https://${url}/${sublo.folder}/${sublo.link}`;
     }
     for (let unitlo of sublo.los) {
-      unitlo.img = `https://${url}/${lo.folder}/${unitlo.img}`;
+      unitlo.img = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.img}`;
       if ('http' != unitlo.link.substr(0, 4)) {
-        unitlo.link = `https://${url}/${lo.folder}/${unitlo.link}`;
+        unitlo.link = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.link}`;
       }
     }
   }

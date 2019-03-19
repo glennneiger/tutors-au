@@ -2,6 +2,7 @@ import { bindable } from 'aurelia-framework';
 import { inject } from 'aurelia-framework';
 import { Lo } from '../../services/lo';
 import { CourseRepo } from '../../services/course-repo';
+import * as path from 'path';
 
 @inject(CourseRepo)
 export class Card {
@@ -17,7 +18,9 @@ export class Card {
         this.link = `/#/topic/${this.courseRepo.courseUrl}/${this.lo.folder}`;
         break;
       case 'lab':
-        this.link = `/#/lab/${this.courseRepo.topicUrl}/${this.lo.folder}`;
+        const fullPath = path.dirname(this.lo.link);
+        const labUrl = fullPath.replace(/(^\w+:|^)\/\//, '');
+        this.link = `/#/lab/${labUrl}`
         break;
     }
   }

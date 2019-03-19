@@ -25,7 +25,7 @@ export class Course {
     for (let lo of this.properties.topics) {
       const topicUrl = this.url + '/' + lo.folder;
       const topicLo = await this.fetch(topicUrl);
-      const topic = new Topic(topicLo, this.url);
+      const topic = new Topic(topicLo, topicUrl);
       this.topics.push(topic);
       this.topicIndex.set(topic.properties.folder, topic);
     }
