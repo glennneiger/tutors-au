@@ -9,15 +9,12 @@ export class Header {
   homeicon : string;
   homelink : string;
   hometooltip : string;
+  test = 'asdfasd';
 
   constructor(private courseInterface: CourseInterface) {
-  }
-
-  attached() {
-    if (this.properties.type === 'topic') {
-      this.homeicon = 'fas fa-home fa-3x';
-      this.homelink = `#/course/${this.courseInterface.courseUrl}`;
-      this.hometooltip = 'To the top level Topics for this Module';
-    }
+    this.homeicon = 'fas fa-home fa-3x';
+    //this.homelink = `#/course/wit-tutors.github.io/tutors-starter-public`;
+    this.homelink = `#/course/${this.courseInterface.courseUrl}`;
+    this.hometooltip = 'To the top level Topics for this Module';
   }
 }

@@ -18,7 +18,7 @@ export class Card {
         this.link = `/#/topic/${this.courseInterface.courseUrl}/${this.lo.folder}`;
         break;
       case 'lab':
-        this.link = `/#/lab/${this.courseInterface.courseUrl}/${this.lo.folder}`;
+        this.link = `/#/lab/${this.courseInterface.topicUrl}/${this.lo.folder}`;
         break;
     }
   }
