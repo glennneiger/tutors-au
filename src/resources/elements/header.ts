@@ -9,12 +9,12 @@ export class Header {
   homeicon: string;
   homelink: string;
   hometooltip: string;
-  test = 'asdfasd';
+  talksLink : string;
 
   constructor(private courseRepo: CourseRepo) {
     this.homeicon = 'fas fa-home fa-3x';
-    //this.homelink = `#/course/wit-tutors.github.io/tutors-starter-public`;
     this.homelink = `#/course/${this.courseRepo.courseUrl}`;
     this.hometooltip = 'To the top level Topics for this Module';
+    this.talksLink = `#/talks/${this.courseRepo.courseUrl}`;
   }
 }

@@ -12,18 +12,22 @@ export class CourseRepo {
 
   constructor(private http: HttpClient) {}
 
+  async getCourse(url) {
+    if (!this.course || this.course.url !== url) {
+      this.courseUrl = url;
+      this.course = new Course(this.http, url);
+      await this.course.fetchCourse();
+    }
+  }
+
   async fetchCourse(url: string) {
-    this.courseUrl = url;
-    this.course = new Course(this.http, url);
-    await this.course.fetchCourse();
+    await this.getCourse(url)
     return this.course;
   }
 
   async fetchTopic(url: string) {
+    await this.getCourse(path.dirname(url))
     this.topicUrl = url;
-    if (!this.course) {
-      await this.fetchCourse(path.dirname(url));
-    }
     return this.course.topicIndex.get(path.basename(url));
   }
 
@@ -31,5 +35,10 @@ export class CourseRepo {
     const lab = new Lab(this.http, url);
     await lab.fetchLab();
     return lab;
+  }
+
+  async fetchTalks(url: string) {
+    await this.getCourse(url);
+
   }
 }
