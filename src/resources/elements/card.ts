@@ -12,16 +12,18 @@ export class Card {
   constructor(private courseRepo: CourseRepo) {}
 
   attached() {
-    this.link = this.lo.link;
+    const fullPath = path.dirname(this.lo.link);
+    const url = fullPath.replace(/(^\w+:|^)\/\//, '');
+
     switch (this.lo.type) {
       case 'topic':
-        this.link = `/#/topic/${this.courseRepo.courseUrl}/${this.lo.folder}`;
+        this.link = `/#/topic/${url}`;
         break;
       case 'lab':
-        const fullPath = path.dirname(this.lo.link);
-        const labUrl = fullPath.replace(/(^\w+:|^)\/\//, '');
-        this.link = `/#/lab/${labUrl}`
+        this.link = `/#/lab/${url}`;
         break;
+      default:
+        this.link = this.lo.link;
     }
   }
 }

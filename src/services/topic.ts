@@ -1,6 +1,5 @@
 import { Lo } from './lo';
 import { Course } from './course';
-import { Lab } from './lab';
 
 export function fixLinks(lo: Lo, url: string) {
   lo.img = `https://${url}/${lo.img}`;
@@ -28,8 +27,6 @@ export class Topic {
   panelTalks: Lo[];
   standardLos: Lo[];
   courseUrl: string;
-  labs: Lab[] = [];
-  los: Lo[] = [];
   course: Course;
 
   constructor(lo: Lo, url: string) {

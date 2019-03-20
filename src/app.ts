@@ -30,6 +30,12 @@ export class App {
         title: 'TopicView'
       },
       {
+        route: 'talks/*courseurl',
+        moduleId: PLATFORM.moduleName('./components/wall'),
+        name: 'wall',
+        title: 'Wall'
+      },
+      {
         route: ':start',
         moduleId: PLATFORM.moduleName('./components/start'),
         name: 'start',

@@ -36,9 +36,4 @@ export class CourseRepo {
     await lab.fetchLab();
     return lab;
   }
-
-  async fetchTalks(url: string) {
-    await this.getCourse(url);
-
-  }
 }
