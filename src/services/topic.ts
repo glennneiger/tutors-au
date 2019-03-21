@@ -14,8 +14,7 @@ export class Topic {
   constructor(lo: Lo, url: string) {
     this.lo = lo;
     this.courseUrl = url;
-    this.lo.img = lo.img;
-    fixLinks(this.lo, url);
+    fixLinks(this, url);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');
     this.panelTalks = lo.los.filter(lo => lo.type == 'paneltalk');
