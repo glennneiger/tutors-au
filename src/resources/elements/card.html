@@ -11,5 +11,11 @@
     <div class="uk-card-footer">
       <div innerhtml="${lo.objectives}"></div>
     </div>
+    <div show.bind="lo.videoid" class="uk-card-footer">
+      <div uk-lightbox>
+        <a class="uk-button uk-button-default" href="//www.youtube.com/watch?v=${lo.videoid}"
+           data-caption="${lo.title}">Play Video</a>
+      </div>
+    </div>
   </div>
 </template>

@@ -4,6 +4,7 @@ export interface Lo {
   folder: string;
   link: string;
   img: string;
+  videoid: string;
   objectives: string;
   standardLos: Lo[];
   panelVideos: Lo[];
