@@ -6,10 +6,6 @@ export interface Lo {
   img: string;
   videoid: string;
   objectives: string;
-  standardLos: Lo[];
-  panelVideos: Lo[];
-  panelTalks: Lo[];
-  units: Lo[];
   los: Lo[];
   topics: Lo[];
   properties : {};

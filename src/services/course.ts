@@ -1,19 +1,7 @@
 import { Lo } from './lo';
 import { Topic } from './topic';
 import { HttpClient } from 'aurelia-fetch-client';
-
-export function findLos(los: Lo[], lotype: string): Lo[] {
-  let result: Lo[] = [];
-  los.forEach(lo => {
-    if (lo.type === lotype) {
-      result.push(lo);
-    }
-    if (lo.type == 'unit') {
-      result = result.concat(findLos(lo.los, lotype));
-    }
-  });
-  return result;
-}
+import { findLos } from './utils';
 
 export class Course {
   lo: Lo;

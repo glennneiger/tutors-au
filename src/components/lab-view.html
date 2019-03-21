@@ -1,8 +1,8 @@
 <template>
   <style>
     body {
-      font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-      font-size:90%;
+      font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 90%;
       color: black;
     }
 
@@ -17,26 +17,26 @@
 
     img {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin:10px;
+      margin: 10px;
     }
 
     h1, h2, h3 {
-      border-bottom:thin solid black;
+      border-bottom: thin solid black;
       margin-bottom: 0.5em;
       margin-top: 1em;
     }
 
     h1 {
-      font-style:italic;
-      font-size:130%;
+      font-style: italic;
+      font-size: 130%;
     }
 
     h2 {
-      font-size:110%;
+      font-size: 110%;
     }
 
     h3 {
-      font-size:100%;
+      font-size: 100%;
     }
 
   </style>
@@ -44,6 +44,9 @@
   <div uk-sticky>
     <nav class="uk-navbar">
       <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+        </ul>
       </div>
       <div class="uk-navbar-right">
         <ul class="uk-subnav uk-background-secondary uk-subnav-pill" innerhtml="${navbarHtml}">

@@ -3,6 +3,7 @@ import { inject } from 'aurelia-framework';
 import { Course } from './course';
 import * as path from 'path';
 import { Lab } from './lab';
+import {findCourseUrl} from "./utils";
 
 @inject(HttpClient)
 export class CourseRepo {
@@ -32,6 +33,7 @@ export class CourseRepo {
   }
 
   async fetchLab(url: string) {
+    await this.getCourse(findCourseUrl(url))
     const lab = new Lab(this.http, url);
     await lab.fetchLab();
     return lab;
