@@ -11,4 +11,5 @@ export interface Lo {
   units: Lo[];
   los: Lo[];
   topics: Lo[];
+  properties : {};
 }

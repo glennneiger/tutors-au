@@ -11,7 +11,16 @@ export function fixLinks(lo: Lo, url: string) {
   if ('http' != lo.link.substr(0, 4)) {
     lo.link = `https://${url}/${lo.link}`;
   }
-  lo.los.forEach(subLo => {
-    fixLinks(subLo, url + '/' + lo.folder + '/');
-  });
+  for (let sublo of lo.los) {
+    sublo.img = `https://${url}/${sublo.folder}/${sublo.img}`;
+    if ('http' != sublo.link.substr(0, 4)) {
+      sublo.link = `https://${url}/${sublo.folder}/${sublo.link}`;
+    }
+    for (let unitlo of sublo.los) {
+      unitlo.img = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.img}`;
+      if ('http' != unitlo.link.substr(0, 4)) {
+        unitlo.link = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.link}`;
+      }
+    }
+  }
 }

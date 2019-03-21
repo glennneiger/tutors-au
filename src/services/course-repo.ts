@@ -36,4 +36,14 @@ export class CourseRepo {
     await lab.fetchLab();
     return lab;
   }
+
+  async fetchWall(url:string, type:string){
+    await this.getCourse(url)
+    return this.course.allLos(type);
+  }
+
+  async fetchCourseProperties(url:string){
+    await this.getCourse(url)
+    return this.course.lo.properties;
+  }
 }

@@ -1,27 +1,9 @@
 import { Lo } from './lo';
 import { Course } from './course';
-
-export function fixLinks(lo: Lo, url: string) {
-  lo.img = `https://${url}/${lo.img}`;
-  if ('http' != lo.link.substr(0, 4)) {
-    lo.link = `https://${url}/${lo.link}`;
-  }
-  for (let sublo of lo.los) {
-    sublo.img = `https://${url}/${sublo.folder}/${sublo.img}`;
-    if ('http' != sublo.link.substr(0, 4)) {
-      sublo.link = `https://${url}/${sublo.folder}/${sublo.link}`;
-    }
-    for (let unitlo of sublo.los) {
-      unitlo.img = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.img}`;
-      if ('http' != unitlo.link.substr(0, 4)) {
-        unitlo.link = `https://${url}/${sublo.folder}/${unitlo.folder}/${unitlo.link}`;
-      }
-    }
-  }
-}
+import {fixLinks} from "./utils";
 
 export class Topic {
-  properties: Lo;
+  lo: Lo;
   units: Lo[];
   panelVideos: Lo[];
   panelTalks: Lo[];
@@ -30,10 +12,10 @@ export class Topic {
   course: Course;
 
   constructor(lo: Lo, url: string) {
-    this.properties = lo;
+    this.lo = lo;
     this.courseUrl = url;
-    this.properties.img = lo.img;
-    fixLinks(this.properties, url);
+    this.lo.img = lo.img;
+    fixLinks(this.lo, url);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');
     this.panelTalks = lo.los.filter(lo => lo.type == 'paneltalk');

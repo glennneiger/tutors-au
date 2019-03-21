@@ -16,10 +16,11 @@ export function findLos(los: Lo[], lotype: string): Lo[] {
 }
 
 export class Course {
-  properties: Lo;
+  lo: Lo;
   topicIndex = new Map();
-  topics: Topic[] = [];
+  topicLos: Lo[] = [];
   url: string;
+  walls: Lo[][] = [];
 
   constructor(private http: HttpClient, url) {
     this.url = url;
@@ -33,19 +34,24 @@ export class Course {
 
   async fetchCourse() {
     const lo = await this.fetch(this.url);
-    this.properties = lo as Lo;
+    this.lo = lo;
     this.url = this.url;
-    for (let lo of this.properties.topics) {
+    for (let lo of this.lo.topics) {
       const topicUrl = this.url + '/' + lo.folder;
       const topic = new Topic(lo, topicUrl);
-      this.topics.push(topic);
-      this.topicIndex.set(topic.properties.folder, topic);
+      this.topicIndex.set(topic.lo.folder, topic);
+      this.topicLos.push(topic.lo);
     }
+    this.walls.push(this.allLos('talk'));
+    this.walls.push(this.allLos('lab'));
+    this.walls.push(this.allLos('video'));
+    this.walls.push(this.allLos('github'));
+    this.walls.push(this.allLos('archive'));
   }
 
   allLos(lotype: string) {
     let allLos: Lo[] = [];
-    for (let topic of this.properties.topics) {
+    for (let topic of this.lo.topics) {
       allLos = allLos.concat(findLos(topic.los, lotype));
     }
     return allLos;

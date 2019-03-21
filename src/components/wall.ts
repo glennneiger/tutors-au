@@ -1,18 +1,20 @@
 import { CourseRepo } from '../services/course-repo';
 import { inject } from 'aurelia-framework';
-import {Lo} from "../services/lo";
+import { Lo } from '../services/lo';
 
 @inject(CourseRepo)
 export class Wall {
+  los: Lo[];
+  title = '';
 
-  los : Lo[];
+  constructor(private courseRepo: CourseRepo) {}
 
-  constructor(private courseRepo: CourseRepo) {
-
+  async activate(params, route) {
+    this.los = await this.courseRepo.fetchWall(params.courseurl, route.name);
+    this.title = route.title;
   }
 
-  async activate(params) {
-    this.los = this.courseRepo.course.allLos('talk');
-    console.log(params);
+  determineActivationStrategy() {
+    return 'invoke-lifecycle';
   }
 }

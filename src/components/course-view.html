@@ -1,16 +1,9 @@
 <template>
   <require from="../resources/elements/header"></require>
-  <require from="../resources/elements/card"></require>
+  <require from="../resources/elements/standard"></require>
+  <require from="../resources/elements/toc.html"></require>
 
-  <header properties.one-way="properties"></header>
-
-  <div class="uk-container uk-padding-small">
-    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: .uk-card">
-      <div repeat.for="lo of course.topics">
-        <div class="uk-card uk-card-default uk-card-small uk-text-center uk-text-baseline uk-animation-fade">
-          <card lo.one-way="lo.properties"></card>
-        </div>
-      </div>
-    </div>
-  </div>
+  <toc></toc>
+  <header title.one-way="course.lo.title"></header>
+  <standard los.one-way="course.topicLos"></standard>
 </template>

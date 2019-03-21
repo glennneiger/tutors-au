@@ -1,23 +1,66 @@
 import { bindable } from 'aurelia-framework';
-import { Lo } from '../../services/lo';
 import { inject } from 'aurelia-framework';
 import { CourseRepo } from '../../services/course-repo';
+import { Course } from '../../services/course';
+import { iconColours, IconNav, icons } from '../../services/styles';
+
+interface Properties {
+  [key: string]: any;
+}
 
 @inject(CourseRepo)
 export class Header {
-  @bindable properties: Lo;
+  @bindable title: string;
+  moduleProperties: Properties = {};
+  course: Course;
+
+  companions: IconNav[] = [];
+  walls: IconNav[] = [];
+
   homeicon: string;
   homelink: string;
   hometooltip: string;
-  talksicon : string;
-  talkslink : string;
 
   constructor(private courseRepo: CourseRepo) {
+    this.moduleProperties = this.courseRepo.course.lo.properties;
+    this.course = this.courseRepo.course;
+
     this.homeicon = 'fas fa-home fa-3x';
     this.homelink = `#/course/${this.courseRepo.courseUrl}`;
     this.hometooltip = 'To the top level Topics for this Module';
 
-    this.talksicon = 'fas fa-object-group';
-    this.talkslink = `#/talks/${this.courseRepo.courseUrl}`;
+    this.createCompanionBar();
+    this.createWallBar();
+  }
+
+  createCompanionBar() {
+    if (this.moduleProperties.adobeconnect) this.companions.push(this.createCompanionLink('adobeconnect'));
+    if (this.moduleProperties.moodle) this.companions.push(this.createCompanionLink('moodle'));
+    if (this.moduleProperties.slack) this.companions.push(this.createCompanionLink('slack'));
+    if (this.moduleProperties.youtube) this.companions.push(this.createCompanionLink('youtube'));
+  }
+
+  createCompanionLink(type: string) {
+    return {
+      link: this.moduleProperties[type],
+      icon: icons[type],
+      colour: iconColours[type]
+    };
+  }
+
+  createWallBar() {
+    if (this.course.walls[0].length > 0) this.walls.push(this.createWallLink('talk'));
+    if (this.course.walls[1].length > 0) this.walls.push(this.createWallLink('lab'));
+    if (this.course.walls[2].length > 0) this.walls.push(this.createWallLink('video'));
+    if (this.course.walls[3].length > 0) this.walls.push(this.createWallLink('github'));
+    if (this.course.walls[4].length > 0) this.walls.push(this.createWallLink('archive'));
+  }
+
+  createWallLink(type: string) {
+    return {
+      link: `#/${type}s/${this.courseRepo.courseUrl}`,
+      icon: icons[type],
+      colour: iconColours[type]
+    };
   }
 }

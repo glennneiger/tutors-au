@@ -21,25 +21,43 @@ export class App {
         route: ['topic/*topicurl'],
         moduleId: PLATFORM.moduleName('./components/topic-view'),
         name: 'topic',
-        title: 'TopicView'
+        title: 'Topic'
       },
       {
         route: 'lab/*laburl/:step?',
         moduleId: PLATFORM.moduleName('./components/lab-view'),
-        name: 'tbook',
-        title: 'TopicView'
+        name: 'lab',
+        title: 'Lab'
       },
       {
         route: 'talks/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
-        name: 'wall',
-        title: 'Wall'
+        name: 'talk',
+        title: 'All Talks in Module'
       },
       {
-        route: ':start',
-        moduleId: PLATFORM.moduleName('./components/start'),
-        name: 'start',
-        title: 'TopicView'
+        route: 'labs/*courseurl',
+        moduleId: PLATFORM.moduleName('./components/wall'),
+        name: 'lab',
+        title: 'All Labs in Module'
+      },
+      {
+        route: 'videos/*courseurl',
+        moduleId: PLATFORM.moduleName('./components/wall'),
+        name: 'video',
+        title: 'All Videos in Module'
+      },
+      {
+        route: 'archives/*courseurl',
+        moduleId: PLATFORM.moduleName('./components/wall'),
+        name: 'archive',
+        title: 'All Archives in Module'
+      },
+      {
+        route: 'githubs/*courseurl',
+        moduleId: PLATFORM.moduleName('./components/wall'),
+        name: 'github',
+        title: 'All Repos in Module'
       }
     ]);
   }

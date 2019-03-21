@@ -1,12 +1,35 @@
 <template>
-  <require from="./page-title.html"></require>
   <require from="./home.html"></require>
+  <require from="./icon-nav-bar"></require>
 
   <div class="uk-flex uk-flex-center uk-flex-middle uk-text-center uk-padding-small" uk-grid>
-    <page-title class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small"
-                title="${properties.title}"></page-title>
-    <!--<home icon.to-view="homeicon" link.to-view="homelink" tip.bind="hometooltip"></home>-->
-    <a href="${homelink}">  <i  class="${homeicon}"> </i></a>
-    <a href="${talkslink}">  <i  class="${talksicon}"> </i></a>
+
+    <div class="uk-padding">
+      <a href="#offcanvas-usage" uk-toggle title="Table of Contents" pos="bottom" uk-tooltip>
+        <i class="fas fa-bars fa-3x"> </i>
+      </a>
+    </div>
+
+    <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
+      <div uk-grid>
+        <div class="uk-width-1-5@m">
+          <i class="${moduleProperties.faPanelicon} fa-4x" style="color:${moduleProperties.faColour}"></i>
+        </div>
+        <div class="uk-width-expand@m uk-text-left">
+          <h2> ${title} </h2>
+          <div class="uk-text-muted uk-text-small">
+            ${moduleProperties.credits}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-padding">
+      <a href="${homelink}"> <i class="${homeicon} fa-4x"> </i></a>
+    </div>
+
+    <icon-nav-bar nav.one-way="companions"></icon-nav-bar>
+    <icon-nav-bar nav.one-way="walls"></icon-nav-bar>
+
   </div>
 </template>
