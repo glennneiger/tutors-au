@@ -40,10 +40,30 @@ export function fixLinks(topic: Topic, url: string) {
   fixLos(topic.lo.los, url);
 }
 
-export function findCourseUrl(labUrl: string) {
-  let url = path.dirname(path.dirname(labUrl));
-  if (path.basename(url).startsWith('topic')) {
-    url = path.dirname(url);
+// export function findCourseUrl(labUrl: string) {
+//   let url = path.dirname(path.dirname(labUrl));
+//   if (path.basename(url).startsWith('topic')) {
+//     url = path.dirname(url);
+//   }
+//   return url;
+// }
+
+function removeLastDirectory(the_url)
+{
+  var the_arr = the_url.split('/');
+  the_arr.pop();
+  return( the_arr.join('/') );
+}
+
+export function findCourseUrls(labUrl: string) : string[] {
+  let topicUrl = removeLastDirectory(labUrl);
+  if (path.basename(topicUrl).startsWith('unit')) {
+    topicUrl = removeLastDirectory(topicUrl);
   }
-  return url;
+  const courseUrl = removeLastDirectory(topicUrl);
+  // let url = path.dirname(path.dirname(labUrl));
+  // if (path.basename(url).startsWith('topic')) {
+  //   url = path.dirname(url);
+  // }
+  return [courseUrl, topicUrl];
 }
