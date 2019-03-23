@@ -1,4 +1,7 @@
 <template>
+
+  <!--<require from="./lab.css"></require>-->
+
   <style>
     body {
       font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial", sans-serif;
@@ -6,13 +9,20 @@
       color: black;
     }
 
+    ul {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
     p {
-      margin: 0.5em;
+      line-height:20px;
+      margin:2px;
+      padding:2px;
     }
 
     pre code {
       font-family: "Monaco";
       font-size: 100%;
+      line-height:18px;
     }
 
     img {
@@ -22,17 +32,17 @@
 
     h1, h2, h3 {
       border-bottom: thin solid black;
-      margin-bottom: 0.5em;
-      margin-top: 1em;
+      margin-top: 1rem;
+      margin-bottom: 0.2rem;
     }
 
     h1 {
-      font-style: italic;
-      font-size: 130%;
+      font-size: 120%;
     }
 
     h2 {
       font-size: 110%;
+
     }
 
     h3 {
@@ -46,7 +56,7 @@
       <div class="uk-navbar-left">
         <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
           <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <!--<li class="uk-active"><a href="../../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic" pos="bottom" uk-tooltip>{{ lo.parent.title }}</a></li>-->
+          <li class="uk-active"><a href="${lab.topic.url}" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic" pos="bottom" uk-tooltip> ${lab.topic.lo.title} </a></li>-->
         </ul>
       </div>
       <div class="uk-navbar-right">
@@ -55,7 +65,7 @@
       </div>
     </nav>
   </div>
-  <div class="uk-container uk-container-expand">
+  <div class="uk-container uk-container-expand uk-padding-small">
     <div innerhtml="${content}"></div>
   </div>
 </template>

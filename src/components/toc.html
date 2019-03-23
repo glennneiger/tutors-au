@@ -6,38 +6,19 @@
         <div repeat.for="topic of los">
           <ul class="uk-nav">
             <li class="uk-parent">
-              <a class="item" href="${topic.link}"> <i class="${icon(topic.type)}" style="color:${iconStyle(topic.type)}"> </i> ${topic.title} </a>
+              <a class="item" href="${topic.link}"> <i class="${icon(topic.type)}" style="color:${iconStyle(topic.type)}"> </i>
+                ${topic.title} </a>
               <ul class="uk-nav-sub">
-                <div repeat.for="resource of topic.los">
+                <div repeat.for="lo of topic.los">
                   <li>
-                    <!--{% if resource.lotype == 'panelvideo' %}-->
-                    <!--<a class="item"-->
-                       <!--href="http://www.youtube.com/watch?v={{ resource.videoid }}">{{ icon('panelvideo') }}{{ resource.title }}</a>-->
-                    <!--{% else %}-->
-                    <!--{% if resource.lotype == 'web' %}-->
-                    <!--<a class="item"-->
-                       <!--href="${resource.link}">{{ icon(resource.lotype) }}${resource.title}-->
-                    <!--</a>-->
-                    <!--{% else %}-->
-                    <!--{% if resource.lotype == 'unit' %}-->
-                    <!--<div class="item"> {{ icon("unit") }} {{ resource.title }}</div>-->
-                    <!--<ul class="uk-nav-sub">-->
-                      <!--{% for lo in resource.los %}-->
-                      <!--<div>-->
-                        <!--<a class="item"-->
-                           <!--href="{{ lo.properties.courseurl }}/{{ topic.folder }}/{{ lo.parent.folder }}/{{ lo.folder }}/{{ lo.link }}">{{ icon(lo.lotype) }}{{ lo.title }}-->
-                          <!--{% if resource.lotype == 'talk' and resource.videoid != 'none' %}-->
-                          <!--{{ icon("film") }}-->
-                          <!--{% endif %}-->
-                        <!--</a>-->
-                      <!--</div>-->
-                      <!--{% endfor %}-->
-                    <!--</ul>-->
-                    <!--{% else %}-->
-                    <a class="item" href="${resource.link}"> <i class="${icon(resource.type)}" style="color:${iconStyle(resource.type)}"> </i> ${resource.title} </a>
-                    <!--{% endif %}-->
-                    <!--{% endif %}-->
-                    <!--{% endif %}-->
+                    <a class="item" href="${lo.link}"> <i class="${icon(lo.type)}" style="color:${iconStyle(lo.type)}"> </i>
+                      ${lo.title} </a>
+                    <ul class="uk-nav-sub">
+                      <div repeat.for="lo of lo.los">
+                        <a class="item" href="${lo.link}"> <i class="${icon(lo.type)}" style="color:${iconStyle(lo.type)}"> </i>
+                          ${lo.title} </a>
+                      </div>
+                    </ul>
                   </li>
                 </div>
               </ul>

@@ -43,7 +43,12 @@ export class LabView {
       this.currentChapter = this.lab.chapters.find(ch => ch.shortTitle == lastSegment);
     }
 
-    const filtered = replaceAll(this.currentChapter.contentMd, 'img\\/', `https://${this.url}/img/`);
+
+    let filtered = replaceAll(this.currentChapter.contentMd, '.\/img\\/', `img/`);
+    filtered = replaceAll(filtered, 'img\\/', `https://${this.url}/img/`);
+
+    filtered = filtered.replace('#', '# ');
+    filtered = filtered.replace('# #', '##');
 
     this.refreshav();
     this.content = md.render(filtered);

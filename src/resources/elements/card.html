@@ -1,9 +1,19 @@
 <template>
-  <div class="uk-card uk-card-default uk-card-small uk-text-center uk-text-baseline uk-animation-fade">
+  <require from="./icon"></require>
+
+  <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-text-center uk-text-baseline uk-animation-scale-up uk-padding-small">
     <a href="${lo.link}">
-      <div class="uk-card-header">
-        <h3> ${lo.title}</h3>
+      <div uk-grid>
+        <div class="uk-width-expand@m">
+          <h3> ${lo.title}</h3>
+        </div>
+        <div class="uk-width-1-4@m">
+          <icon type="${lo.type}"></icon>
+          <!--<hello first-name="Albert" last-name="Einstein"></hello>-->
+          <!--<i class="${icon(lo.type)} fa-2x" style="color:${iconStyle(lo.type)}"></i>-->
+        </div>
       </div>
+
       <div class="uk-card-body">
         <img src="${lo.img}">
       </div>

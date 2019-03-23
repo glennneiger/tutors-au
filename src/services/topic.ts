@@ -8,12 +8,12 @@ export class Topic {
   panelVideos: Lo[];
   panelTalks: Lo[];
   standardLos: Lo[];
-  courseUrl: string;
+  url: string;
   course: Course;
 
   constructor(lo: Lo, url: string) {
     this.lo = lo;
-    this.courseUrl = url;
+    this.url = '#topic/' + url;
     fixLinks(this, url);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');

@@ -37,6 +37,8 @@ export class CourseRepo {
     await this.getCourse(urls[0]);
     const lab = new Lab(this.http, url);
     await lab.fetchLab();
+    const topic = await this.fetchTopic(urls[1]);
+    lab.topic = topic;
     return lab;
   }
 
