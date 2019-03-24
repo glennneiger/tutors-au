@@ -44,5 +44,4 @@ export const iconColours = {
 export interface IconNav {
   link: string;
   icon: string;
-  colour: string;
 }

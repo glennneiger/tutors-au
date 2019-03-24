@@ -4,7 +4,7 @@ import { CourseRepo } from '../services/course-repo';
 import { inject } from 'aurelia-framework';
 
 @inject(CourseRepo)
-export class Toc {
+export class SideBar {
   los: Lo[];
 
   constructor(private courseRepo: CourseRepo) {}

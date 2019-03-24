@@ -1,21 +1,32 @@
 <template>
+  <require from="../resources/elements/course-outline"></require>
 
   <div class="uk-container">
     <div class="uk-section uk-section-default">
+      <div class="uk-child-width-expand@s" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-padding">
+            <h3 class="uk-card-title">Tutors Reader</h3>
+            <p>Enter the public course web url below. The course must have been published with tutors-ts Version 3+ </p>
+            <fieldset class="uk-fieldset">
+              <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Course Web Url" value.bind="url">
+              </div>
+              <button class="uk-button uk-button-default" click.trigger="setUrl()">Get Course Url</button>
+              <p> ${status} </p>
+              <p><a href="${courseUrl}"> ${courseUrl} </a></p>
+            </fieldset>
+          </div>
 
-      <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-padding">
-        <h3 class="uk-card-title">Turors Reader</h3>
-        <p>Enter the url of your course below. The course must have been published with tutors--ts Version 3+ </p>
-        <form submit.trigger="openCourse()">
-          <fieldset class="uk-fieldset">
-            <div class="uk-margin">
-              <input class="uk-input" type="text" placeholder="Input" value.bind="url">
+        </div>
+        <div>
+          <div show.bind="courseFound">
+            <div class="uk-card uk-card-default uk-align-left uk-card-body">
+              <course-outline los.bind="course.topicLos"></course-outline>
             </div>
-            <button class="uk-button uk-button-default submit">Open Course</button>
-          </fieldset>
-        </form>
+          </div>
+        </div>
       </div>
-
     </div>
   </div>
 </template>

@@ -17,7 +17,12 @@ export class CourseRepo {
     if (!this.course || this.course.url !== url) {
       this.courseUrl = url;
       this.course = new Course(this.http, url);
-      await this.course.fetchCourse();
+      try {
+        await this.course.fetchCourse();
+      } catch (e) {
+        this.courseUrl = '';
+        this.course = null;
+      }
     }
   }
 

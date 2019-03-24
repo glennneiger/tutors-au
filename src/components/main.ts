@@ -1,16 +1,33 @@
 import { Router } from 'aurelia-router';
 import { inject, Aurelia } from 'aurelia-framework';
+import { computedFrom } from 'aurelia-framework';
+import { CourseRepo } from '../services/course-repo';
+import {Course} from "../services/course";
 
-@inject(Router)
+@inject(Router, CourseRepo)
 export class Main {
-
   url: string;
+  courseUrl: string;
+  status: string;
+  courseFound = false;
+  course:Course;
 
-  constructor (private router : Router){}
+  constructor(private router: Router, private courseRepo: CourseRepo) {}
 
-  openCourse() {
-    this.url = this.url.substring(this.url.indexOf('//')+2);
-    console.log (this.url);
-    this.router.navigate(`https://wit-tutors.github.io/#course/${this.url}`);
+  async setUrl() {
+    let domain = this.url.substring(this.url.indexOf('//') + 2);
+
+    const courseUrl = `https://wit-tutors.github.io/#course/${domain}`;
+    await this.courseRepo.fetchCourse(domain);
+    if (this.courseRepo.course) {
+      this.course = this.courseRepo.course;
+      this.courseUrl = courseUrl;
+      this.status = 'Course available at:';
+      this.courseFound = true;
+    } else {
+      this.courseFound = false;
+      this.courseUrl = '';
+      this.status = 'No Course found - check url again';
+    }
   }
 }

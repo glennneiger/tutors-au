@@ -43,8 +43,7 @@ export class Header {
   createCompanionLink(type: string) {
     return {
       link: this.moduleProperties[type],
-      icon: icons[type],
-      colour: iconColours[type]
+      icon: type,
     };
   }
 
@@ -59,8 +58,7 @@ export class Header {
   createWallLink(type: string) {
     return {
       link: `#/${type}s/${this.courseRepo.courseUrl}`,
-      icon: icons[type],
-      colour: iconColours[type]
+      icon: type,
     };
   }
 }

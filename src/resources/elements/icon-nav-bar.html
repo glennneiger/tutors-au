@@ -1,9 +1,11 @@
 <template>
+  <require from="./icon"></require>
+
   <div class="uk-card uk-card-default uk-padding-small">
     <ul class="uk-iconnav">
       <div repeat.for="icon of nav">
         <li>
-          <a href="${icon.link}"> <i class="${icon.icon} fa-2x" style="color:${icon.colour}"></i></a>
+          <a href="${icon.link}"> <icon type="${icon.icon}" size="fa-2x"></icon> </a>
         </li>
       </div>
     </ul>
