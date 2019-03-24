@@ -1,0 +1,21 @@
+<template>
+
+  <div class="uk-container">
+    <div class="uk-section uk-section-default">
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-padding">
+        <h3 class="uk-card-title">Turors Reader</h3>
+        <p>Enter the url of your course below. The course must have been published with tutors--ts Version 3+ </p>
+        <form submit.trigger="openCourse()">
+          <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="Input" value.bind="url">
+            </div>
+            <button class="uk-button uk-button-default submit">Open Course</button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</template>

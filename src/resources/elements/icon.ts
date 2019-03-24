@@ -3,9 +3,10 @@ import { bindable } from 'aurelia-framework';
 
 export class Icon {
   @bindable type:string;
+  @bindable size:string;
 
   icon() {
-    return icons[this.type];
+    return icons[this.type] + ' ' + this.size;
   }
 
   iconStyle() {

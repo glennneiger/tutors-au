@@ -1,4 +1,5 @@
 <template>
+  <require from="../resources/elements/icon"></require>
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas="mode: reveal; overlay: true">
       <div class="uk-offcanvas-bar">
@@ -6,16 +7,16 @@
         <div repeat.for="topic of los">
           <ul class="uk-nav">
             <li class="uk-parent">
-              <a class="item" href="${topic.link}"> <i class="${icon(topic.type)}" style="color:${iconStyle(topic.type)}"> </i>
+              <a class="item" href="${topic.link}"> <icon type="${topic.type}"></icon>
                 ${topic.title} </a>
               <ul class="uk-nav-sub">
                 <div repeat.for="lo of topic.los">
                   <li>
-                    <a class="item" href="${lo.link}"> <i class="${icon(lo.type)}" style="color:${iconStyle(lo.type)}"> </i>
+                    <a class="item" href="${lo.link}"><icon type="${lo.type}"></icon>
                       ${lo.title} </a>
                     <ul class="uk-nav-sub">
                       <div repeat.for="lo of lo.los">
-                        <a class="item" href="${lo.link}"> <i class="${icon(lo.type)}" style="color:${iconStyle(lo.type)}"> </i>
+                        <a class="item" href="${lo.link}"><icon type="${lo.type}"></icon>
                           ${lo.title} </a>
                       </div>
                     </ul>

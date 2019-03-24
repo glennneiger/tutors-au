@@ -13,6 +13,11 @@ export class App {
     config.title = 'Tutors';
     config.map([
       {
+        route: [''],
+        moduleId: PLATFORM.moduleName('./components/main'),
+        title: 'Module'
+      },
+      {
         route: ['course/*courseurl'],
         moduleId: PLATFORM.moduleName('./components/course-view'),
         title: 'Module'

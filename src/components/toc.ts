@@ -9,15 +9,9 @@ export class Toc {
 
   constructor(private courseRepo: CourseRepo) {}
 
-  icon(type: string) {
-    return icons[type];
-  }
-
-  iconStyle(type: string) {
-    return iconColours[type];
-  }
-
   attached() {
-    this.los = this.courseRepo.course.topicLos;
+    if (this.courseRepo.course) {
+      this.los = this.courseRepo.course.topicLos;
+    }
   }
 }
