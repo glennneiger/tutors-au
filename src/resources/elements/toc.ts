@@ -10,6 +10,12 @@ export class Toc {
     console.log(this.courseRepo.course);
   }
 
+  attached() {
+    if (this.courseRepo.course) {
+      this.los = this.courseRepo.course.topicLos;
+    }
+  }
+}
   // bind(bindingContext: Object, overrideContext: Object) {
   //   console.log(this.courseRepo.course);
   // }
@@ -22,4 +28,4 @@ export class Toc {
   // determineActivationStrategy() {
   //   return 'invoke-lifecycle';
   // }
-}
+
