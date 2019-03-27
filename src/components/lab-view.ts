@@ -47,6 +47,12 @@ export class LabView {
     let filtered = replaceAll(this.currentChapter.contentMd, '.\/img\\/', `img/`);
     filtered = replaceAll(filtered, 'img\\/', `https://${this.url}/img/`);
 
+    filtered = replaceAll(filtered, '.\/archives\\/', `archives/`);
+    filtered = replaceAll(filtered, 'archives\\/', `https://${this.url}/archives/`);
+
+    filtered = replaceAll(filtered, '\\]\\(\\#', `](https://${this.url}#/`);
+
+
     filtered = filtered.replace('#', '# ');
     filtered = filtered.replace('# #', '##');
 

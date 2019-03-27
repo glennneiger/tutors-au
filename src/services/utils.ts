@@ -30,6 +30,9 @@ function fixLos(los: Lo[], prefix: string) {
     if (lo.videoid == 'none') {
       delete lo.videoid;
     }
+    if (lo.type == 'unit') {
+      lo.link = `#topic/${prefix}`;
+    }
     fixLos(lo.los, `${prefix}/${lo.folder}`);
   }
 }
@@ -39,14 +42,6 @@ export function fixLinks(topic: Topic, url: string) {
   topic.lo.link = `#topic/${url}`;
   fixLos(topic.lo.los, url);
 }
-
-// export function findCourseUrl(labUrl: string) {
-//   let url = path.dirname(path.dirname(labUrl));
-//   if (path.basename(url).startsWith('topic')) {
-//     url = path.dirname(url);
-//   }
-//   return url;
-// }
 
 function removeLastDirectory(the_url)
 {
@@ -61,9 +56,5 @@ export function findCourseUrls(labUrl: string) : string[] {
     topicUrl = removeLastDirectory(topicUrl);
   }
   const courseUrl = removeLastDirectory(topicUrl);
-  // let url = path.dirname(path.dirname(labUrl));
-  // if (path.basename(url).startsWith('topic')) {
-  //   url = path.dirname(url);
-  // }
   return [courseUrl, topicUrl];
 }

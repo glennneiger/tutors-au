@@ -18,7 +18,7 @@ const title = 'Aurelia Navigation Skeleton';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
-const baseUrl = '/edeleastar.github.io/tutors-staging/';
+const baseUrl = '/tutors-staging.github.io/';
 //const baseUrl = '/';
 
 const cssRules = [
