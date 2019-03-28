@@ -6,6 +6,14 @@ const path = require('path');
 
 const md = require('markdown-it')().use(require('markdown-it-highlightjs'), {});
 
+var showdown  = require('showdown');
+//const converter = new showdown.Converter();
+const showdownHighlight = require("showdown-highlight");
+let converter = new showdown.Converter({
+  // That's it
+  extensions: [showdownHighlight]
+});
+
 function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
@@ -52,12 +60,13 @@ export class LabView {
 
     filtered = replaceAll(filtered, '\\]\\(\\#', `](https://${this.url}#/`);
 
-
-    filtered = filtered.replace('#', '# ');
-    filtered = filtered.replace('# #', '##');
+    //
+    // filtered = filtered.replace('#', '# ');
+    // filtered = filtered.replace('# #', '##');
 
     this.refreshav();
-    this.content = md.render(filtered);
+    //this.content = md.render(filtered);
+    this.content = converter.makeHtml(filtered);
   }
 
   attached() {}
