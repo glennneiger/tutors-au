@@ -1,15 +1,15 @@
-lab body {
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial", sans-serif;
   font-size: 90%;
   color: black;
 }
 
-lab ul {
+ul {
   margin-top: 2px;
   margin-bottom: 2px;
 }
 
-lab p {
+p {
   line-height:20px;
   margin:2px;
   padding:2px;
@@ -21,26 +21,26 @@ pre code {
   line-height:18px;
 }
 
-img {
+.lab img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 10px;
 }
 
-h1 > lab, lab h2, lab h3 {
+h1, h2, h3 {
   border-bottom: thin solid black;
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 }
 
-lab h1 {
+h1 {
   font-size: 120%;
 }
 
-lab h2 {
+h2 {
   font-size: 110%;
 
 }
 
-lab h3 {
+h3 {
   font-size: 100%;
 }

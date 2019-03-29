@@ -1,24 +1,11 @@
 import { inject } from 'aurelia-framework';
 import { CourseRepo } from '../services/course-repo';
 import { Chapter, Lab } from '../services/lab';
+import { MarkdownParser } from '../services/markdown-parser';
 
 const path = require('path');
 
-const md = require('markdown-it')().use(require('markdown-it-highlightjs'), {});
-
-var showdown  = require('showdown');
-//const converter = new showdown.Converter();
-const showdownHighlight = require("showdown-highlight");
-let converter = new showdown.Converter({
-  // That's it
-  extensions: [showdownHighlight]
-});
-
-function replaceAll(str, find, replace) {
-  return str.replace(new RegExp(find, 'g'), replace);
-}
-
-@inject(CourseRepo)
+@inject(CourseRepo, MarkdownParser)
 export class LabView {
   lab: Lab;
   content = '';
@@ -26,7 +13,7 @@ export class LabView {
   currentChapter: Chapter;
   navbarHtml = '';
 
-  constructor(private courseRepo: CourseRepo) {}
+  constructor(private courseRepo: CourseRepo, private markdownParser: MarkdownParser) {}
 
   refreshav() {
     this.navbarHtml = '';
@@ -51,22 +38,8 @@ export class LabView {
       this.currentChapter = this.lab.chapters.find(ch => ch.shortTitle == lastSegment);
     }
 
-
-    let filtered = replaceAll(this.currentChapter.contentMd, '.\/img\\/', `img/`);
-    filtered = replaceAll(filtered, 'img\\/', `https://${this.url}/img/`);
-
-    filtered = replaceAll(filtered, '.\/archives\\/', `archives/`);
-    filtered = replaceAll(filtered, 'archives\\/', `https://${this.url}/archives/`);
-
-    filtered = replaceAll(filtered, '\\]\\(\\#', `](https://${this.url}#/`);
-
-    //
-    // filtered = filtered.replace('#', '# ');
-    // filtered = filtered.replace('# #', '##');
-
     this.refreshav();
-    //this.content = md.render(filtered);
-    this.content = converter.makeHtml(filtered);
+    this.content = this.markdownParser.parse(this.currentChapter.contentMd, this.url);
   }
 
   attached() {}
