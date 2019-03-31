@@ -2,5 +2,6 @@ export default {
   debug: true,
   testing: true,
   urlPrefix: '#',
-  courseBase: 'https://wit-tutors.github.io/#course'
+  courseBase: 'https://wit-tutors.github.io/#course',
+  pushState: false
 };

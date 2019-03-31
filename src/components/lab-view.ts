@@ -2,6 +2,7 @@ import { inject } from 'aurelia-framework';
 import { CourseRepo } from '../services/course-repo';
 import { Chapter, Lab } from '../services/lab';
 import { MarkdownParser } from '../services/markdown-parser';
+import environment from "../environment";
 
 const path = require('path');
 
@@ -20,7 +21,7 @@ export class LabView {
     this.lab.chapters.forEach(chapter => {
       const active = chapter == this.currentChapter ? 'class= uk-active' : '';
       this.navbarHtml = this.navbarHtml.concat(
-        `<li ${active}> <a href="#lab/${this.url}/${chapter.shortTitle}"> ${chapter.shortTitle} </a> </li>`
+        `<li ${active}> <a href="${environment.urlPrefix}lab/${this.url}/${chapter.shortTitle}"> ${chapter.shortTitle} </a> </li>`
       );
     });
   }

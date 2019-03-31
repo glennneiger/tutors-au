@@ -2,6 +2,7 @@ import { inject } from 'aurelia-framework';
 import { PLATFORM } from 'aurelia-pal';
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { CourseRepo } from './services/course-repo';
+import environment from "./environment";
 
 @inject(CourseRepo)
 export class App {
@@ -11,6 +12,8 @@ export class App {
 
   configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Tutors';
+    config.options.pushState = environment.pushState;
+    config.options.root = '/';
     config.map([
       {
         route: [''],

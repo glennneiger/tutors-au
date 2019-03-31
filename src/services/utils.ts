@@ -40,7 +40,7 @@ function fixLos(los: Lo[], prefix: string) {
 
 export function fixLinks(topic: Topic, url: string) {
   topic.lo.img = `https://${url}/${topic.lo.img}`;
-  topic.lo.link = `#topic/${url}`;
+  topic.lo.link = `${environment.urlPrefix}topic/${url}`;
   fixLos(topic.lo.los, url);
 }
 
