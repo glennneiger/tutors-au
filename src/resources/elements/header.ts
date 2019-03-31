@@ -3,6 +3,7 @@ import { inject } from 'aurelia-framework';
 import { CourseRepo } from '../../services/course-repo';
 import { Course } from '../../services/course';
 import { iconColours, IconNav, icons } from '../../services/styles';
+import environment from "../../environment";
 
 interface Properties {
   [key: string]: any;
@@ -26,7 +27,7 @@ export class Header {
     this.course = this.courseRepo.course;
 
     this.homeicon = 'fas fa-home fa-3x';
-    this.homelink = `#/course/${this.courseRepo.courseUrl}`;
+    this.homelink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.hometooltip = 'To the top level Topics for this Module';
 
     this.createCompanionBar();
@@ -57,7 +58,7 @@ export class Header {
 
   createWallLink(type: string) {
     return {
-      link: `#/${type}s/${this.courseRepo.courseUrl}`,
+      link: `${environment.urlPrefix}/${type}s/${this.courseRepo.courseUrl}`,
       icon: type,
     };
   }

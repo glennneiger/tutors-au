@@ -1,6 +1,7 @@
 import { Lo } from './lo';
 import { Topic } from './topic';
 import * as path from 'path';
+import environment from "../environment";
 
 export function findLos(los: Lo[], lotype: string): Lo[] {
   let result: Lo[] = [];
@@ -22,7 +23,7 @@ function fixLos(los: Lo[], prefix: string) {
       lo.link = `https://${prefix}/${lo.folder}/${lo.link}`;
     }
     if (lo.type == 'lab') {
-      lo.link = `#lab/${prefix}/${lo.folder}`;
+      lo.link = `${environment.urlPrefix}lab/${prefix}/${lo.folder}`;
     }
     if (lo.type == 'panelvideo') {
       lo.link = `http://www.youtube.com/watch?v=${lo.videoid}`;
@@ -31,7 +32,7 @@ function fixLos(los: Lo[], prefix: string) {
       delete lo.videoid;
     }
     if (lo.type == 'unit') {
-      lo.link = `#topic/${prefix}`;
+      lo.link = `${environment.urlPrefix}topic/${prefix}`;
     }
     fixLos(lo.los, `${prefix}/${lo.folder}`);
   }
