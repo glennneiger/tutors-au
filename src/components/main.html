@@ -1,31 +1,39 @@
 <template>
   <require from="../resources/elements/course-outline"></require>
 
-  <div class="uk-container">
-    <div class="uk-section uk-section-default">
-      <div class="uk-child-width-expand@s" uk-grid>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body uk-padding">
-            <h3 class="uk-card-title">Tutors Reader</h3>
-            <p>Enter the public course web url below. The course must have been published with tutors-ts Version 3 </p>
-            <fieldset class="uk-fieldset">
-              <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Course Web Url" value.bind="url">
+
+    <div class="uk-width-1-1">
+
+      <div class="uk-container">
+        <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+          <div class="uk-width-1-1@m">
+            <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+
+              <h3 class="uk-card-title uk-text-center">Tutors Course Reader</h3>
+              <form>
+                <div class="uk-margin">
+                  <div class="uk-inline uk-width-1-1">
+                    <input class="uk-input" type="text" placeholder="Course Web Url" value.bind="url">
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" click.trigger="setUrl()">Get Url
+                  </button>
+                </div>
+              </form>
+              <p class="uk-text-centre"><a href="${courseUrl}"> ${courseUrl} </a></p>
+              <div show.bind="courseFound">
+                <div class="uk-card uk-card-default uk-align-left uk-card-body">
+                  <course-outline los.bind="course.topicLos"></course-outline>
+                </div>
               </div>
-              <button class="uk-button uk-button-default" click.trigger="setUrl()">Get Course Url</button>
-              <p> ${status} </p>
-              <p><a href="${courseUrl}"> ${courseUrl} </a></p>
-            </fieldset>
-          </div>
-        </div>
-        <div>
-          <div show.bind="courseFound">
-            <div class="uk-card uk-card-default uk-align-left uk-card-body">
-              <course-outline los.bind="course.topicLos"></course-outline>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
 </template>
+
