@@ -1,6 +1,6 @@
 #!/bin/bash
 au build --env prod
-cd ../wit-tutors.github-staging.io
+cd ../wit-tutors.github.staging.io
 git pull
 cp ../tutors-au/dist/* .
 git add -A .
