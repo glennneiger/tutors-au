@@ -3,6 +3,7 @@ import { inject, Aurelia } from 'aurelia-framework';
 import { computedFrom } from 'aurelia-framework';
 import { CourseRepo } from '../services/course-repo';
 import {Course} from "../services/course";
+import environment from "../environment";
 
 @inject(Router, CourseRepo)
 export class Main {
@@ -17,7 +18,7 @@ export class Main {
   async setUrl() {
     let domain = this.url.substring(this.url.indexOf('//') + 2);
 
-    const courseUrl = `https://wit-tutors.github.io/#course/${domain}`;
+    const courseUrl = `${environment.courseBase}/${domain}`;
     await this.courseRepo.fetchCourse(domain);
     if (this.courseRepo.course) {
       this.course = this.courseRepo.course;

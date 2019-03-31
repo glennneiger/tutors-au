@@ -1,5 +1,6 @@
 export default {
   debug: false,
   testing: false,
-  urlPrefix: ''
+  urlPrefix: '#',
+  courseBase: 'https://tutors.design/#course'
 };
