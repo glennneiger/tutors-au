@@ -8,5 +8,5 @@ export interface Lo {
   objectives: string;
   los: Lo[];
   topics: Lo[];
-  properties : {};
+  properties: { [prop: string]: string };
 }

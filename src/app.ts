@@ -72,7 +72,12 @@ export class App {
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'github',
         title: 'All Repos in Module'
-      }
+      },
+      {
+        route: "callback",
+        name: "callback",
+        moduleId: PLATFORM.moduleName("callback")
+      },
     ]);
   }
 }
