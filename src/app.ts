@@ -32,6 +32,12 @@ export class App {
         title: 'Topic'
       },
       {
+        route: ['video/*courseUrl/:videoid'],
+        moduleId: PLATFORM.moduleName('./components/video-player'),
+        name: 'video',
+        title: 'Video'
+      },
+      {
         route: 'lab/*laburl/:step?',
         moduleId: PLATFORM.moduleName('./components/lab-view'),
         name: 'lab',

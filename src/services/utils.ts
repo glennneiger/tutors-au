@@ -29,7 +29,7 @@ function fixLos(los: Lo[], prefix: string) {
       lo.link = `http://www.youtube.com/watch?v=${lo.videoid}`;
     }
     if (lo.videoid == 'none') {
-      delete lo.videoid;
+      delete lo.videoid
     }
     if (lo.type == 'unit') {
       lo.link = `${environment.urlPrefix}topic/${prefix}`;
