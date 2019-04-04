@@ -17,11 +17,11 @@
                   </div>
                 </div>
                 <div class="uk-margin">
-                  <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" click.trigger="setUrl()">Get Url
+                  <button name="geturl" class="uk-button uk-button-primary uk-button-large uk-width-1-1" click.trigger="setUrl()">Get Url
                   </button>
                 </div>
               </form>
-              <p class="uk-text-centre"><a href="${courseUrl}"> ${courseUrl} </a></p>
+              <p name="url" class="uk-text-centre"><a href="${courseUrl}"> ${courseUrl} </a></p>
               <div show.bind="courseFound">
                 <div class="uk-card uk-card-default uk-align-left uk-card-body">
                   <course-outline los.bind="course.topicLos"></course-outline>
@@ -33,7 +33,5 @@
       </div>
     </div>
   </div>
-
-
 </template>
 
