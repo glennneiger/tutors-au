@@ -1,5 +1,4 @@
 import { Lo } from '../services/lo';
-import { iconColours, icons } from '../services/styles';
 import { CourseRepo } from '../services/course-repo';
 import { inject } from 'aurelia-framework';
 

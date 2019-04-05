@@ -6,13 +6,19 @@ import { Lab } from './lab';
 import { findCourseUrls } from './utils';
 import { AuthService } from './auth-service';
 
-@inject(HttpClient, AuthService)
+import { EventAggregator } from 'aurelia-event-aggregator';
+import {CourseUpdate} from "./messages";
+import {Topic} from "./topic";
+
+@inject(HttpClient, AuthService, EventAggregator)
 export class CourseRepo {
   course: Course;
+  topic : Topic;
+  lab : Lab;
   courseUrl = '';
   topicUrl = '';
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService, private ea: EventAggregator) {}
 
   async getCourse(url) {
     if (!this.course || this.course.url !== url) {
@@ -20,6 +26,7 @@ export class CourseRepo {
       this.course = new Course(this.http, url);
       try {
         await this.course.fetchCourse();
+        this.ea.publish(new CourseUpdate(this.course));
       } catch (e) {
         this.courseUrl = '';
         this.course = null;
@@ -29,7 +36,7 @@ export class CourseRepo {
 
   async fetchCourse(url: string) {
     await this.getCourse(url);
-    if (this.course.lo.properties.hasOwnProperty('auth') && (this.course.lo.properties.auth == 'true')) {
+    if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
       console.log('secured');
       if (this.authService.isAuthenticated()) {
         console.log('your are logged in');
@@ -45,7 +52,8 @@ export class CourseRepo {
   async fetchTopic(url: string) {
     await this.getCourse(path.dirname(url));
     this.topicUrl = url;
-    return this.course.topicIndex.get(path.basename(url));
+    this.topic = this.course.topicIndex.get(path.basename(url));
+    return this.topic;
   }
 
   async fetchLab(url: string) {
@@ -55,6 +63,7 @@ export class CourseRepo {
     await lab.fetchLab();
     const topic = await this.fetchTopic(urls[1]);
     lab.topic = topic;
+    this.lab = lab;
     return lab;
   }
 

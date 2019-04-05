@@ -1,11 +1,11 @@
 <template>
-  <require from="./panel-video"></require>
+  <require from="./cards/video-card"></require>
 
   <div class="uk-container uk-padding-small">
     <div class="uk-child-width-1-2@s uk-flex uk-flex-center" uk-grid uk-height-match="target: .uk-card">
       <div repeat.for="lo of los">
         <div class="uk-card uk-card-default uk-card-small uk-text-center uk-text-baseline uk-animation-fade">
-          <panel-video lo.one-way="lo"></panel-video>
+          <video-card lo.one-way="lo"></video-card>
         </div>
       </div>
     </div>

@@ -1,19 +1,9 @@
 <template>
-  <require from="./card"></require>
-  <require from="./panel-video"></require>
+  <require from="./cards/video-card"></require>
 
 
   <div repeat.for="video of videos">
-    <panel-video lo.bind="video"></panel-video>
-    <!--<div class="uk-card uk-card-default uk-box-shadow-xlarge uk-animation-scale-up">-->
-      <!--<div class="uk-card-header">-->
-        <!--<h5 class="uk-card-title"> ${video.title} </h5>-->
-      <!--</div>-->
-      <!--<div class="uk-card-media-top">-->
-        <!--<iframe width="1280" height="720" src="https://www.youtube.com/embed/${video.videoid}"-->
-                <!--allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>-->
-      <!--</div>-->
-    <!--</div>-->
+    <video-card lo.bind="video"></video-card>
     <br>
   </div>
 </template>

@@ -4,9 +4,10 @@ import { Router, RouterConfiguration } from 'aurelia-router';
 import { CourseRepo } from './services/course-repo';
 import environment from "./environment";
 
+
 @inject(CourseRepo)
 export class App {
-  title = 'Oileain';
+  title = 'Tutors';
 
   constructor(private courseRepo: CourseRepo) {}
 
@@ -47,31 +48,31 @@ export class App {
         route: 'talks/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'talk',
-        title: 'All Talks in Module'
+        title: 'Talks'
       },
       {
         route: 'labs/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'lab',
-        title: 'All Labs in Module'
+        title: 'Labs'
       },
       {
         route: 'videos/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'video',
-        title: 'All Videos in Module'
+        title: 'Video'
       },
       {
         route: 'archives/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'archive',
-        title: 'All Archives in Module'
+        title: 'Archives'
       },
       {
         route: 'githubs/*courseurl',
         moduleId: PLATFORM.moduleName('./components/wall'),
         name: 'github',
-        title: 'All Repos in Module'
+        title: 'Repos'
       },
       {
         route: "callback",

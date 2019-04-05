@@ -1,10 +1,10 @@
 import { bindable } from 'aurelia-framework';
 import { inject } from 'aurelia-framework';
-import { Lo } from '../../services/lo';
-import {iconColours, icons} from "../../services/styles";
-import environment from "../../environment";
+import { Lo } from '../../../services/lo';
+import {iconColours, icons} from "../../../services/styles";
+import environment from "../../../environment";
 import * as path from 'path';
-import {CourseRepo} from "../../services/course-repo";
+import {CourseRepo} from "../../../services/course-repo";
 
 @inject(CourseRepo)
 export class Card {
