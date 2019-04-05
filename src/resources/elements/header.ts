@@ -49,11 +49,14 @@ export class Header {
   }
 
   createWallBar() {
-    if (this.course.walls[0].length > 0) this.walls.push(this.createWallLink('talk'));
-    if (this.course.walls[1].length > 0) this.walls.push(this.createWallLink('lab'));
-    if (this.course.walls[2].length > 0) this.walls.push(this.createWallLink('video'));
-    if (this.course.walls[3].length > 0) this.walls.push(this.createWallLink('github'));
-    if (this.course.walls[4].length > 0) this.walls.push(this.createWallLink('archive'));
+    this.course.walls.forEach((los, type) => {
+      this.walls.push(this.createWallLink(type));
+    });
+    // if (this.course.walls[0].length > 0) this.walls.push(this.createWallLink('talk'));
+    // if (this.course.walls[1].length > 0) this.walls.push(this.createWallLink('lab'));
+    // if (this.course.walls[2].length > 0) this.walls.push(this.createWallLink('video'));
+    // if (this.course.walls[3].length > 0) this.walls.push(this.createWallLink('github'));
+    // if (this.course.walls[4].length > 0) this.walls.push(this.createWallLink('archive'));
   }
 
   createWallLink(type: string) {

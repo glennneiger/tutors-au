@@ -10,5 +10,6 @@ export class CourseView {
 
   async activate(params) {
     this.course = await this.courseRepo.fetchCourse(params.courseurl);
+    console.log(this.course);
   }
 }

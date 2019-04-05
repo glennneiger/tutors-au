@@ -15,8 +15,8 @@ export class AuthService {
   auth0 = new WebAuth({
     domain: env.auth0.domain,
     clientID: env.auth0.clientId,
-    //redirectUri: "http://localhost:8080/callback",
-    redirectUri: "https://tutors.design/callback",
+    redirectUri: "http://localhost:8080/callback",
+    //redirectUri: "https://tutors.design/callback",
     audience: `https://${env.auth0.domain}/userinfo`,
     responseType: "token id_token",
     scope: "openid"
@@ -31,15 +31,8 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
 
-        //const savedLocation = JSON.parse(localStorage.getItem("location"));
-        //const navigateTarget = savedLocation.url || "home";
-
-        console.log("about to navigate");
         const url = localStorage.getItem('course_url')
-        console.log(url);
-
         this.router.navigate(`/course/${url}`);
-        console.log("naigation");
 
         this.authNotifier.emit("authChange", { authenticated: true });
       } else if (err) {

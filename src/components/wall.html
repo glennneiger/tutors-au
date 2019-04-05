@@ -1,7 +1,14 @@
 <template>
   <require from="../resources/elements/header"></require>
   <require from="../resources/elements/standard"></require>
+  <require from="../resources/elements/video-wall"></require>
 
   <header title.one-way="title"></header>
-  <standard los.one-way="los"></standard>
+
+  <div if.bind="name != 'video'">
+    <standard los.one-way="los"></standard>
+  </div>
+  <div else>
+    <video-wall los.one-way="los"></video-wall>
+  </div>
 </template>

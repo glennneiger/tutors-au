@@ -1,17 +1,43 @@
 import { Lo } from './lo';
 import { Topic } from './topic';
 import { HttpClient } from 'aurelia-fetch-client';
-import { findLos } from './utils';
+import { allLos, allVideoLos } from './utils';
 
 export class Course {
   lo: Lo;
   topicIndex = new Map();
   topicLos: Lo[] = [];
   url: string;
-  walls: Lo[][] = [];
+  walls = new Map<string, Lo[]>();
+  videos = new Map<string, Lo>();
 
   constructor(private http: HttpClient, url) {
     this.url = url;
+  }
+
+  addWall(type: string) {
+    const los = allLos(type, this.lo.topics);
+    if (los.length > 0) {
+      this.walls.set(type, los);
+    }
+  }
+
+  addVideoWall() {
+    const videoLos = allVideoLos(this.lo.topics);
+    if (videoLos.length > 0) {
+      this.walls.set('video', videoLos);
+    }
+    videoLos.forEach( lo => {
+      this.videos.set(lo.videoid, lo);
+    })
+  }
+
+  populateWalls() {
+    this.addWall('talk');
+    this.addWall('lab');
+    this.addVideoWall();
+    this.addWall('github');
+    this.addWall('archive');
   }
 
   async fetch(url: string) {
@@ -30,18 +56,6 @@ export class Course {
       this.topicIndex.set(topic.lo.folder, topic);
       this.topicLos.push(topic.lo);
     }
-    this.walls.push(this.allLos('talk'));
-    this.walls.push(this.allLos('lab'));
-    this.walls.push(this.allLos('video'));
-    this.walls.push(this.allLos('github'));
-    this.walls.push(this.allLos('archive'));
-  }
-
-  allLos(lotype: string) {
-    let allLos: Lo[] = [];
-    for (let topic of this.lo.topics) {
-      allLos = allLos.concat(findLos(topic.los, lotype));
-    }
-    return allLos;
+    this.populateWalls();
   }
 }

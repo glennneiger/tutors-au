@@ -60,7 +60,7 @@ export class CourseRepo {
 
   async fetchWall(url: string, type: string) {
     await this.getCourse(url);
-    return this.course.allLos(type);
+    return this.course.walls.get(type);
   }
 
   async fetchCourseProperties(url: string) {

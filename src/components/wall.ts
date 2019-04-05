@@ -6,12 +6,14 @@ import { Lo } from '../services/lo';
 export class Wall {
   los: Lo[];
   title = '';
+  name = '';
 
   constructor(private courseRepo: CourseRepo) {}
 
   async activate(params, route) {
     this.los = await this.courseRepo.fetchWall(params.courseurl, route.name);
     this.title = route.title;
+    this.name = route.name;
   }
 
   determineActivationStrategy() {
