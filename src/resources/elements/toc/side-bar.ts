@@ -1,5 +1,5 @@
-import { Lo } from '../services/lo';
-import { CourseRepo } from '../services/course-repo';
+import { Lo } from '../../../services/lo';
+import { CourseRepo } from '../../../services/course-repo';
 import { inject } from 'aurelia-framework';
 
 @inject(CourseRepo)

@@ -1,14 +1,14 @@
 <template>
   <require from="../resources/elements/header/header"></require>
-  <require from="../resources/elements/standard"></require>
-  <require from="../resources/elements/units"></require>
-  <require from="../resources/elements/panel-videos"></require>
+  <require from="../resources/elements/card-decks/card-deck"></require>
+  <require from="../resources/elements/card-decks/unit-deck"></require>
+  <require from="../resources/elements/card-decks/video-deck"></require>
 
-  <!--<header title.one-way="topic.lo.title"></header>-->
+  <header></header>
 
   <div class="uk-container uk-padding-small">
-    <panel-videos videos.one-way="topic.panelVideos"></panel-videos>
-    <units units.one-way="topic.units"></units>
-    <standard los.one-way="topic.standardLos"></standard>
+    <video-deck videos.one-way="topic.panelVideos"></video-deck>
+    <unit-deck units.one-way="topic.units"></unit-deck>
+    <card-deck los.one-way="topic.standardLos"></card-deck>
   </div>
 </template>

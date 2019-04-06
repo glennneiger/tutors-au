@@ -1,7 +1,9 @@
 <template>
   <require from="../resources/elements/header/header"></require>
-  <require from="../resources/elements/standard"></require>
+  <require from="../resources/elements/card-decks/card-deck"></require>
 
-  <!--<header title.one-way="course.lo.title"></header>-->
-  <standard los.one-way="course.topicLos"></standard>
+  <header></header>
+  <div class="uk-container uk-padding-small">
+    <card-deck los.one-way="course.topicLos"></card-deck>
+  </div>
 </template>

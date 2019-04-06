@@ -1,11 +1,13 @@
 <template>
-  <require from="./cards/card"></require>
-  <require from="./panel-videos"></require>
+  <require from="./card"></require>
+  <require from="./video-card"></require>
 
-  <div class="uk-card uk-card-body uk-background-default">
+  <div class="uk-card uk-card-body">
     <h3 class="uk-card-title"> ${unit.title} </h3>
     <hr>
-    <panel-videos videos.one-way="panelVideos"></panel-videos>
+    <div repeat.for="video of panelVideos">
+      <video-card lo.bind="video"></video-card>
+    </div>
     <br>
     <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
       <div repeat.for="lo of standardLos">

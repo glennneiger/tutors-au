@@ -30,7 +30,7 @@ export class Header {
 
     this.moduleProperties = this.courseRepo.course.lo.properties;
     this.course = this.courseRepo.course;
-    //this.title = this.course.lo.title// + this.router.currentInstruction.config.name;
+ //   this.title = this.course.lo.title;
 
     this.homeicon = 'fas fa-home fa-3x';
     this.homelink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
@@ -42,26 +42,7 @@ export class Header {
 
 
   constructor(private courseRepo: CourseRepo, private ea : EventAggregator, private router: Router) {
-    // if (this.courseRepo.course) {
-    //   this.init();
-    // }
-    ea.subscribe(CourseUpdate, msg => {
-      this.course = msg.course;
-      this.init();
-    });
-    this.ea.subscribe('router:navigation:complete', response => {
-      console.log(response);
-    });
-  }
-
-  activate() {
-    this.ea.subscribe('router:navigation:complete', response => {
-      console.log(response);
-    });
-  }
-
-  deactivate() {
-    //this.navEvent.dispose();
+    this.init();
   }
 
   createCompanionBar() {
