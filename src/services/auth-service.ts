@@ -15,8 +15,8 @@ export class AuthService {
   auth0 = new WebAuth({
     domain: env.auth0.domain,
     clientID: env.auth0.clientId,
-    redirectUri: "http://localhost:8080/callback",
-    //redirectUri: "https://tutors.design/callback",
+    //redirectUri: "http://localhost:8080/#callback",
+    redirectUri: "https://tutors.design/callback",
     audience: `https://${env.auth0.domain}/userinfo`,
     responseType: "token id_token",
     scope: "openid"
@@ -46,7 +46,6 @@ export class AuthService {
   }
 
   setSession(authResult) {
-    // Set the time that the access token will expire at
     let expiresAt = JSON.stringify(
       authResult.expiresIn * 1000 + new Date().getTime()
     );
@@ -56,7 +55,6 @@ export class AuthService {
   }
 
   logout() {
-    // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
@@ -65,8 +63,6 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    // Check whether the current time is past the
-    // access token's expiry time
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }

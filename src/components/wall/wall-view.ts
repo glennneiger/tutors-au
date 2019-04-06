@@ -1,6 +1,6 @@
-import { CourseRepo } from '../services/course-repo';
+import { CourseRepo } from '../../services/course-repo';
 import { inject } from 'aurelia-framework';
-import { Lo } from '../services/lo';
+import { Lo } from '../../services/lo';
 
 @inject(CourseRepo)
 export class WallView {

@@ -1,9 +1,9 @@
 import { Router } from 'aurelia-router';
 import { inject, Aurelia } from 'aurelia-framework';
 import { computedFrom } from 'aurelia-framework';
-import { CourseRepo } from '../services/course-repo';
-import {Course} from "../services/course";
-import environment from "../environment";
+import { CourseRepo } from '../../services/course-repo';
+import {Course} from "../../services/course";
+import environment from "../../environment";
 
 @inject(Router, CourseRepo)
 export class MainView {

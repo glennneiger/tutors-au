@@ -1,8 +1,8 @@
 import { inject } from 'aurelia-framework';
-import { CourseRepo } from '../services/course-repo';
-import { Chapter, Lab } from '../services/lab';
-import { MarkdownParser } from '../services/markdown-parser';
-import environment from "../environment";
+import { CourseRepo } from '../../services/course-repo';
+import { Chapter, Lab } from '../../services/lab';
+import { MarkdownParser } from '../../services/markdown-parser';
+import environment from "../../environment";
 
 const path = require('path');
 

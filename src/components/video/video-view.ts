@@ -1,8 +1,8 @@
 import { inject } from 'aurelia-framework';
-import { CourseRepo } from '../services/course-repo';
-import { Topic } from '../services/topic';
-import { Course } from '../services/course';
-import {Lo} from "../services/lo";
+import { CourseRepo } from '../../services/course-repo';
+import { Topic } from '../../services/topic';
+import { Course } from '../../services/course';
+import {Lo} from "../../services/lo";
 
 @inject(CourseRepo)
 export class VideoView {

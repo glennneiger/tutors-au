@@ -10,6 +10,7 @@ export class Course {
   url: string;
   walls = new Map<string, Lo[]>();
   videos = new Map<string, Lo>();
+  secured = false;
 
   constructor(private http: HttpClient, url) {
     this.url = url;

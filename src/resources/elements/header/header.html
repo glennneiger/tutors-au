@@ -27,6 +27,9 @@
 
       <icon-nav-bar nav.one-way="companions"></icon-nav-bar>
       <icon-nav-bar nav.one-way="walls"></icon-nav-bar>
+      <div if.bind="secured  == true">
+        <a href="/logout"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+      </div>
     </div>
   </div>
 </template>

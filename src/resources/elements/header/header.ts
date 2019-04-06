@@ -24,10 +24,12 @@ export class Header {
   hometooltip = 'To the top level Topics for this Module';
 
   showHome = true;
+  secured = false;
 
   init() {
     this.moduleProperties = this.courseRepo.course.lo.properties;
     this.course = this.courseRepo.course;
+    this.secured = this.course.secured;
     this.homelink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.createCompanionBar();
     this.createWallBar();

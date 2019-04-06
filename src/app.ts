@@ -18,66 +18,71 @@ export class App {
     config.map([
       {
         route: [''],
-        moduleId: PLATFORM.moduleName('./components/main-view'),
+        moduleId: PLATFORM.moduleName('./components/main/main-view'),
         title: 'Module'
       },
       {
         route: ['course/*courseurl'],
-        moduleId: PLATFORM.moduleName('./components/course-view'),
+        moduleId: PLATFORM.moduleName('./components/course/course-view'),
         title: 'Module'
       },
       {
         route: ['topic/*topicurl'],
-        moduleId: PLATFORM.moduleName('./components/topic-view'),
+        moduleId: PLATFORM.moduleName('./components/topic/topic-view'),
         name: 'topic',
         title: 'Topic'
       },
       {
         route: ['video/*courseUrl/:videoid'],
-        moduleId: PLATFORM.moduleName('./components/video-view'),
+        moduleId: PLATFORM.moduleName('./components/video/video-view'),
         name: 'video',
         title: 'Video'
       },
       {
         route: 'lab/*laburl/:step?',
-        moduleId: PLATFORM.moduleName('./components/lab-view'),
+        moduleId: PLATFORM.moduleName('./components/lab/lab-view'),
         name: 'lab',
         title: 'Lab'
       },
       {
         route: 'talks/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall-view'),
+        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),
         name: 'talk',
         title: 'Talks'
       },
       {
         route: 'labs/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall-view'),
+        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),
         name: 'lab',
         title: 'Labs'
       },
       {
         route: 'videos/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall-view'),
+        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),
         name: 'video',
         title: 'Videos'
       },
       {
         route: 'archives/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall-view'),
+        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),
         name: 'archive',
         title: 'Archives'
       },
       {
         route: 'githubs/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall-view'),
+        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),
         name: 'github',
         title: 'Repos'
       },
       {
         route: "callback",
         name: "callback",
-        moduleId: PLATFORM.moduleName("callback")
+        moduleId: PLATFORM.moduleName("./components/auth/callback")
+      },
+      {
+        route: "logout",
+        name: "logout",
+        moduleId: PLATFORM.moduleName("./components/auth/logout")
       },
     ]);
   }

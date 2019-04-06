@@ -37,11 +37,8 @@ export class CourseRepo {
   async fetchCourse(url: string) {
     await this.getCourse(url);
     if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
-      console.log('secured');
-      if (this.authService.isAuthenticated()) {
-        console.log('your are logged in');
-      } else {
-        console.log('your are not logged in');
+      this.course.secured = true;
+      if (!this.authService.isAuthenticated()) {
         localStorage.setItem('course_url', url);
         this.authService.login();
       }
