@@ -5,7 +5,7 @@ export class VideoHeader {
   @bindable
   lo: Lo;
 
-  homeicon = 'fas fa-home fa-3x';
+  homeicon = 'fas fa-arrow-up fa-3x';
   homelink = '';
 
   attached() {
