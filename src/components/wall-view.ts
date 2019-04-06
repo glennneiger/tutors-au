@@ -3,7 +3,7 @@ import { inject } from 'aurelia-framework';
 import { Lo } from '../services/lo';
 
 @inject(CourseRepo)
-export class Wall {
+export class WallView {
   los: Lo[];
   title = '';
   name = '';

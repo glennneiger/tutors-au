@@ -17,7 +17,6 @@ export class Card {
     if (this.lo.videoid) {
       const url = path.dirname(this.lo.link);
       this.videoLink = `${environment.urlPrefix}video/${this.courseRepo.courseUrl}/${this.lo.videoid}`;
-      //this.videoLink = `${environment.urlPrefix}video/${url}/${this.lo.videoid}`;
     }
   }
 }

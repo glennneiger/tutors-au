@@ -9,4 +9,5 @@ export interface Lo {
   los: Lo[];
   topics: Lo[];
   properties: { [prop: string]: string };
+  parentLink:string;
 }

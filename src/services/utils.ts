@@ -46,7 +46,7 @@ export function allVideoLos(los:Lo[]) {
 }
 
 
-function fixLos(los: Lo[], prefix: string) {
+function fixLos(topic : Topic, los: Lo[], prefix: string) {
   for (let lo of los) {
     lo.img = `https://${prefix}/${lo.folder}/${lo.img}`;
     if ('http' != lo.link.substr(0, 4)) {
@@ -64,14 +64,15 @@ function fixLos(los: Lo[], prefix: string) {
     if (lo.type == 'unit') {
       lo.link = `${environment.urlPrefix}topic/${prefix}`;
     }
-    fixLos(lo.los, `${prefix}/${lo.folder}`);
+    fixLos(topic, lo.los, `${prefix}/${lo.folder}`);
+    lo.parentLink = topic.lo.link;
   }
 }
 
 export function fixLinks(topic: Topic, url: string) {
   topic.lo.img = `https://${url}/${topic.lo.img}`;
   topic.lo.link = `${environment.urlPrefix}topic/${url}`;
-  fixLos(topic.lo.los, url);
+  fixLos(topic, topic.lo.los, url);
 }
 
 function removeLastDirectory(the_url) {

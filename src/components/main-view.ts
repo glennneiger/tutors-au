@@ -6,7 +6,7 @@ import {Course} from "../services/course";
 import environment from "../environment";
 
 @inject(Router, CourseRepo)
-export class Main {
+export class MainView {
   url: string;
   courseUrl: string;
   status: string;

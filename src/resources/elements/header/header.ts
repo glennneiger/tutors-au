@@ -1,11 +1,9 @@
-import { bindable } from 'aurelia-framework';
-import { inject, autoinject } from 'aurelia-framework';
+import { autoinject } from 'aurelia-framework';
 import { CourseRepo } from '../../../services/course-repo';
 import { Course } from '../../../services/course';
 import { IconNav } from '../../../services/styles';
 import environment from '../../../environment';
 import { EventAggregator } from 'aurelia-event-aggregator';
-import {CourseUpdate} from "../../../services/messages";
 import { Router } from 'aurelia-router';
 import { computedFrom } from 'aurelia-framework';
 
@@ -15,33 +13,27 @@ interface Properties {
 
 @autoinject
 export class Header {
-  //title: string;
   moduleProperties: Properties = {};
   course: Course;
 
   companions: IconNav[] = [];
   walls: IconNav[] = [];
 
-  homeicon: string;
+  homeicon = 'fas fa-home fa-3x';
   homelink: string;
-  hometooltip: string;
+  hometooltip = 'To the top level Topics for this Module';
+
+  showHome = true;
 
   init() {
-
     this.moduleProperties = this.courseRepo.course.lo.properties;
     this.course = this.courseRepo.course;
- //   this.title = this.course.lo.title;
-
-    this.homeicon = 'fas fa-home fa-3x';
     this.homelink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
-    this.hometooltip = 'To the top level Topics for this Module';
-
     this.createCompanionBar();
     this.createWallBar();
   }
 
-
-  constructor(private courseRepo: CourseRepo, private ea : EventAggregator, private router: Router) {
+  constructor(private courseRepo: CourseRepo, private ea: EventAggregator, private router: Router) {
     this.init();
   }
 
@@ -75,15 +67,18 @@ export class Header {
   @computedFrom('router.currentInstruction')
   get title() {
     let s = '';
-    if (this.router.currentInstruction !== null)
-      s = this.router.currentInstruction.config.title
-      switch(s) {
-        case 'Module' : return this.course.lo.title;
+    if (this.router.currentInstruction !== null) s = this.router.currentInstruction.config.title;
+    switch (s) {
+      case 'Module':
+        this.showHome = false;
+        return this.course.lo.title;
         break;
-        case 'Topic' : return this.courseRepo.topic.lo.title;
+      case 'Topic':
+        return this.courseRepo.topic.lo.title;
         break;
-        default: return `All ${s} in ${this.course.lo.title}`
-      }
-      return this.router.currentInstruction.config.title;
+      default:
+        return `All ${s} in ${this.course.lo.title}`;
+    }
+    return this.router.currentInstruction.config.title;
   }
 }

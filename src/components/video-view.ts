@@ -5,7 +5,7 @@ import { Course } from '../services/course';
 import {Lo} from "../services/lo";
 
 @inject(CourseRepo)
-export class VideoPlayer {
+export class VideoView {
   course: Course;
   lo : Lo;
 

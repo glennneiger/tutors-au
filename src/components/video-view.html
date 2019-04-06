@@ -1,0 +1,18 @@
+<template>
+  <require from="../resources/elements/header/video-header"></require>
+  <require from="../resources/elements/cards/video-card"></require>
+  <require from="../resources/elements/cards/card"></require>
+
+  <video-header lo.bind="lo"></video-header>
+  <div class="uk-container-expand uk-text-center">
+    <div uk-grid uk-flex uk-flex-center>
+      <div class="uk-width-auto@m"></div>
+      <div class="uk-width-expand@m">
+        <video-card showHeader.one-way="showHeader" lo.one-way="lo"></video-card>
+      </div>
+      <div class="uk-width-1-5@m">
+        <card lo.one-way="lo"></card>
+      </div>
+    </div>
+  </div>
+</template>

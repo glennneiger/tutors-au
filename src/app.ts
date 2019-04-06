@@ -18,7 +18,7 @@ export class App {
     config.map([
       {
         route: [''],
-        moduleId: PLATFORM.moduleName('./components/main'),
+        moduleId: PLATFORM.moduleName('./components/main-view'),
         title: 'Module'
       },
       {
@@ -34,7 +34,7 @@ export class App {
       },
       {
         route: ['video/*courseUrl/:videoid'],
-        moduleId: PLATFORM.moduleName('./components/video-player'),
+        moduleId: PLATFORM.moduleName('./components/video-view'),
         name: 'video',
         title: 'Video'
       },
@@ -46,31 +46,31 @@ export class App {
       },
       {
         route: 'talks/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall'),
+        moduleId: PLATFORM.moduleName('./components/wall-view'),
         name: 'talk',
         title: 'Talks'
       },
       {
         route: 'labs/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall'),
+        moduleId: PLATFORM.moduleName('./components/wall-view'),
         name: 'lab',
         title: 'Labs'
       },
       {
         route: 'videos/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall'),
+        moduleId: PLATFORM.moduleName('./components/wall-view'),
         name: 'video',
-        title: 'Video'
+        title: 'Videos'
       },
       {
         route: 'archives/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall'),
+        moduleId: PLATFORM.moduleName('./components/wall-view'),
         name: 'archive',
         title: 'Archives'
       },
       {
         route: 'githubs/*courseurl',
-        moduleId: PLATFORM.moduleName('./components/wall'),
+        moduleId: PLATFORM.moduleName('./components/wall-view'),
         name: 'github',
         title: 'Repos'
       },
