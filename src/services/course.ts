@@ -10,6 +10,7 @@ export class Course {
   url: string;
   walls = new Map<string, Lo[]>();
   videos = new Map<string, Lo>();
+  talks = new Map<string, Lo>();
   secured = false;
 
   constructor(private http: HttpClient, url) {
@@ -21,6 +22,11 @@ export class Course {
     if (los.length > 0) {
       this.walls.set(type, los);
     }
+    if (type == 'talk') {
+      los.forEach(lo => {
+        this.talks.set(`${lo.link}/${lo.folder}-`, lo);
+      });
+    }
   }
 
   addVideoWall() {
@@ -28,9 +34,9 @@ export class Course {
     if (videoLos.length > 0) {
       this.walls.set('video', videoLos);
     }
-    videoLos.forEach( lo => {
+    videoLos.forEach(lo => {
       this.videos.set(lo.videoid, lo);
-    })
+    });
   }
 
   populateWalls() {

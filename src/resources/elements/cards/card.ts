@@ -18,5 +18,8 @@ export class Card {
       const url = path.dirname(this.lo.link);
       this.videoLink = `${environment.urlPrefix}video/${this.courseRepo.courseUrl}/${this.lo.videoid}`;
     }
+    if (this.lo.type == 'talk') {
+      console.log (this.lo);
+    }
   }
 }

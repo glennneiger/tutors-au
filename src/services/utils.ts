@@ -64,6 +64,9 @@ function fixLos(topic : Topic, los: Lo[], prefix: string) {
     if (lo.type == 'unit') {
       lo.link = `${environment.urlPrefix}topic/${prefix}`;
     }
+    if (lo.type == 'talk') {
+
+    }
     fixLos(topic, lo.los, `${prefix}/${lo.folder}`);
     lo.parentLink = topic.lo.link;
   }
