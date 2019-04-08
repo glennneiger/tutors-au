@@ -10,4 +10,6 @@ export interface Lo {
   topics: Lo[];
   properties: { [prop: string]: string };
   parentLink:string;
+  videoLink : string;
+  pdf: string;
 }

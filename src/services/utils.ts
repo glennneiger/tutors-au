@@ -1,5 +1,5 @@
-import { Lo } from './lo';
-import { Topic } from './topic';
+import {Lo} from './lo';
+import {Topic} from './topic';
 import * as path from 'path';
 import environment from '../environment';
 
@@ -29,7 +29,7 @@ export function findVideoLos(los: Lo[]): Lo[] {
   return result;
 }
 
-export function allLos(lotype: string, los:Lo[]) {
+export function allLos(lotype: string, los: Lo[]) {
   let allLos: Lo[] = [];
   for (let topic of los) {
     allLos = allLos.concat(findLos(topic.los, lotype));
@@ -37,7 +37,7 @@ export function allLos(lotype: string, los:Lo[]) {
   return allLos;
 }
 
-export function allVideoLos(los:Lo[]) {
+export function allVideoLos(los: Lo[]) {
   let allLos: Lo[] = [];
   for (let topic of los) {
     allLos = allLos.concat(findVideoLos(topic.los));
@@ -46,36 +46,42 @@ export function allVideoLos(los:Lo[]) {
 }
 
 
-function fixLos(topic : Topic, los: Lo[], prefix: string) {
+function fixLos(topic: Topic, los: Lo[], prefix: string, courseUrl: string) {
   for (let lo of los) {
     lo.img = `https://${prefix}/${lo.folder}/${lo.img}`;
-    if ('http' != lo.link.substr(0, 4)) {
-      lo.link = `https://${prefix}/${lo.folder}/${lo.link}`;
-    }
-    if (lo.type == 'lab') {
-      lo.link = `${environment.urlPrefix}lab/${prefix}/${lo.folder}`;
-    }
-    if (lo.type == 'panelvideo' || lo.type == 'video') {
-      lo.link = `http://www.youtube.com/watch?v=${lo.videoid}`;
+    // if ('http' != lo.link.substr(0, 4)) {
+    //   lo.link = `https://${prefix}/${lo.folder}/${lo.link}`;
+    // }
+    switch (lo.type) {
+      case  'lab' :
+        lo.link = `${environment.urlPrefix}lab/${prefix}/${lo.folder}`;
+        break;
+      case 'panelvideo':
+      case 'video:':
+        lo.link = `http://www.youtube.com/watch?v=${lo.videoid}`;
+        break;
+      case 'unit' :
+        lo.link = `${environment.urlPrefix}topic/${prefix}`;
+        break;
+      case 'talk':
+        lo.pdf = `https://${prefix}/${lo.folder}/${lo.link}`;
+        lo.link = `${environment.urlPrefix}talk/${prefix}/${lo.folder}/${lo.link}`;
+        break
     }
     if (lo.videoid == 'none') {
       delete lo.videoid;
+    } else if (lo.videoid) {
+      lo.videoLink = `${environment.urlPrefix}video/${courseUrl}/${lo.videoid}`;
     }
-    if (lo.type == 'unit') {
-      lo.link = `${environment.urlPrefix}topic/${prefix}`;
-    }
-    if (lo.type == 'talk') {
-
-    }
-    fixLos(topic, lo.los, `${prefix}/${lo.folder}`);
+    fixLos(topic, lo.los, `${prefix}/${lo.folder}`, courseUrl);
     lo.parentLink = topic.lo.link;
   }
 }
 
-export function fixLinks(topic: Topic, url: string) {
-  topic.lo.img = `https://${url}/${topic.lo.img}`;
-  topic.lo.link = `${environment.urlPrefix}topic/${url}`;
-  fixLos(topic, topic.lo.los, url);
+export function fixLinks(topic: Topic, topicUrl: string, courseUrl: string) {
+  topic.lo.img = `https://${topicUrl}/${topic.lo.img}`;
+  topic.lo.link = `${environment.urlPrefix}topic/${topicUrl}`;
+  fixLos(topic, topic.lo.los, topicUrl, courseUrl);
 }
 
 function removeLastDirectory(the_url) {

@@ -12,10 +12,11 @@ export class Topic {
   url: string;
   course: Course;
 
-  constructor(lo: Lo, url: string) {
+  constructor(lo: Lo, courseUrl: string) {
     this.lo = lo;
-    this.url = `${environment.urlPrefix}topic/` + url;
-    fixLinks(this, url);
+    const topicUrl = courseUrl + '/' + lo.folder;
+    this.url = `${environment.urlPrefix}topic/` + topicUrl;
+    fixLinks(this, topicUrl, courseUrl);
     this.units = lo.los.filter(lo => lo.type == 'unit');
     this.panelVideos = lo.los.filter(lo => lo.type == 'panelvideo');
     this.panelTalks = lo.los.filter(lo => lo.type == 'paneltalk');

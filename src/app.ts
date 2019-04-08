@@ -39,6 +39,12 @@ export class App {
         title: 'Video'
       },
       {
+        route: 'talk/*courseUrl/:talkid',
+        moduleId: PLATFORM.moduleName('./components/talk/talk-view'),
+        name: 'talk',
+        title: 'Talk'
+      },
+      {
         route: 'lab/*laburl/:step?',
         moduleId: PLATFORM.moduleName('./components/lab/lab-view'),
         name: 'lab',

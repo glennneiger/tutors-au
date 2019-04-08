@@ -10,16 +10,5 @@ import {CourseRepo} from "../../../services/course-repo";
 export class Card {
   @bindable lo: Lo;
   videoLink : string;
-
   constructor(private courseRepo: CourseRepo) {}
-
-  attached() {
-    if (this.lo.videoid) {
-      const url = path.dirname(this.lo.link);
-      this.videoLink = `${environment.urlPrefix}video/${this.courseRepo.courseUrl}/${this.lo.videoid}`;
-    }
-    if (this.lo.type == 'talk') {
-      console.log (this.lo);
-    }
-  }
 }

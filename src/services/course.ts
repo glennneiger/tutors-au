@@ -24,7 +24,7 @@ export class Course {
     }
     if (type == 'talk') {
       los.forEach(lo => {
-        this.talks.set(`${lo.link}/${lo.folder}-`, lo);
+        this.talks.set(`${lo.link}`, lo);
       });
     }
   }
@@ -56,10 +56,8 @@ export class Course {
   async fetchCourse() {
     const lo = await this.fetch(this.url);
     this.lo = lo;
-    this.url = this.url;
     for (let lo of this.lo.topics) {
-      const topicUrl = this.url + '/' + lo.folder;
-      const topic = new Topic(lo, topicUrl);
+      const topic = new Topic(lo, this.url);// + '/' + lo.folder);
       this.topicIndex.set(topic.lo.folder, topic);
       this.topicLos.push(topic.lo);
     }

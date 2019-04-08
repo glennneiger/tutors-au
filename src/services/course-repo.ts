@@ -73,4 +73,11 @@ export class CourseRepo {
     await this.getCourse(url);
     return this.course.lo.properties;
   }
+
+  async fetchCourseFromTalk(url: string) {
+    console.log(url);
+    const urls = findCourseUrls(url);
+    await this.getCourse(urls[0]);
+  }
+
 }

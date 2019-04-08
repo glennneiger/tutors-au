@@ -6,9 +6,4 @@ export class VideoHeader {
   lo: Lo;
 
   homeicon = 'fas fa-arrow-up fa-3x';
-  homelink = '';
-
-  attached() {
-    this.homelink = this.lo.parentLink;
-  }
 }
