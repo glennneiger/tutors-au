@@ -5,5 +5,10 @@ export class TalkHeader {
   @bindable
   lo: Lo;
 
-  homeicon = 'fas fa-arrow-up fa-3x';
+
+  attached() {
+    const s = this.lo.parentTopic.lo.title;
+    const icon = this.lo.parentTopic.course.courseIcon;
+    console.log(icon);
+  }
 }

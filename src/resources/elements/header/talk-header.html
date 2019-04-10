@@ -1,31 +1,13 @@
 <template>
-  <require from="./home.html"></require>
-  <require from="./icon-nav-bar"></require>
+  <require from="./maintitle.html"></require>
+  <require from="./toc-btn.html"></require>
+  <require from="../icon"></require>
 
-  <div uk-sticky>
-    <div class="uk-flex uk-flex-center uk-flex-middle uk-text-center uk-container-expand" uk-grid>
-
-      <div class="uk-padding">
-        <a href="#offcanvas-usage" uk-toggle title="Table of Contents" pos="bottom" uk-tooltip> <i class="fas fa-bars fa-3x"> </i>
-        </a>
-      </div>
-
-      <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
-        <div uk-grid>
-          <div class="uk-width-1-5@m">
-            <i class="${moduleProperties.faPanelicon} fa-4x" style="color:${moduleProperties.faColour}"></i>
-          </div>
-          <div class="uk-width-expand@m uk-text-left">
-            <div class="course-title"> ${lo.title}</div>
-            <div class="uk-text-muted uk-text-small">
-              ${moduleProperties.credits}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <a href="${lo.parentLink}"> <i class="${homeicon} fa-4x"> </i></a>
-
+  <div class="uk-flex uk-flex-center uk-flex-middle uk-text-center uk-container-expand" uk-grid>
+    <toc-btn></toc-btn>
+    <div class="uk-width-2-3@m  uk-card uk-card-default uk-padding-small">
+      <maintitle maintitle="${lo.title}" subtitle="Topic: ${lo.parentTopic.lo.title}" icon="${lo.parentTopic.course.courseIcon}"></maintitle>
     </div>
+    <a href="${lo.parentLink}"> <icon type="topic" size="fa-4x"> </icon></a>
   </div>
 </template>

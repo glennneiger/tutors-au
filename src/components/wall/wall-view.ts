@@ -12,7 +12,7 @@ export class WallView {
 
   async activate(params, route) {
     this.los = await this.courseRepo.fetchWall(params.courseurl, route.name);
-    this.title = route.title;
+    this.title = route.maintitle;
     this.name = route.name;
   }
 

@@ -1,13 +1,13 @@
 <template>
   <require from="./home.html"></require>
   <require from="./icon-nav-bar"></require>
+  <require from="./toc-btn.html"></require>
 
   <div uk-sticky>
     <div class="uk-flex uk-flex-center uk-flex-middle uk-text-center uk-container-expand" uk-grid>
-      <div class="uk-padding">
-        <a href="#offcanvas-usage" uk-toggle title="Table of Contents" pos="bottom" uk-tooltip> <i class="fas fa-bars fa-3x"> </i>
-        </a>
-      </div>
+
+      <toc-btn></toc-btn>
+
       <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
         <div uk-grid>
           <div class="uk-width-1-5@m">

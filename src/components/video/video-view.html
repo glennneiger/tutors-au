@@ -1,16 +1,15 @@
 <template>
-  <require from="../../resources/elements/header/video-header"></require>
+  <require from="../../resources/elements/header/talk-header"></require>
   <require from="../../resources/elements/cards/video-card"></require>
   <require from="../../resources/elements/cards/card"></require>
 
-  <video-header lo.bind="lo"></video-header>
-  <div class="uk-container-expand uk-text-center">
+  <talk-header lo.bind="lo"></talk-header>
+  <div class="uk-container-expand uk-text-center uk-margin-medium-left uk-margin-medium-right">
     <div uk-grid uk-flex uk-flex-center>
-      <div class="uk-width-auto@m"></div>
       <div class="uk-width-expand@m">
         <video-card showHeader.one-way="showHeader" lo.one-way="lo"></video-card>
       </div>
-      <div class="uk-width-1-5@m">
+      <div class="uk-width-1-5@m uk-flex uk-flex-middle">
         <card lo.one-way="lo"></card>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { allLos, allVideoLos } from './utils';
 
 export class Course {
   lo: Lo;
+  courseIcon = '';
   topicIndex = new Map();
   topicLos: Lo[] = [];
   url: string;
@@ -57,10 +58,12 @@ export class Course {
     const lo = await this.fetch(this.url);
     this.lo = lo;
     for (let lo of this.lo.topics) {
-      const topic = new Topic(lo, this.url);// + '/' + lo.folder);
+      const topic = new Topic(lo, this.url);
+      topic.course = this;
       this.topicIndex.set(topic.lo.folder, topic);
       this.topicLos.push(topic.lo);
     }
+    this.courseIcon = this.lo.properties.faPanelicon;
     this.populateWalls();
   }
 }

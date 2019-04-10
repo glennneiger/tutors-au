@@ -1,3 +1,5 @@
+import { Topic } from './topic';
+
 export interface Lo {
   title: string;
   type: string;
@@ -9,7 +11,8 @@ export interface Lo {
   los: Lo[];
   topics: Lo[];
   properties: { [prop: string]: string };
-  parentLink:string;
-  videoLink : string;
+  parentLink: string;
+  parentTopic: Topic;
+  videoLink: string;
   pdf: string;
 }

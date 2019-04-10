@@ -1,0 +1,13 @@
+<template bindable="maintitle, subtitle, icon">
+    <div uk-grid>
+      <div class="uk-width-1-5@m">
+        <i class="${icon} fa-4x" style="color:${moduleProperties.faColour}"></i>
+      </div>
+      <div class="uk-width-expand@m uk-text-left">
+        <div class="course-title"> ${maintitle}</div>
+        <div class="uk-text-muted uk-text-small">
+          ${subtitle}
+        </div>
+      </div>
+    </div>
+</template>

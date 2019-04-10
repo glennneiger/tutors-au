@@ -48,6 +48,7 @@ export function allVideoLos(los: Lo[]) {
 
 function fixLos(topic: Topic, los: Lo[], prefix: string, courseUrl: string) {
   for (let lo of los) {
+    lo.parentTopic = topic;
     lo.img = `https://${prefix}/${lo.folder}/${lo.img}`;
     // if ('http' != lo.link.substr(0, 4)) {
     //   lo.link = `https://${prefix}/${lo.folder}/${lo.link}`;
