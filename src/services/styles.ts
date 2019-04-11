@@ -1,3 +1,13 @@
+export interface NavigatorProperties {
+  title :string;
+  subtitle: string;
+  icon: string;
+  iconColour : string;
+  parentLink : string;
+  parentIcon : string;
+  parentIconColour: string;
+}
+
 export const icons = {
   course: 'fas fa-book',
   topic: 'fas fa-sitemap',

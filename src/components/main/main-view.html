@@ -1,6 +1,6 @@
 <template>
-  <require from="../../resources/elements/header/main-header.html"></require>
-  <require from="../../resources/elements/toc/course-outline"></require>
+  <require from="../../resources/elements/navigators/main-header.html"></require>
+  <require from="../../resources/elements/navigators/module-outline.html"></require>
 
   <div class="uk-width-1-1">
 
@@ -44,7 +44,7 @@
         <div class="uk-width-1-3@m">
           <div show.bind="courseFound">
             <div class="uk-card uk-card-default uk-align-left uk-card-body">
-              <course-outline los.bind="course.topicLos"></course-outline>
+              <module-outline los.one-way="course.topicLos"></module-outline>
             </div>
           </div>
         </div>

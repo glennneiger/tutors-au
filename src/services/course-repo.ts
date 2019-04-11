@@ -78,6 +78,7 @@ export class CourseRepo {
     console.log(url);
     const urls = findCourseUrls(url);
     await this.getCourse(urls[0]);
+    return this.course;
   }
 
 }

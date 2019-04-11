@@ -1,9 +1,9 @@
 <template>
-  <require from="../../resources/elements/header/header"></require>
-  <require from="../../resources/elements/card-decks/card-deck"></require>
-  <require from="../../resources/elements/card-decks/video-deck-double"></require>
+  <require from="../../resources/elements/navigators/main-navigator"></require>
+  <require from="../../resources/elements/card-decks/card-deck.html"></require>
+  <require from="../../resources/elements/card-decks/video-deck-double.html"></require>
 
-  <header></header>
+  <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
 
   <div class="uk-container uk-padding-small">
     <div if.bind="name != 'video'">

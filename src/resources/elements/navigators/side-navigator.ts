@@ -3,7 +3,7 @@ import { CourseRepo } from '../../../services/course-repo';
 import { inject } from 'aurelia-framework';
 
 @inject(CourseRepo)
-export class SideBar {
+export class SideNavigator {
   los: Lo[];
 
   constructor(private courseRepo: CourseRepo) {}

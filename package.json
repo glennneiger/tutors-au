@@ -110,7 +110,7 @@
   },
   "prettier": {
     "singleQuote": true,
-    "printWidth": 120
+    "printWidth": 160
   },
   "main": "dist/app.bundle.js"
 }
