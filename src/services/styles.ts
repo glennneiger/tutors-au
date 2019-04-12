@@ -1,11 +1,23 @@
-export interface NavigatorProperties {
-  title :string;
+import { Course } from './course';
+
+export class NavigatorProperties {
+  title: string;
   subtitle: string;
   icon: string;
-  iconColour : string;
-  parentLink : string;
-  parentIcon : string;
+  iconColour: string;
+  parentLink: string;
+  parentIcon: string;
   parentIconColour: string;
+
+  init(course: Course) {
+    this.title = course.lo.title;
+    this.subtitle = course.lo.properties.credits;
+    this.icon = course.lo.properties.faPanelicon;
+    this.iconColour = course.lo.properties.faColour;
+    this.parentLink = course.lo.properties.parent;
+    this.parentIcon = icons['programHome'];
+    this.parentIconColour = '';
+  }
 }
 
 export const icons = {

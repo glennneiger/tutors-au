@@ -1,30 +1,25 @@
 import { CourseRepo } from '../../services/course-repo';
-import { inject } from 'aurelia-framework';
 import { Lo } from '../../services/lo';
 import { icons, NavigatorProperties } from '../../services/styles';
-import environment from "../../environment";
+import environment from '../../environment';
+import { autoinject } from 'aurelia-framework';
 
-@inject(CourseRepo)
+@autoinject
 export class WallView {
   los: Lo[];
-  navigatorProperties: NavigatorProperties;
-  name = ''
+  name = '';
 
-  constructor(private courseRepo: CourseRepo) {}
+  constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
   async activate(params, route) {
     this.los = await this.courseRepo.fetchWall(params.courseurl, route.name);
     const course = this.courseRepo.course;
-    this.name = route.name
-    this.navigatorProperties = {
-      title: `All ${route.name}'s in ${course.lo.title}`,
-      subtitle: course.lo.properties.credits,
-      icon: course.lo.properties.faPanelicon,
-      iconColour: course.lo.properties.faColour,
-      parentLink: `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`,
-      parentIcon: icons['moduleHome'],
-      parentIconColour: ''
-    };
+    this.name = route.name;
+
+    this.navigatorProperties.title = `All ${route.name}'s in ${course.lo.title}`;
+    this.navigatorProperties.subtitle = course.lo.properties.credits;
+    this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
+    this.navigatorProperties.parentIcon = icons['moduleHome'];
   }
 
   determineActivationStrategy() {

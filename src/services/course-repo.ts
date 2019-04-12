@@ -5,20 +5,19 @@ import * as path from 'path';
 import { Lab } from './lab';
 import { findCourseUrls } from './utils';
 import { AuthService } from './auth-service';
+import { Topic } from './topic';
+import { NavigatorProperties } from './styles';
+import { autoinject } from 'aurelia-framework';
 
-import { EventAggregator } from 'aurelia-event-aggregator';
-import {CourseUpdate} from "./messages";
-import {Topic} from "./topic";
-
-@inject(HttpClient, AuthService, EventAggregator)
+@autoinject
 export class CourseRepo {
   course: Course;
-  topic : Topic;
-  lab : Lab;
+  topic: Topic;
+  lab: Lab;
   courseUrl = '';
   topicUrl = '';
 
-  constructor(private http: HttpClient, private authService: AuthService, private ea: EventAggregator) {}
+  constructor(private http: HttpClient, private authService: AuthService, private navigatorProperties: NavigatorProperties) {}
 
   async getCourse(url) {
     if (!this.course || this.course.url !== url) {
@@ -26,7 +25,7 @@ export class CourseRepo {
       this.course = new Course(this.http, url);
       try {
         await this.course.fetchCourse();
-        this.ea.publish(new CourseUpdate(this.course));
+        this.navigatorProperties.init(this.course);
       } catch (e) {
         this.courseUrl = '';
         this.course = null;
@@ -80,5 +79,4 @@ export class CourseRepo {
     await this.getCourse(urls[0]);
     return this.course;
   }
-
 }

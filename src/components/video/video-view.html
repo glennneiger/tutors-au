@@ -2,14 +2,18 @@
   <require from="../../resources/elements/navigators/main-navigator"></require>
   <require from="../../resources/elements/cards/video-card"></require>
   <require from="../../resources/elements/cards/card"></require>
+  <require from="../../resources/elements/navigators/lo-navigator.html"></require>
 
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
-  <div class="uk-container-expand uk-text-center uk-margin-medium-left uk-margin-medium-right">
+  <div class="uk-container-expand uk-margin-medium-left uk-margin-medium-right">
     <div uk-grid uk-flex uk-flex-center>
       <div class="uk-width-expand@m">
         <video-card showHeader.one-way="showHeader" lo.one-way="lo"></video-card>
       </div>
-      <div class="uk-width-1-5@m uk-flex uk-flex-middle">
+      <div class="uk-width-1-5@m uk-flex uk-grid">
+        <div class="uk-flex-first">
+          <lo-navigator thelos.one-way="lo.parentTopic.lo.los"></lo-navigator>
+        </div>
         <card lo.one-way="lo"></card>
       </div>
     </div>

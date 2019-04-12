@@ -1,0 +1,15 @@
+<template bindable="los">
+  <require from="../icon"></require>
+  <require from="./lo-navigator.html"></require>
+
+  <div repeat.for="topic of los">
+    <ul class="uk-nav">
+      <li class="uk-parent">
+        <a class="item" href="${topic.link}"><icon type="${topic.type}" size="fa-lg"></icon> ${topic.title} </a>
+        <ul class="uk-nav-sub">
+          <lo-navigator thelos.one-way="topic.los"></lo-navigator>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</template>
