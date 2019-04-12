@@ -7,3 +7,8 @@
 .pdfobject {
   border: solid 2px #666;
 }
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 90%;
+}

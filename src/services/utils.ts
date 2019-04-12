@@ -73,6 +73,10 @@ function fixLos(topic: Topic, los: Lo[], prefix: string, courseUrl: string) {
       delete lo.videoid;
     } else if (lo.videoid) {
       lo.videoLink = `${environment.urlPrefix}video/${courseUrl}/${lo.videoid}`;
+      if (lo.type=='panelvideo') {
+        lo.link = `${environment.urlPrefix}video/${courseUrl}/${lo.videoid}`;
+        lo.img = '';
+      }
     }
     fixLos(topic, lo.los, `${prefix}/${lo.folder}`, courseUrl);
     lo.parentLink = topic.lo.link;

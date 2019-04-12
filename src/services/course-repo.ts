@@ -35,18 +35,18 @@ export class CourseRepo {
 
   async fetchCourse(url: string) {
     await this.getCourse(url);
-    if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
-      this.course.secured = true;
-      if (!this.authService.isAuthenticated()) {
-        localStorage.setItem('course_url', url);
-        this.authService.login();
-      }
-    }
+    // if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
+    //   this.course.secured = true;
+    //   if (!this.authService.isAuthenticated()) {
+    //     localStorage.setItem('course_url', url);
+    //     this.authService.login();
+    //   }
+    // }
     return this.course;
   }
 
   async fetchTopic(url: string) {
-    await this.getCourse(path.dirname(url));
+    await this.fetchCourse(path.dirname(url));
     this.topicUrl = url;
     this.topic = this.course.topicIndex.get(path.basename(url));
     return this.topic;
@@ -54,7 +54,7 @@ export class CourseRepo {
 
   async fetchLab(url: string) {
     const urls = findCourseUrls(url);
-    await this.getCourse(urls[0]);
+    await this.fetchCourse(urls[0]);
     const lab = new Lab(this.http, url);
     await lab.fetchLab();
     const topic = await this.fetchTopic(urls[1]);
@@ -64,19 +64,19 @@ export class CourseRepo {
   }
 
   async fetchWall(url: string, type: string) {
-    await this.getCourse(url);
+    await this.fetchCourse(url);
     return this.course.walls.get(type);
   }
 
   async fetchCourseProperties(url: string) {
-    await this.getCourse(url);
+    await this.fetchCourse(url);
     return this.course.lo.properties;
   }
 
   async fetchCourseFromTalk(url: string) {
     console.log(url);
     const urls = findCourseUrls(url);
-    await this.getCourse(urls[0]);
+    await this.fetchCourse(urls[0]);
     return this.course;
   }
 }

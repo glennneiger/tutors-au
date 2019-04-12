@@ -8,6 +8,7 @@ export class Course {
   courseIcon = '';
   topicIndex = new Map();
   topicLos: Lo[] = [];
+  topics : Topic[] = [];
   url: string;
   walls = new Map<string, Lo[]>();
   videos = new Map<string, Lo>();
@@ -62,6 +63,7 @@ export class Course {
       topic.course = this;
       this.topicIndex.set(topic.lo.folder, topic);
       this.topicLos.push(topic.lo);
+      this.topics.push(topic);
     }
     this.courseIcon = this.lo.properties.faPanelicon;
     this.populateWalls();

@@ -1,0 +1,18 @@
+<template bindable="topic">
+  <require from="../icon"></require>
+
+  <div repeat.for="lo of topic.toc">
+    <ul class="uk-nav">
+      <a class="item" href="${lo.link}"><icon type="${lo.type}" size="fa-lg"></icon> ${lo.title} </a>
+      <ul class="uk-nav-sub">
+        <div repeat.for="lo of lo.los">
+          <a class="item" href="${lo.link}"> <icon type="${lo.type}" size="fa-lg"></icon> ${lo.title} </a>
+          <a show.bind="lo.videoid && lo.type!='panelvideo'" href="${lo.videoLink}">
+            <icon type="video" size="fa-lg"></icon>
+          </a>
+        </div>
+      </ul>
+    </ul>
+  </div>
+
+</template>

@@ -4,8 +4,8 @@
 
   <require from="../../resources/elements/navigators/main-navigator"></require>
   <require from="../../resources/elements/cards/video-card"></require>
-  <require from="../../resources/elements/cards/card"></require>
-  <require from="../../resources/elements/navigators/lo-navigator.html"></require>
+  <require from="../../resources/elements/cards/topic-navigator-card.html"></require>
+
 
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
 
@@ -16,10 +16,7 @@
         <div id="pdf-placeholder"></div>
       </div>
       <div class="uk-width-1-5@m uk-flex uk-grid">
-        <div class="uk-flex-first">
-          <lo-navigator thelos.one-way="lo.parentTopic.lo.los"></lo-navigator>
-        </div>
-        <card lo.one-way="lo"></card>
+        <topic-navigator-card topic.one-way="lo.parentTopic"> </topic-navigator-card>
       </div>
     </div>
   </div>

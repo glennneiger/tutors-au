@@ -1,13 +1,13 @@
-<template bindable="los">
+<template bindable="course">
   <require from="../icon"></require>
-  <require from="./lo-navigator.html"></require>
+  <require from="./topic-navigator.html"></require>
 
-  <div repeat.for="topic of los">
+  <div repeat.for="topic of course.topics">
     <ul class="uk-nav">
       <li class="uk-parent">
-        <a class="item" href="${topic.link}"><icon type="${topic.type}" size="fa-lg"></icon> ${topic.title} </a>
+        <a class="item" href="${topic.lo.link}"><icon type="${topic.lo.type}" size="fa-lg"></icon> ${topic.lo.title} </a>
         <ul class="uk-nav-sub">
-          <lo-navigator thelos.one-way="topic.los"></lo-navigator>
+          <topic-navigator topic.one-way="topic"></topic-navigator>
         </ul>
       </li>
     </ul>
