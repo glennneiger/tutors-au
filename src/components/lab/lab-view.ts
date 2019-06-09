@@ -1,10 +1,8 @@
-import { inject } from 'aurelia-framework';
 import { CourseRepo } from '../../services/course-repo';
 import { Chapter, Lab } from '../../services/lab';
 import { MarkdownParser } from '../../services/markdown-parser';
-import environment from "../../environment";
+import environment from '../../environment';
 import { autoinject } from 'aurelia-framework';
-import {SideNavigator} from "../../resources/elements/navigators/side-navigator";
 const path = require('path');
 
 @autoinject

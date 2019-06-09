@@ -14,16 +14,17 @@ const when = (condition, config, negativeConfig) =>
   condition ? ensureArray(config) : ensureArray(negativeConfig);
 
 // primary config:
-const title = 'Tutors';
+const title = 'Aurelia Navigation Skeleton';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
+const testDir = path.resolve(__dirname, 'test', 'unit');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
-//const baseUrl = '/oileain-au-public';
 const baseUrl = '/';
 
 const cssRules = [
   { loader: 'css-loader' },
 ];
+
 
 module.exports = ({ production, server, extractCss, coverage, analyze, karma } = {}) => ({
   resolve: {
@@ -118,7 +119,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         use: extractCss ? [{
           loader: MiniCssExtractPlugin.loader
         },
-          'css-loader'
+        'css-loader'
         ] : ['style-loader', ...cssRules]
       },
       {
@@ -129,9 +130,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         use: cssRules
       },
       { test: /\.html$/i, loader: 'html-loader' },
-      { test: /\.ts$/, loader: "ts-loader" },
-      // use Bluebird as the global Promise implementation:
-      { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },
+      { test: /\.ts$/, loader: "ts-loader", options: { reportFiles: [ srcDir+'/**/*.ts'] }, include: karma ? [srcDir, testDir] : srcDir },
       // embed small images and fonts as Data Urls and larger ones as files:
       { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff2' } },
@@ -140,7 +139,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
       { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' },
       ...when(coverage, {
         test: /\.[jt]s$/i, loader: 'istanbul-instrumenter-loader',
-        include: srcDir, exclude: [/\.{spec,test}\.[jt]s$/i],
+        include: srcDir, exclude: [/\.(spec|test)\.[jt]s$/i],
         enforce: 'post', options: { esModules: true },
       })
     ]
@@ -149,17 +148,13 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
     ...when(!karma, new DuplicatePackageCheckerPlugin()),
     new AureliaPlugin(),
     new ProvidePlugin({
-      'Promise': 'bluebird',
-  }),
+      'Promise': ['promise-polyfill', 'default']
+    }),
     new ModuleDependenciesPlugin({
       'aurelia-testing': ['./compile-spy', './view-spy']
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
-      minify: production ? {
-        removeComments: true,
-        collapseWhitespace: true
-      } : undefined,
       metadata: {
         // available in index.ejs //
         title, server, baseUrl

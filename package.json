@@ -1,44 +1,38 @@
 {
-  "name": "oileain-au",
+  "name": "tutors-au",
   "description": "An Aurelia client application.",
   "version": "0.1.0",
   "repository": {
     "type": "???",
     "url": "???"
   },
-  "scripts": {},
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
-    "aurelia-bootstrapper": "^2.3.0",
-    "aurelia-fetch-client": "^1.8.0",
-    "aurelia-polyfills": "^1.3.0",
-    "bluebird": "^3.5.2",
-    "highlight.js": "^9.14.2",
+    "aurelia-bootstrapper": "^2.3.2",
+    "aurelia-fetch-client": "^1.8.2",
+    "highlight.js": "^9.15.8",
     "markdown-it": "^8.4.2",
     "markdown-it-highlightjs": "^3.0.0",
     "pdfobject": "^2.1.1",
     "showdown": "^1.9.0",
     "showdown-highlight": "^2.1.3"
   },
-  "peerDependencies": {},
   "devDependencies": {
-    "@types/auth0-js": "^8.11.11",
-    "@types/bluebird": "^3.5.24",
-    "@types/jest": "^23.3.5",
+    "@types/jest": "^24.0.9",
     "@types/lodash": "^4.14.117",
     "@types/node": "^10.11.6",
     "@types/webpack": "^4.4.15",
-    "aurelia-cli": "^1.0.0-beta.13",
+    "aurelia-cli": "^1.0.0",
     "aurelia-loader-nodejs": "^1.0.1",
-    "aurelia-pal-nodejs": "^1.1.1",
-    "aurelia-protractor-plugin": "^1.0.6",
+    "aurelia-pal-nodejs": "^1.2.0",
     "aurelia-testing": "^1.0.0",
     "aurelia-tools": "^2.0.0",
     "aurelia-webpack-plugin": "^3.0.0",
-    "auth0-js": "^9.10.1",
-    "copy-webpack-plugin": "^4.5.2",
+    "auth0-js": "^9.10.4",
+    "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^1.0.0",
+    "cypress": "^3.3.1",
     "del": "^3.0.0",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "expose-loader": "^0.7.5",
@@ -48,26 +42,34 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "istanbul-instrumenter-loader": "^3.0.1",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
+    "jest-transform-stub": "^2.0.0",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.4.3",
     "minimatch": "^3.0.4",
     "opn": "^5.4.0",
-    "plugin-error": "^1.0.1",
-    "protractor": "^5.4.2",
+    "promise-polyfill": "^8.1.0",
     "style-loader": "^0.23.1",
-    "through2": "^2.0.3",
-    "ts-jest": "^23.10.4",
+    "through2": "^3.0.0",
+    "ts-jest": "^24.0.0",
     "ts-loader": "^5.2.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.2",
-    "url-loader": "^1.1.1",
+    "url-loader": "^1.1.2",
     "vinyl-fs": "^3.0.3",
     "webpack": "^4.27.0",
-    "webpack-bundle-analyzer": "latest",
+    "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
+  },
+  "scripts": {
+    "build": "au build",
+    "start": "au run",
+    "test": "au test"
+  },
+  "engines": {
+    "node": ">=8.9.0"
   },
   "jest": {
     "moduleNameMapper": {
@@ -78,11 +80,12 @@
       "<rootDir>/node_modules"
     ],
     "moduleFileExtensions": [
+      "ts",
       "js",
-      "json",
-      "ts"
+      "json"
     ],
     "transform": {
+      "^.+\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
       "^.+\\.ts$": "ts-jest"
     },
     "testRegex": "\\.spec\\.(ts|js)$",
@@ -104,13 +107,5 @@
       "text",
       "html"
     ]
-  },
-  "engines": {
-    "node": ">= 6.0.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 160
-  },
-  "main": "dist/app.bundle.js"
+  }
 }
