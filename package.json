@@ -107,5 +107,9 @@
       "text",
       "html"
     ]
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 120
   }
 }
