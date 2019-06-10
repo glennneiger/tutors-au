@@ -2,8 +2,8 @@
 
 it('Side Navigator', () => {
   // cy.visit('https://wit-tutors.github.io/#course/wit-tutors.github.io/tutors-starter-public/');
-  //cy.visit('http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/');
-  cy.visit('https://wit-tutors.github.io/#/course/wit-tutors.github.io/tutors-starter-public/');
+  cy.visit('http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/');
+  //cy.visit('https://wit-tutors.github.io/#/course/wit-tutors.github.io/tutors-starter-public/');
   cy.toc();
   cy.tocItem('Simple');
   // cy.toc();

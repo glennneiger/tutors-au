@@ -32,7 +32,7 @@ context("Home", () => {
     cy.contains("Varied").click({ force: true });
     cy.contains("Lecture 3");
     cy.contains(
-      "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons."
+      "A flavour of the contents."
     );
   });
 });
