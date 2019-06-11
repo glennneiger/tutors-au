@@ -40,3 +40,9 @@ Cypress.Commands.add('archives', (userType, options = {}) => {
   cy.get('#archive').click({ force: true });
   cy.wait(delay);
 });
+
+Cypress.Commands.add('card', (index, card, options = {}) => {
+  cy.get('card-deck card').eq(index).should('contain', card.title);
+  cy.get('card-deck card').eq(index).should('contain', card.summary);
+  cy.get('card-deck card').eq(index).find("img").should('have.attr', 'src', card.img);
+});

@@ -4,35 +4,42 @@ context("Home", () => {
     cy.visit("http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/");
   });
 
+  const simple = {
+    title: "Simple",
+    summary: "Just lectures and labs",
+    img: "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/topic.jpg"
+  };
+
+  const varied = {
+    title: "Varied",
+    summary: "Lectures & labs + archive and github repos",
+    img: "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/topic.jpg"
+  };
+
+  const media = {
+    title: "Media",
+    summary: "Include 2 type of videos",
+    img: "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/topic.jpg"
+  };
+
+  const units = {
+    title: "Units",
+    summary: "This topic has 3 units - each unit has lectures + lab",
+    img: "https://wit-tutors.github.io/tutors-starter-public//topic-04-units/topic.jpg"
+  };
+
   it("HomeContents", () => {
-    cy.contains("Simple");
-    cy.contains("Just lectures and labs");
-    cy.contains("Varied");
-    cy.contains("Lectures & labs + archive and github repos");
-    cy.contains("Media");
-    cy.contains("Include 2 type of videos");
-    cy.contains("Units");
-    cy.contains("This topic has 3 units - each unit has lectures + lab");
+    cy.card(0, simple);
+    cy.card(1, varied);
+    cy.card(2, media);
+    cy.card(3, units);
+
   });
 
   it("SimpleContents", () => {
-    cy.contains("Simple").click({ force: true });
-    cy.contains("Lecture 1");
-    cy.contains(
-      "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons."
-    );
-    cy.contains("Lecture 2");
-    cy.contains("The summary can indicate the lecture objectives of contents.");
-    cy.contains("Lab-01");
-
-    cy.contains("Lecture 1").click({ force: true });
   });
 
   it("VariedContents", () => {
-    cy.contains("Varied").click({ force: true });
-    cy.contains("Lecture 3");
-    cy.contains(
-      "A flavour of the contents."
-    );
   });
+
 });
