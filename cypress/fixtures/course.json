@@ -1,0 +1,26 @@
+{
+  "simple": {
+    "title": "Simple",
+    "summary": "Just lectures and labs",
+    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/topic.jpg",
+    "icon": "fa-sitemap"
+  },
+  "varied": {
+    "title": "Varied",
+    "summary": "Lectures & labs + archive and github repos",
+    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/topic.jpg",
+    "icon": "fa-sitemap"
+  },
+  "media": {
+    "title": "Media",
+    "summary": "Include 2 type of videos",
+    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/topic.jpg",
+    "icon": "fa-sitemap"
+  },
+  "units": {
+    "title": "Units",
+    "summary": "This topic has 3 units - each unit has lectures + lab",
+    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-04-units/topic.jpg",
+    "icon": "fa-sitemap"
+  }
+}
