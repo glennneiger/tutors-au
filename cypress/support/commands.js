@@ -41,9 +41,9 @@ Cypress.Commands.add('archives', (userType, options = {}) => {
   cy.wait(delay);
 });
 
-Cypress.Commands.add('card', (index, card, options = {}) => {
-  cy.get('card-deck card').eq(index).should('contain', card.title);
-  cy.get('card-deck card').eq(index).should('contain', card.summary);
-  cy.get('card-deck card').eq(index).find("img").should('have.attr', 'src', card.img);
-  cy.get('card-deck card').eq(index).find("svg").should('have.class', card.icon);
+Cypress.Commands.add('card', (index, card, cardType, options = {}) => {
+  cy.get(`${cardType} card`).eq(index).should('contain', card.title);
+  cy.get(`${cardType} card`).eq(index).should('contain', card.summary);
+  cy.get(`${cardType} card`).eq(index).find("img").should('have.attr', 'src', card.img);
+  cy.get(`${cardType} card`).eq(index).find("svg").should('have.class', card.icon);
 });

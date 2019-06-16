@@ -6,8 +6,8 @@
 
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
   <div class="uk-container uk-padding-small">
-    <video-deck videos.one-way="topic.panelVideos"></video-deck>
-    <unit-deck units.one-way="topic.units"></unit-deck>
-    <card-deck los.one-way="topic.standardLos"></card-deck>
+    <video-deck if.bind="topic.panelVideos.length>0" videos.one-way="topic.panelVideos"></video-deck>
+    <unit-deck if.bind="topic.units.length>0" units.one-way="topic.units"></unit-deck>
+    <card-deck if.bind="topic.standardLos.length>0" los.one-way="topic.standardLos"></card-deck>
   </div>
 </template>

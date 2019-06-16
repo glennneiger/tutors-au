@@ -1,26 +1,103 @@
 {
-  "simple": {
-    "title": "Simple",
-    "summary": "Just lectures and labs",
-    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/topic.jpg",
-    "icon": "fa-sitemap"
-  },
-  "varied": {
-    "title": "Varied",
-    "summary": "Lectures & labs + archive and github repos",
-    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/topic.jpg",
-    "icon": "fa-sitemap"
-  },
-  "media": {
-    "title": "Media",
-    "summary": "Include 2 type of videos",
-    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/topic.jpg",
-    "icon": "fa-sitemap"
-  },
-  "units": {
-    "title": "Units",
-    "summary": "This topic has 3 units - each unit has lectures + lab",
-    "img": "https://wit-tutors.github.io/tutors-starter-public//topic-04-units/topic.jpg",
-    "icon": "fa-sitemap"
-  }
+  "topics": [
+    {
+      "title": "Simple",
+      "summary": "Just lectures and labs",
+      "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/topic.jpg",
+      "icon": "fa-sitemap",
+      "cardType": "card-deck",
+      "los": [
+        {
+          "title": "Lecture 1",
+          "summary": "A short summary of the talk, no more than two sentences.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/talk-1/talk-1.jpg",
+          "icon": "fa-object-group"
+        },
+        {
+          "title": "Lecture 2",
+          "summary": "The summary can indicate the lecture objectives of contents.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/talk-2/talk-2.jpg",
+          "icon": "fa-object-group"
+        },
+        {
+          "title": "Lab-01",
+          "summary": "A few sentences on the purpose of the lab. Avoid bullet points here for formatting reasons.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-01-simple/book-a/img/main.jpg",
+          "icon": "fa-flask"
+        }
+      ]
+    },
+    {
+      "title": "Varied",
+      "summary": "Lectures & labs + archive and github repos",
+      "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/topic.jpg",
+      "icon": "fa-sitemap",
+      "los": [
+        {
+          "title": "Lecture 3",
+          "summary": "A flavour of the contents.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/talk-1/talk-1.jpg",
+          "icon": "fa-object-group"
+        },
+        {
+          "title": "Lecture 4",
+          "summary": "Indicate what the talk is about.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/talk-2/talk-2.jpg",
+          "icon": "fa-object-group"
+        },
+        {
+          "title": "Lab-02",
+          "summary": "Another lab - summary here.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/book-a/img/main.jpg",
+          "icon": "fa-flask"
+        },
+        {
+          "title": "Lab-03",
+          "summary": "Two labs in the same topic.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-02-varied/book-b/img/main.png",
+          "icon": "fa-flask"
+        }
+      ]
+    },
+    {
+      "title": "Media",
+      "summary": "Include 2 type of videos",
+      "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/topic.jpg",
+      "icon": "fa-sitemap",
+      "los": [
+        {
+          "title": "Lecture 5",
+          "summary": "This is a slide deck + an associated video",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/talk-1/todo-review.jpg",
+          "icon": "fa-object-group"
+        },
+        {
+          "title": "Lab-04",
+          "summary": "Just one lab in this topic.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/book-a/img/main.jpg",
+          "icon": "fa-flask"
+        },
+        {
+          "title": "Resource I",
+          "summary": "This is not a pdf link, but a zipped archive. If it is selected the archive will be downloaded. Use this to distributed general resources.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public//topic-03-media/archive/archive.jpg",
+          "icon": "fa-file-archive"
+        }
+      ]
+    },
+    {
+      "title": "Units",
+      "summary": "This topic has 3 units - each unit has lectures + lab",
+      "img": "https://wit-tutors.github.io/tutors-starter-public//topic-04-units/topic.jpg",
+      "icon": "fa-sitemap",
+      "los": [
+        {
+          "title": "Lecture 6",
+          "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
+          "icon": "fa-object-group"
+        }
+      ]
+    }
+  ]
 }
