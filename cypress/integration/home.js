@@ -7,9 +7,9 @@ describe("User page", () => {
     });
   });
 
-   it("HomePage", function() {
+  it("HomePage", function() {
     for (let [i, topic] of this.course.topics.entries()) {
-      cy.card(i, topic, "card-deck");
+      cy.card(i, "card-deck card", topic);
     }
   });
 
@@ -17,9 +17,14 @@ describe("User page", () => {
     for (let [i, topic] of this.course.topics.entries()) {
       cy.contains(topic.title).click({ force: true });
       cy.wait(200);
-      for (let [j, lo] of topic.los.entries()) {
-        cy.card(j, lo, "card-deck");
-        //cy.contains(lo).click({ force: true });
+      for (let deck of topic.decks) {
+        for (let [j, card] of deck.cards.entries()) {
+          if (deck.type == "unit-card") {
+            cy.card(j, `.${card.type}`, card);
+          } else {
+            cy.card(j, `${deck.type} ${card.type}`, card);
+          }
+        }
       }
       cy.home();
     }
