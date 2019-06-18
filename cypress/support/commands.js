@@ -1,4 +1,4 @@
-const delay = 400;
+const delay = 500;
 
 Cypress.Commands.add('toc', (userType, options = {}) => {
   cy.get('#toc').click({ force: true });
@@ -17,7 +17,7 @@ Cypress.Commands.add('home', (userType, options = {}) => {
 });
 
 Cypress.Commands.add('talks', (userType, options = {}) => {
-  cy.get('#talk').click({ force: true });
+  cy.get('#talk').click();
   cy.wait(delay);
 });
 
@@ -41,7 +41,7 @@ Cypress.Commands.add('archives', (userType, options = {}) => {
   cy.wait(delay);
 });
 
-Cypress.Commands.add('card', (index, selector, card, options = {}) => {
+Cypress.Commands.add('card', (index, selector, card, icon, options = {}) => {
   cy.get(selector).eq(index).should('contain', card.title);
   cy.get(selector).eq(index).should('contain', card.summary);
   if (card.img) {
@@ -50,17 +50,6 @@ Cypress.Commands.add('card', (index, selector, card, options = {}) => {
   if (card.video) {
     cy.get(selector).eq(index).find("iframe").should('have.attr', 'src', card.video);
   }
-  cy.get(selector).eq(index).find("svg").should('have.class', card.icon);
+  cy.get(selector).eq(index).find("svg").should('have.class', icon);
 });
 
-// Cypress.Commands.add('card', (index, container, card, options = {}) => {
-//   cy.get(`${container} ${card.card}`).eq(index).should('contain', card.title);
-//   cy.get(`${container} ${card.card}`).eq(index).should('contain', card.summary);
-//   if (card.img) {
-//     cy.get(`${container} ${card.card}`).eq(index).find("img").should('have.attr', 'src', card.img);
-//   }
-//   if (card.video) {
-//     cy.get(`${container} ${card.card}`).eq(index).find("iframe").should('have.attr', 'src', card.video);
-//   }
-//   cy.get(`${container} ${card.card}`).eq(index).find("svg").should('have.class', card.icon);
-// });

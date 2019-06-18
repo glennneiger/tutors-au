@@ -10,7 +10,7 @@ declare namespace Cypress {
     archives(): Chainable<any>
     github(): Chainable<any>
 
-    card (index:number, card:any): Chainable<any>
+    card (index:number, selector:string, card:any, icon:string): Chainable<any>
 
   }
 }

@@ -1,0 +1,20 @@
+{
+  "icons": {
+    "topic": "fa-sitemap",
+    "talk": "fa-object-group",
+    "lab": "fa-flask",
+    "video": "fa-youtube",
+    "resource": "fa-file-archive",
+    "github": "fa-github",
+    "web": "fa-bookmark"
+  },
+  "cards": {
+    "topic": "card",
+    "talk": "card",
+    "lab": "card",
+    "video": "video-card",
+    "resource": "card",
+    "github": "card",
+    "web": "card"
+  }
+}
