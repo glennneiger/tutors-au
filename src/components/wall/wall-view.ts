@@ -23,6 +23,6 @@ export class WallView {
   }
 
   determineActivationStrategy() {
-    return 'invoke-lifecycle';
+    return 'replace';
   }
 }
