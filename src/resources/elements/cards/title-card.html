@@ -1,13 +1,27 @@
 <template bindable="maintitle, subtitle, icon, colour">
-    <div uk-grid>
-      <div class="uk-width-1-5@m">
-        <i class="${icon} fa-4x" style="color:${colour}"></i>
-      </div>
-      <div class="uk-width-expand@m uk-text-left">
-        <div class="course-title"> ${maintitle}</div>
-        <div class="uk-text-muted uk-text-small">
-          ${subtitle}
-        </div>
+  <div uk-grid>
+    <div class="uk-width-1-5@m">
+      <i class="${icon} fa-4x" style="color:${colour}"></i>
+    </div>
+    <div class="uk-width-expand@m uk-text-left">
+      <div class="course-title"> ${maintitle}</div>
+      <div class="uk-text-muted uk-text-small">
+        ${subtitle}
       </div>
     </div>
+    <div class="uk-width-1-6@m">
+      <div class="uk-card uk-card-small uk-card-hover uk-text-center uk-padding-small">
+        <a target=”_blank” href="https://github.com/edeleastar/tutors-au">
+          <div>
+            <i class="fas fa-chalkboard-teacher fa-2x"></i>
+          </div>
+          <div class="uk-width-expand@m uk-text-left">
+            <div class="uk-text-muted uk-text-center uk-text-small">
+              Powered by Tutors
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </template>

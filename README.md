@@ -21,6 +21,8 @@ The reader is intended for educational content, some representative examples:
  
  This is still experimental - with onoing work on both the JSON format, the rendering architecture and 
  e2e testing approaches.
+ 
+ Eamonn de leastar (edeleastar@wit.ie)
 
 ## License
 
