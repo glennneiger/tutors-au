@@ -1,1 +1,27 @@
 
+tutors-au
+=====
+
+A reader for the tutors-ts static site generator:
+
+- <https://github.com/edeleastar/tutors-ts>
+
+
+The reader is an [Aurelia](https://aurelia.io/) application, which consumes JSON output from [tutors-ts](https://github.com/edeleastar/tutors-ts), rendering a
+ more a interactive version of the site. 
+ 
+The reader is intended for educational content, some representative examples:
+ 
+ - <https://tutors.design/course/wit-hdip-comp-sci-2018.github.io/ent-web/>
+ - <https://tutors.design/course/wit-hdip-comp-sci-2019.github.io/web-development/>
+ - <https://tutors.design/course/wit-hdip-comp-sci-2019.github.io/programming>
+ 
+ The application identifies the published course from the url, recovers the json version 
+ of the static site and then renders using Aurelia.
+ 
+ This is still experimental - with onoing work on both the JSON format, the rendering architecture and 
+ e2e testing approaches.
+
+## License
+
+[MIT](https://github.com/atom/atom/blob/master/LICENSE.md)
