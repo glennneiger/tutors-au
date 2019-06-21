@@ -17,9 +17,9 @@ export class TalkView {
     const ref = `${environment.urlPrefix}talk/${params.courseUrl}/${params.talkid}`;
     this.lo = course.talks.get(ref);
 
-    this.navigatorProperties.subtitle = this.lo.parentTopic.lo.title
+    this.navigatorProperties.subtitle = this.lo.parent.lo.title
     this.navigatorProperties.title = this.lo.title;
-    this.navigatorProperties.parentLink = this.lo.parentLink;
+    this.navigatorProperties.parentLink = this.lo.parent.lo.route;
     this.navigatorProperties.parentIcon = icons['topic'];
 
     this.refreshPdf();

@@ -2,7 +2,7 @@
   <require from="../icon"></require>
 
   <div class="uk-card uk-card-default uk-card-small uk-card-hover uk-text-center uk-text-baseline uk-animation-scale-up uk-padding-small">
-    <a href="${lo.link}">
+    <a href="${lo.route}">
       <div uk-grid>
         <div class="uk-width-expand@m">
           <div class="card-title"> ${lo.title}</div>
@@ -18,10 +18,10 @@
       </div>
     </a>
     <div class="uk-card-footer">
-      <div class="card-body" innerhtml="${lo.objectives}"></div>
+      <div class="card-body" innerhtml="${lo.summary}"></div>
     </div>
-    <div show.bind="lo.videoid" class="uk-card-footer">
-      <a href="${lo.videoLink}">
+    <div show.bind="lo.video" class="uk-card-footer">
+      <a href="${lo.video}">
         <icon type="video" size="fa-3x"></icon>
       </a>
     </div>

@@ -5,7 +5,7 @@
   <div repeat.for="topic of course.topics">
     <ul class="uk-nav">
       <li class="uk-parent">
-        <a class="item" href="${topic.lo.link}"><icon type="${topic.lo.type}" size="fa-lg"></icon> ${topic.lo.title} </a>
+        <a class="item" href="${topic.lo.route}"><icon type="${topic.lo.type}" size="fa-lg"></icon> ${topic.lo.title} </a>
         <ul class="uk-nav-sub">
           <topic-navigator topic.one-way="topic"></topic-navigator>
         </ul>

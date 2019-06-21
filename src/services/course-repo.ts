@@ -9,6 +9,7 @@ import { Topic } from './topic';
 import { NavigatorProperties } from './styles';
 import { autoinject } from 'aurelia-framework';
 
+
 @autoinject
 export class CourseRepo {
   course: Course;
@@ -48,7 +49,7 @@ export class CourseRepo {
   async fetchTopic(url: string) {
     await this.fetchCourse(path.dirname(url));
     this.topicUrl = url;
-    this.topic = this.course.topicIndex.get(path.basename(url));
+    this.topic = this.course.topicIndex.get("#topic/" +  this.topicUrl);
     return this.topic;
   }
 
