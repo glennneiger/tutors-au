@@ -65,3 +65,9 @@ export function replaceAt(str:string, index:number, char) {
   a[index] = char;
   return a.join("");
 }
+
+export function lastSegment(url:string) {
+  var parts = url.split('/');
+  var lastSegment = parts.pop() || parts.pop();
+  return lastSegment;
+}

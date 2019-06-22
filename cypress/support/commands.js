@@ -53,3 +53,15 @@ Cypress.Commands.add('card', (index, selector, card, icon, options = {}) => {
   cy.get(selector).eq(index).find("svg").should('have.class', icon);
 });
 
+
+Cypress.Commands.add('lo', (index, selector, lo, icon, options = {}) => {
+  cy.get(selector).eq(index).should('contain', lo.title);
+  cy.get(selector).eq(index).should('contain', lo.summary);
+  if (lo.type == "panelvideo") {
+    cy.get(selector).eq(index).find("iframe").should('have.attr', 'src', lo.video);
+  }
+  else {
+    cy.get(selector).eq(index).find("img").should('have.attr', 'src', lo.img);
+  }
+  cy.get(selector).eq(index).find("svg").should('have.class', icon);
+});

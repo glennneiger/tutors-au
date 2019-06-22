@@ -64,7 +64,7 @@ export class Course {
       const topic = new Topic(lo, this.url);
 
       this.topics.push(topic);
-      this.topicIndex.set(lo.route, topic);
+      this.topicIndex.set(lo.id, topic);
     }
     this.populateWalls();
   }

@@ -16,7 +16,6 @@ export class Topic {
   constructor(lo: Lo, courseUrl: string) {
     this.lo = lo;
 
-
     this.units = this.getSortedUnits();
     this.panelVideos = lo.los.filter(lo => lo.type == "panelvideo");
     this.panelTalks = lo.los.filter(lo => lo.type == "paneltalk");
@@ -30,15 +29,18 @@ export class Topic {
 
     this.toc.forEach(lo => {
       lo.parent = this;
-      // if (lo.route && environment.pushState) {
-      //   lo.route = lo.route.slice(1);
-      // }
+      if (lo.route && environment.pushState) {
+        lo.route = lo.route.slice(1);
+      }
       if (lo.type === "unit") {
         lo.los.forEach(subLo => {
           subLo.parent = this;
         });
       }
     });
+    if (lo.route && environment.pushState) {
+      this.lo.route = this.lo.route.slice(1);
+    }
   }
 
   getSortedUnits() {

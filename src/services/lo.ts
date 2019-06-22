@@ -9,6 +9,7 @@ export interface Lo {
   pdf: string;
   summary: string;
   route: string;
+  id:string;
   los: Lo[];
   parent: Topic;
 }

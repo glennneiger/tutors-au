@@ -20,4 +20,8 @@ export class TopicView {
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.navigatorProperties.parentIcon = icons['moduleHome'];
   }
+
+  determineActivationStrategy() {
+    return 'replace';
+  }
 }

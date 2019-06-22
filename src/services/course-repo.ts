@@ -3,11 +3,12 @@ import { inject } from 'aurelia-framework';
 import { Course } from './course';
 import * as path from 'path';
 import { Lab } from './lab';
-import { findCourseUrls } from './utils';
+import {findCourseUrls, lastSegment} from './utils';
 import { AuthService } from './auth-service';
 import { Topic } from './topic';
 import { NavigatorProperties } from './styles';
 import { autoinject } from 'aurelia-framework';
+import environment from "../environment";
 
 
 @autoinject
@@ -48,8 +49,7 @@ export class CourseRepo {
 
   async fetchTopic(url: string) {
     await this.fetchCourse(path.dirname(url));
-    this.topicUrl = url;
-    this.topic = this.course.topicIndex.get("#topic/" +  this.topicUrl);
+    this.topic = this.course.topicIndex.get(lastSegment(url));
     return this.topic;
   }
 
