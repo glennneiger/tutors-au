@@ -28,16 +28,17 @@ export class MainNavigator {
 
   createCompanionBar(properties: Properties) {
     if (properties.adobeconnect)
-      this.companions.push(this.createCompanionLink(properties["adobeconnect"], "adobeconnect"));
-    if (properties.moodle) this.companions.push(this.createCompanionLink(properties["moodle"], "moodle"));
-    if (properties.slack) this.companions.push(this.createCompanionLink(properties["slack"], "slack"));
-    if (properties.youtube) this.companions.push(this.createCompanionLink(properties["youtube"], "youtube"));
+      this.companions.push(this.createCompanionLink(properties["adobeconnect"], "adobeconnect", "to adobe connect"));
+    if (properties.moodle) this.companions.push(this.createCompanionLink(properties["moodle"], "moodle", "to moodle module for this course"));
+    if (properties.slack) this.companions.push(this.createCompanionLink(properties["slack"], "slack", "to slack channel for this module"));
+    if (properties.youtube) this.companions.push(this.createCompanionLink(properties["youtube"], "youtube", "to youtube channel for this module"));
   }
 
-  createCompanionLink(link: string, type: string) {
+  createCompanionLink(link: string, type: string, tip: string) {
     return {
       link: link,
-      icon: type
+      icon: type,
+      tip: tip
     };
   }
 
@@ -50,7 +51,8 @@ export class MainNavigator {
   createWallLink(type: string) {
     return {
       link: `${environment.urlPrefix}/${type}s/${this.courseRepo.courseUrl}`,
-      icon: type
+      icon: type,
+      tip: `all ${type}'s in this module`
     };
   }
 }

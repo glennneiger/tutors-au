@@ -27,8 +27,8 @@ describe("User page", () => {
 
   beforeEach(function() {
     //cy.visit("https://wit-tutors.github.io/#course/wit-tutors.github.io/tutors-starter-public/");
-    //cy.visit("http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/");
-    cy.visit("https://tutors.design/course/wit-tutors.github.io/tutors-starter-public/");
+    cy.visit("http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/");
+    //cy.visit("https://tutors.design/course/wit-tutors.github.io/tutors-starter-public/");
     //cy.visit("http://localhost:8080/#/course/wit-tutors.github.io/tutors-demo");
     //cy.visit("https://wit-tutors.github.io/#/course/wit-tutors.github.io/tutors-demo");
     //cy.visit("http://localhost:8080/#/course/wit-hdip-comp-sci-2019.github.io/web-development");

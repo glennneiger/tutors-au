@@ -8,6 +8,7 @@ export class NavigatorProperties {
   parentLink: string;
   parentIcon: string;
   parentIconColour: string;
+  parentIconTip: string;
 
   init(course: Course) {
     this.title = course.lo.title;
@@ -16,6 +17,7 @@ export class NavigatorProperties {
     this.iconColour = course.lo.properties.faColour;
     this.parentLink = course.lo.properties.parent;
     this.parentIcon = icons["programHome"];
+    this.parentIconTip = "To programme home..."
     this.parentIconColour = "";
   }
 }
