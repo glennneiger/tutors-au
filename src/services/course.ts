@@ -51,18 +51,13 @@ export class Course {
   async fetch(url: string) {
     const response = await this.http.fetch("https://" + url + "/tutors.json");
     const lo = await response.json();
-
     return lo;
   }
 
   async fetchCourse() {
     this.lo = await this.fetch(this.url);
     for (let lo of this.lo.los) {
-      // if (lo.route && environment.pushState) {
-      //   lo.route = lo.route.slice(1);
-      // }
       const topic = new Topic(lo, this.url);
-
       this.topics.push(topic);
       this.topicIndex.set(lo.id, topic);
     }

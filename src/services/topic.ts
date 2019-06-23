@@ -1,7 +1,5 @@
 import { Lo } from "./lo";
-import { Course } from "./course";
-import environment from "../environment";
-import { fixRoutes, replaceAt } from "./utils";
+import { fixRoutes } from "./utils";
 
 export class Topic {
   lo: Lo;
@@ -9,8 +7,6 @@ export class Topic {
   panelVideos: Lo[];
   panelTalks: Lo[];
   standardLos: Lo[];
-  url: string;
-  course: Course;
   toc: Lo[] = [];
 
   constructor(lo: Lo, courseUrl: string) {
@@ -36,9 +32,7 @@ export class Topic {
         });
       }
     });
-    if (lo.route && environment.pushState) {
-      this.lo.route = this.lo.route.slice(1);
-    }
+    fixRoutes(lo);
   }
 
   getSortedUnits() {
