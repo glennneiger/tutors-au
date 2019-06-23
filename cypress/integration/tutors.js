@@ -11,72 +11,52 @@ function allLos(lotype, course) {
   return allLos;
 }
 
-function cardDeck(topic, icons) {
-  const los = topic.los.filter (lo=> lo.type != "panelvideo" && lo.type != "unit");
-  for (let [i, lo] of los.entries()) {
-    cy.lo(i, "card-deck card", lo, icons[lo.type]);
-  }
-}
-
-function videoDeck(topic, icons) {
-  const los = topic.los.filter (lo=> lo.type == "panelvideo");
-  for (let [i, lo] of los.entries()) {
-    cy.lo(i, "video-deck video-card", lo, icons[lo.type]);
-  }
-}
-
-function unitDeck(topic, icons) {
-  const units = topic.los.filter (lo=> lo.type == "unit");
-  for (let unit of units) {
-    for (let [i, lo] of unit.los.entries()) {
-      cy.lo(i, `#${unit.id} card`, lo, icons[lo.type]);
-    }
-  }
-}
-
-function wall(los, type, icons) {
-  for (let [i, lo] of los.entries()) {
-    cy.lo(i, "card", lo, icons[type]);
-  }
-}
+let course = null;
+let talks = null;
+let labs = null;
 
 describe("User page", () => {
+
+  before(function() {
+    cy.fixture("tutors").then(c => {
+      course = c;
+      talks = allLos("talk", course);
+      labs = allLos("lab", course);
+    });
+  })
+
   beforeEach(function() {
     //cy.visit("https://wit-tutors.github.io/#course/wit-tutors.github.io/tutors-starter-public/");
     cy.visit("http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/");
     //cy.visit("https://tutors.design/course/wit-tutors.github.io/tutors-starter-public/");
-    cy.fixture("tutors").then(course => {
-      this.course = course;
-      this.talks = allLos("talk", this.course);
-      this.labs = allLos("lab", this.course);
-    });
-
-    cy.fixture("assets").then(assets => {
-      this.assets = assets;
-    });
+    //cy.visit("http://localhost:8080/#/course/wit-tutors.github.io/tutors-demo");
+    //cy.visit("https://wit-tutors.github.io/#/course/wit-tutors.github.io/tutors-demo");
+    //cy.visit("http://localhost:8080/#/course/wit-hdip-comp-sci-2019.github.io/web-development");
+    //cy.visit (course.properties.courseurl);
   });
 
-  // it("HomePage", function() {
-  //   for (let [i, topic] of this.course.los.entries()) {
-  //     cy.lo(i, "card-deck card", topic, this.assets.icons["topic"]);
-  //   }
-  // });
-  //
-  // it("Topics", function() {
-  //   for (let topic of this.course.los) {
-  //     cy.contains(topic.title).click({ force: true });
-  //     cy.wait(500);
-  //     cardDeck(topic, this.assets.icons);
-  //     videoDeck(topic, this.assets.icons);
-  //     unitDeck(topic, this.assets.icons);
-  //   }
-  //   cy.home();
-  // });
+  it("HomePage", function() {
+    for (let [i, topic] of course.los.entries()) {
+      cy.lo(i, "card-deck card", topic);
+    }
+  });
+
+   it("Topics", function() {
+    for (let topic of course.los) {
+      cy.contains(topic.title).click({ force: true });
+      cy.wait(400);
+      cy.carddeck(topic.los, "card-deck card");
+      cy.videodeck(topic.los, "video-deck video-card");
+      cy.unitdeck(topic.los);
+
+    }
+    cy.home();
+  });
 
   it("Walls", function() {
     cy.talks();
-    wall(this.talks, "talk", this.assets.icons);
+    cy.wall(talks)
     cy.labs();
-    wall(this.labs, "lab", this.assets.icons);
+    cy.wall(labs)
   });
 });

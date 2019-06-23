@@ -1,7 +1,7 @@
 import { Lo } from "./lo";
 import { Course } from "./course";
 import environment from "../environment";
-import {replaceAt} from "./utils";
+import {fixRoutes, replaceAt} from "./utils";
 
 export class Topic {
   lo: Lo;
@@ -29,12 +29,11 @@ export class Topic {
 
     this.toc.forEach(lo => {
       lo.parent = this;
-      if (lo.route && environment.pushState) {
-        lo.route = lo.route.slice(1);
-      }
+      fixRoutes(lo)
       if (lo.type === "unit") {
         lo.los.forEach(subLo => {
           subLo.parent = this;
+          fixRoutes(subLo);
         });
       }
     });

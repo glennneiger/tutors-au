@@ -1,6 +1,6 @@
-
 import * as path from 'path';
 import {Lo} from "./lo";
+import environment from "../environment";
 
 export function findLos(los: Lo[], lotype: string): Lo[] {
   let result: Lo[] = [];
@@ -70,4 +70,13 @@ export function lastSegment(url:string) {
   var parts = url.split('/');
   var lastSegment = parts.pop() || parts.pop();
   return lastSegment;
+}
+
+export function fixRoutes(lo : Lo) {
+  if (environment.pushState && lo.route && lo.route[0] == '#') {
+    lo.route = lo.route.slice(1);
+  }
+  if (environment.pushState && lo.video && lo.video[0] == '#') {
+    lo.video = lo.video.slice(1);
+  }
 }

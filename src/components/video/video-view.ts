@@ -22,4 +22,8 @@ export class VideoView {
     this.navigatorProperties.parentLink = this.lo.parent.lo.route;
     this.navigatorProperties.parentIcon = icons['topic'];
   }
+
+  determineActivationStrategy() {
+    return 'replace';
+  }
 }

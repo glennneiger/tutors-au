@@ -1,25 +1,28 @@
 <template bindable="los">
   <require from="../icon"></require>
+  <require from="./topic-navigator.html"></require>
 
   <ul class="uk-list">
     <div repeat.for="topic of los">
-      <li>
-        <icon type="${topic.type}" size="fa-sm"></icon> ${topic.title}
-        <ul class="uk-list">
-          <div repeat.for="lo of topic.los">
-            <li>
-              <icon type="${lo.type}" size="fa-sm"></icon> ${lo.title}
-              <ul class="uk-list">
-                <div repeat.for="lo of lo.los">
-                  <li>
-                    <icon type="${lo.type}" size="fa-sm"></icon> ${lo.title}
-                  </li>
-                </div>
-              </ul>
-            </li>
-          </div>
-        </ul>
-      </li>
+      <a class="item" href="${topic.lo.route}"><icon type="${topic.lo.type}" size="fa-lg"></icon> ${topic.lo.title} </a>¸
+      <topic-navigator topic.one-way="topic"></topic-navigator>
+<!--      <li>-->
+<!--        <icon type="${topic.lo.type}" size="fa-sm"></icon> ${topic.lo.title}-->
+<!--        <ul class="uk-list">-->
+<!--          <div repeat.for="lo of topic.los">-->
+<!--            <li>-->
+<!--              <icon type="${lo.type}" size="fa-sm"></icon> ${lo.title}-->
+<!--              <ul class="uk-list">-->
+<!--                <div repeat.for="lo of lo.los">-->
+<!--                  <li>-->
+<!--                    <icon type="${lo.type}" size="fa-sm"></icon> ${lo.title}-->
+<!--                  </li>-->
+<!--                </div>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--          </div>-->
+<!--        </ul>-->
+<!--      </li>-->
     </div>
   </ul>
 
