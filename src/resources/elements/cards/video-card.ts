@@ -10,7 +10,7 @@ export class VideoCard {
   videoid = "";
 
   attached() {
-    const parts = this.lo.video.split('/');
+    const parts = this.lo.video.split("/");
     this.videoid = parts.pop() || parts.pop();
   }
 }

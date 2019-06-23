@@ -1,7 +1,7 @@
-import { CourseRepo } from '../../services/course-repo';
-import { Course } from '../../services/course';
-import { NavigatorProperties } from '../../services/styles';
-import { autoinject } from 'aurelia-framework';
+import { CourseRepo } from "../../services/course-repo";
+import { Course } from "../../services/course";
+import { NavigatorProperties } from "../../services/styles";
+import { autoinject } from "aurelia-framework";
 
 @autoinject
 export class CourseView {

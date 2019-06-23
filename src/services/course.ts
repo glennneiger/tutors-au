@@ -1,12 +1,12 @@
-import { Lo } from './lo';
-import { Topic } from './topic';
-import { HttpClient } from 'aurelia-fetch-client';
-import {allLos, allVideoLos, findLos} from './utils';
+import { Lo } from "./lo";
+import { Topic } from "./topic";
+import { HttpClient } from "aurelia-fetch-client";
+import { allLos, allVideoLos, findLos } from "./utils";
 import environment from "../environment";
 
 export class Course {
   lo: Lo;
-  topics : Topic[] = [];
+  topics: Topic[] = [];
   topicIndex = new Map();
   url: string;
   walls = new Map<string, Lo[]>();
@@ -23,7 +23,7 @@ export class Course {
     if (los.length > 0) {
       this.walls.set(type, los);
     }
-    if (type == 'talk') {
+    if (type == "talk") {
       los.forEach(lo => {
         this.talks.set(`${lo.route}`, lo);
       });
@@ -33,7 +33,7 @@ export class Course {
   addVideoWall() {
     const videoLos = allVideoLos(this.lo.los);
     if (videoLos.length > 0) {
-      this.walls.set('video', videoLos);
+      this.walls.set("video", videoLos);
     }
     videoLos.forEach(lo => {
       this.videos.set(lo.video, lo);
@@ -41,15 +41,15 @@ export class Course {
   }
 
   populateWalls() {
-    this.addWall('talk');
-    this.addWall('lab');
+    this.addWall("talk");
+    this.addWall("lab");
     this.addVideoWall();
-    this.addWall('github');
-    this.addWall('archive');
+    this.addWall("github");
+    this.addWall("archive");
   }
 
   async fetch(url: string) {
-    const response = await this.http.fetch('https://' + url + '/tutors.json');
+    const response = await this.http.fetch("https://" + url + "/tutors.json");
     const lo = await response.json();
 
     return lo;

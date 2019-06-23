@@ -1,34 +1,36 @@
-import { CourseRepo } from '../../services/course-repo';
-import { Chapter, Lab } from '../../services/lab';
-import { MarkdownParser } from '../../services/markdown-parser';
-import environment from '../../environment';
-import { autoinject } from 'aurelia-framework';
-const path = require('path');
+import { CourseRepo } from "../../services/course-repo";
+import { Chapter, Lab } from "../../services/lab";
+import { MarkdownParser } from "../../services/markdown-parser";
+import environment from "../../environment";
+import { autoinject } from "aurelia-framework";
+const path = require("path");
 
 @autoinject
 export class LabView {
   lab: Lab;
-  content = '';
-  url = '';
+  content = "";
+  url = "";
   currentChapter: Chapter;
-  navbarHtml = '';
+  navbarHtml = "";
 
   constructor(private courseRepo: CourseRepo, private markdownParser: MarkdownParser) {}
 
   refreshav() {
-    this.navbarHtml = '';
+    this.navbarHtml = "";
     this.lab.chapters.forEach(chapter => {
-      const active = chapter == this.currentChapter ? 'class= uk-active' : '';
+      const active = chapter == this.currentChapter ? "class= uk-active" : "";
       this.navbarHtml = this.navbarHtml.concat(
-        `<li ${active}> <a href="${environment.urlPrefix}lab/${this.url}/${chapter.shortTitle}"> ${chapter.shortTitle} </a> </li>`
+        `<li ${active}> <a href="${environment.urlPrefix}lab/${this.url}/${chapter.shortTitle}"> ${
+          chapter.shortTitle
+        } </a> </li>`
       );
     });
   }
 
   async activate(params) {
-    const lastSegment = params.laburl.substr(params.laburl.lastIndexOf('/') + 1);
+    const lastSegment = params.laburl.substr(params.laburl.lastIndexOf("/") + 1);
     let chapter: Chapter = null;
-    if (lastSegment.startsWith('book')) {
+    if (lastSegment.startsWith("book")) {
       this.url = params.laburl;
       this.lab = await this.courseRepo.fetchLab(this.url);
       this.currentChapter = this.lab.chapters[0];

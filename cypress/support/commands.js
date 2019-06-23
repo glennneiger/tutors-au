@@ -62,7 +62,10 @@ Cypress.Commands.add('lo', (index, selector, lo, icon, options = {}) => {
   cy.get(selector).eq(index).should('contain', lo.title);
   cy.get(selector).eq(index).should('contain', lo.summary);
   if (lo.type == "panelvideo") {
-    cy.get(selector).eq(index).find("iframe").should('have.attr', 'src', lo.video);
+    let parts = lo.video.split('/');;
+    const lastSegment = parts.pop() || parts.pop();
+    const url = "https://www.youtube.com/embed/" + lastSegment;
+    cy.get(selector).eq(index).find("iframe").should('have.attr', 'src', url);
   }
   else {
     cy.get(selector).eq(index).find("img").should('have.attr', 'src', lo.img);

@@ -1,8 +1,7 @@
 <template>
 
   <require from="./lab-view.css"></require>
-
-  <require from="../../resources/elements/navigators/lab-navigator"> </require>
+  <require from="../../resources/elements/navigators/lab-navigator"></require>
 
   <lab-navigator></lab-navigator>
   <div uk-sticky>
@@ -10,12 +9,13 @@
       <div class="uk-navbar-left">
         <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
           <li><a href="#lab-navigator" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="${lab.topic.lo.route}" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic" pos="bottom" uk-tooltip> ${lab.topic.lo.title} </a></li>-->
+          <li class="uk-active"><a href="${lab.topic.lo.route}" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic" pos="bottom" uk-tooltip>
+            ${lab.topic.lo.title} </a></li>
+          -->
         </ul>
       </div>
       <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill" innerhtml="${navbarHtml}">
-        </ul>
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill" innerhtml="${navbarHtml}"></ul>
       </div>
     </nav>
   </div>

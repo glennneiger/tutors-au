@@ -1,8 +1,8 @@
-import { CourseRepo } from '../../services/course-repo';
-import { Topic } from '../../services/topic';
-import { icons, NavigatorProperties } from '../../services/styles';
-import environment from '../../environment';
-import { autoinject } from 'aurelia-framework';
+import { CourseRepo } from "../../services/course-repo";
+import { Topic } from "../../services/topic";
+import { icons, NavigatorProperties } from "../../services/styles";
+import environment from "../../environment";
+import { autoinject } from "aurelia-framework";
 
 @autoinject
 export class TopicView {
@@ -18,10 +18,10 @@ export class TopicView {
     this.navigatorProperties.title = this.topic.lo.title;
     this.navigatorProperties.subtitle = course.lo.title;
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
-    this.navigatorProperties.parentIcon = icons['moduleHome'];
+    this.navigatorProperties.parentIcon = icons["moduleHome"];
   }
 
   determineActivationStrategy() {
-    return 'replace';
+    return "replace";
   }
 }

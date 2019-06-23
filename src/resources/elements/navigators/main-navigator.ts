@@ -1,8 +1,8 @@
-import { autoinject } from 'aurelia-framework';
-import { CourseRepo } from '../../../services/course-repo';
-import { IconNav, NavigatorProperties } from '../../../services/styles';
-import environment from '../../../environment';
-import { bindable } from 'aurelia-framework';
+import { autoinject } from "aurelia-framework";
+import { CourseRepo } from "../../../services/course-repo";
+import { IconNav, NavigatorProperties } from "../../../services/styles";
+import environment from "../../../environment";
+import { bindable } from "aurelia-framework";
 
 interface Properties {
   [key: string]: any;
@@ -26,14 +26,15 @@ export class MainNavigator {
     this.createWallBar();
   }
 
-  createCompanionBar(properties : Properties) {
-    if (properties.adobeconnect) this.companions.push(this.createCompanionLink(properties['adobeconnect'],'adobeconnect' ));
-    if (properties.moodle) this.companions.push(this.createCompanionLink(properties['moodle'],'moodle' ));
-    if (properties.slack) this.companions.push(this.createCompanionLink(properties['slack'],'slack' ));
-    if (properties.youtube) this.companions.push(this.createCompanionLink(properties['youtube'],'youtube' ));
+  createCompanionBar(properties: Properties) {
+    if (properties.adobeconnect)
+      this.companions.push(this.createCompanionLink(properties["adobeconnect"], "adobeconnect"));
+    if (properties.moodle) this.companions.push(this.createCompanionLink(properties["moodle"], "moodle"));
+    if (properties.slack) this.companions.push(this.createCompanionLink(properties["slack"], "slack"));
+    if (properties.youtube) this.companions.push(this.createCompanionLink(properties["youtube"], "youtube"));
   }
 
-  createCompanionLink(link : string, type: string) {
+  createCompanionLink(link: string, type: string) {
     return {
       link: link,
       icon: type

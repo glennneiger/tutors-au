@@ -1,8 +1,8 @@
-import {Course} from "./course";
+import { Course } from "./course";
 
 export class CourseUpdate {
-  course :Course;
-  constructor(course:Course) {
+  course: Course;
+  constructor(course: Course) {
     this.course = course;
   }
 }

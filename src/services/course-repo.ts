@@ -1,25 +1,26 @@
-import { HttpClient } from 'aurelia-fetch-client';
-import { inject } from 'aurelia-framework';
-import { Course } from './course';
-import * as path from 'path';
-import { Lab } from './lab';
-import {findCourseUrls, lastSegment} from './utils';
-import { AuthService } from './auth-service';
-import { Topic } from './topic';
-import { NavigatorProperties } from './styles';
-import { autoinject } from 'aurelia-framework';
-import environment from "../environment";
-
+import { HttpClient } from "aurelia-fetch-client";
+import { Course } from "./course";
+import * as path from "path";
+import { Lab } from "./lab";
+import { findCourseUrls, lastSegment } from "./utils";
+import { AuthService } from "./auth-service";
+import { Topic } from "./topic";
+import { NavigatorProperties } from "./styles";
+import { autoinject } from "aurelia-framework";
 
 @autoinject
 export class CourseRepo {
   course: Course;
   topic: Topic;
   lab: Lab;
-  courseUrl = '';
-  topicUrl = '';
+  courseUrl = "";
+  topicUrl = "";
 
-  constructor(private http: HttpClient, private authService: AuthService, private navigatorProperties: NavigatorProperties) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private navigatorProperties: NavigatorProperties
+  ) {}
 
   async getCourse(url) {
     if (!this.course || this.course.url !== url) {
@@ -29,7 +30,7 @@ export class CourseRepo {
         await this.course.fetchCourse();
         this.navigatorProperties.init(this.course);
       } catch (e) {
-        this.courseUrl = '';
+        this.courseUrl = "";
         this.course = null;
       }
     }

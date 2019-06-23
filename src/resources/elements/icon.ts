@@ -1,13 +1,16 @@
-import {iconColours, icons} from "../../services/styles";
-import {bindable} from 'aurelia-framework';
+import { iconColours, icons } from "../../services/styles";
+import { bindable } from "aurelia-framework";
 
 export class Icon {
-  @bindable type: string;
-  @bindable size: string;
-  @bindable colour: string;
+  @bindable
+  type: string;
+  @bindable
+  size: string;
+  @bindable
+  colour: string;
 
   icon() {
-    return icons[this.type] + ' ' + this.size;
+    return icons[this.type] + " " + this.size;
   }
 
   iconStyle() {

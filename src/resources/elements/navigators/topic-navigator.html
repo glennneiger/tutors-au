@@ -3,13 +3,16 @@
 
   <div repeat.for="lo of topic.toc">
     <ul class="uk-nav">
-      <a class="item" href="${lo.route}"><icon type="${lo.type}" size="fa-lg"></icon> ${lo.title} </a>
+      <a class="item" href="${lo.route}">
+        <icon type="${lo.type}" size="fa-lg"></icon>
+        ${lo.title} </a>
       <ul class="uk-nav-sub">
         <div repeat.for="lo of lo.los">
-          <a class="item" href="${lo.route}"> <icon type="${lo.type}" size="fa-lg"></icon> ${lo.title} </a>
-          <a show.bind="lo.video && lo.type!='panelvideo'" href="${lo.video}">
-            <icon type="video" size="fa-lg"></icon>
-          </a>
+          <a class="item" href="${lo.route}">
+            <icon type="${lo.type}" size="fa-lg"></icon>
+            ${lo.title} </a> <a show.bind="lo.video && lo.type!='panelvideo'" href="${lo.video}">
+          <icon type="video" size="fa-lg"></icon>
+        </a>
         </div>
       </ul>
     </ul>

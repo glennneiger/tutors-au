@@ -1,10 +1,10 @@
-import { CourseRepo } from '../../../services/course-repo';
-import { autoinject } from 'aurelia-framework';
-import {Course} from "../../../services/course";
+import { CourseRepo } from "../../../services/course-repo";
+import { autoinject } from "aurelia-framework";
+import { Course } from "../../../services/course";
 
 @autoinject
 export class SideNavigator {
-  course : Course;
+  course: Course;
 
   constructor(private courseRepo: CourseRepo) {}
 

@@ -206,7 +206,7 @@
           "title": "Lecture 5 ",
           "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.jpg",
 
-          "video": "https://www.youtube.com/embed/BpwNfye_0Sg",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/BpwNfye_0Sg",
 
           "summary": "This is a slide deck + an associated video",
           "id": "talk-1",
@@ -233,12 +233,12 @@
           "title": "01: Overview ",
           "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/",
 
-          "video": "https://www.youtube.com/embed/KFzl-Nhe1vs",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/KFzl-Nhe1vs",
 
           "summary": "01: Overview",
           "id": "panelvideo",
 
-          "route": "KFzl-Nhe1vs"
+          "route": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/KFzl-Nhe1vs"
         },
         {
           "properties": {},
@@ -287,7 +287,7 @@
               "title": "Lecture 6 ",
               "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
 
-              "video": "https://www.youtube.com/embed/BpwNfye_0Sg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/BpwNfye_0Sg",
 
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
               "id": "talk-1",
@@ -302,7 +302,7 @@
               "title": "Lecture 7 ",
               "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.jpg",
 
-              "video": "https://www.youtube.com/embed/BpwNfye_0Sg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/BpwNfye_0Sg",
 
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
               "id": "talk-2",
@@ -344,7 +344,7 @@
               "title": "Lecture 8 ",
               "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.jpg",
 
-              "video": "https://www.youtube.com/embed/BpwNfye_0Sg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/BpwNfye_0Sg",
 
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
               "id": "talk-1",

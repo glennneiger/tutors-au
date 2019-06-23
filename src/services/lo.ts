@@ -1,4 +1,4 @@
-import {Topic} from "./topic";
+import { Topic } from "./topic";
 
 export interface Lo {
   properties: { [prop: string]: string };
@@ -9,7 +9,7 @@ export interface Lo {
   pdf: string;
   summary: string;
   route: string;
-  id:string;
+  id: string;
   los: Lo[];
   parent: Topic;
 }

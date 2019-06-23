@@ -1,25 +1,25 @@
-import { Lo } from './lo';
-import { Topic } from './topic';
-import { HttpClient } from 'aurelia-fetch-client';
+import { Lo } from "./lo";
+import { Topic } from "./topic";
+import { HttpClient } from "aurelia-fetch-client";
 
 export class Chapter {
   title: string;
   shortTitle: string;
-  contentMd = '';
+  contentMd = "";
 }
 
 export class Lab {
   properties: Lo;
   chapters: Chapter[] = [];
   topic: Topic;
-  url = '';
+  url = "";
 
   constructor(private http: HttpClient, url) {
     this.url = url;
   }
 
   async fetch(url: string) {
-    const response = await this.http.fetch('https://' + url + '/index.json');
+    const response = await this.http.fetch("https://" + url + "/index.json");
     const lo = await response.json();
     return lo;
   }

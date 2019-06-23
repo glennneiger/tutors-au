@@ -31,7 +31,7 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
 
-        const url = localStorage.getItem('course_url')
+        const url = localStorage.getItem("course_url");
         this.router.navigate(`/course/${url}`);
 
         this.authNotifier.emit("authChange", { authenticated: true });
@@ -46,24 +46,22 @@ export class AuthService {
   }
 
   setSession(authResult) {
-    let expiresAt = JSON.stringify(
-      authResult.expiresIn * 1000 + new Date().getTime()
-    );
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
+    let expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime());
+    localStorage.setItem("access_token", authResult.accessToken);
+    localStorage.setItem("id_token", authResult.idToken);
+    localStorage.setItem("expires_at", expiresAt);
   }
 
   logout() {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
-    this.router.navigate('home');
-    this.authNotifier.emit('authChange', false);
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("id_token");
+    localStorage.removeItem("expires_at");
+    this.router.navigate("home");
+    this.authNotifier.emit("authChange", false);
   }
 
   isAuthenticated() {
-    let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
     return new Date().getTime() < expiresAt;
   }
 }
