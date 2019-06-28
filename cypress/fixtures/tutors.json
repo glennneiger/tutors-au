@@ -1,433 +1,303 @@
 {
   "properties": {
-    "highlightstyle": "railscasts",
     "slack": "https://tutors-ts-group.slack.com/messages/CCKS0HR0Q",
     "moodle": "https://moodle.wit.ie/course/view.php?id=118143&section=3",
     "youtube": "https://www.youtube.com/playlist?list=PLMW4bgOfD3Dwi6FWirJ3AQtXZ-N_hV3Eo",
+    "highlightstyle": "railscasts",
     "courseurl": "https://wit-tutors.github.io/tutors-starter-public/",
     "credits": "Your Name Here, WIT",
-    "auth": "true",
-    "basecourseurl": "wit-tutors.github.io/tutors-starter-public/"
+    "auth": "true"
   },
-
-  "type": "course",
   "title": " Course Title ",
-  "img": "https://wit-tutors.github.io/tutors-starter-public//course.jpg",
-
+  "type": "course",
   "summary": "A short description of the course. Normally this will not be visible, unless the course is aggregated into a portfolio of modules",
+  "img": "https://https://wit-tutors.github.io/tutors-starter-public//course.jpg",
   "id": "tutors-starter",
-
-  "route": "#course/wit-tutors.github.io/tutors-starter-public/",
-
   "los": [
     {
-      "properties": {},
-
-      "type": "topic",
       "title": " Simple  ",
-      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/topic.jpg",
-
+      "type": "topic",
       "summary": "Just lectures and labs",
+      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/topic.jpg",
       "id": "topic-01-simple",
-
       "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-01-simple",
-
       "los": [
         {
-          "properties": {},
-
-          "type": "talk",
           "title": "Lecture 1 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.jpg",
-
-          "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-          "id": "talk-1",
-
-          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.pdf",
-          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.pdf"
-        },
-        {
-          "properties": {},
-
           "type": "talk",
-          "title": "Lecture 2 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.jpg",
-
-          "summary": "The summary can indicate the lecture objectives of contents.",
-          "id": "talk-2",
-
-          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.pdf",
-          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.pdf"
+          "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.jpg",
+          "id": "talk-1",
+          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.pdf",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-1/talk-1.pdf"
         },
         {
-          "properties": {},
-
-          "type": "lab",
+          "title": "Lecture 2 ",
+          "type": "talk",
+          "summary": "The summary can indicate the lecture objectives of contents.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.jpg",
+          "id": "talk-2",
+          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.pdf",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/talk-2/talk-2.pdf"
+        },
+        {
           "title": "Lab-01",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/book-a/img/main.jpg",
-
+          "type": "lab",
           "summary": "A few sentences on the purpose of the lab. Avoid bullet points here for formatting reasons.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-01-simple/book-a/img/main.jpg",
           "id": "book-a",
-
           "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-01-simple/book-a"
         }
       ]
     },
     {
-      "properties": {},
-
-      "type": "topic",
       "title": " Varied ",
-      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/topic.jpg",
-
+      "type": "topic",
       "summary": "Lectures & labs + archive and github repos",
+      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/topic.jpg",
       "id": "topic-02-varied",
-
       "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-02-varied",
-
       "los": [
         {
-          "properties": {},
-
-          "type": "talk",
           "title": "Lecture 3 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.jpg",
-
-          "summary": "A flavour of the contents.",
-          "id": "talk-1",
-
-          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.pdf",
-          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.pdf"
-        },
-        {
-          "properties": {},
-
           "type": "talk",
-          "title": "Lecture 4 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.jpg",
-
-          "summary": "Indicate what the talk is about.",
-          "id": "talk-2",
-
-          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.pdf",
-          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.pdf"
+          "summary": "A flavour of the contents.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.jpg",
+          "id": "talk-1",
+          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.pdf",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-1/talk-1.pdf"
         },
         {
-          "properties": {},
-
-          "type": "lab",
+          "title": "Lecture 4 ",
+          "type": "talk",
+          "summary": "Indicate what the talk is about.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.jpg",
+          "id": "talk-2",
+          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.pdf",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/talk-2/talk-2.pdf"
+        },
+        {
           "title": "Lab-02",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-a/img/main.jpg",
-
+          "type": "lab",
           "summary": "Another lab - summary here.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-a/img/main.jpg",
           "id": "book-a",
-
           "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-a"
         },
         {
-          "properties": {},
-
-          "type": "lab",
           "title": "Lab-03",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-b/img/main.png",
-
+          "type": "lab",
           "summary": "Two labs in the same topic.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-b/img/main.png",
           "id": "book-b",
-
           "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-02-varied/book-b"
         },
         {
-          "properties": {},
-
-          "type": "archive",
+          "title": "This is a Panel Talk Object ",
+          "type": "paneltalk",
+          "summary": "This is a Panel Talk Object",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/paneltalk/static-site-gen.png",
+          "id": "paneltalk",
+          "route": "static-site-gen.pdf"
+        },
+        {
           "title": "Resource I ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/archive/archive.jpg",
-
+          "type": "archive",
           "summary": "This is not a pdf link, but a zipped archive. If it is selected the archive will be downloaded. Use this to distributed general resources.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/archive/archive.jpg",
           "id": "archive",
-
-          "route": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/archive/archive.zip"
+          "route": "archive.zip",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/archive/archive.zip"
         },
         {
-          "properties": {},
-
-          "type": "github",
           "title": "Github Repo  1 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-1-template-1/github.jpg",
-
-          "summary": "A repo in github that captures important lessons from this topic",
-          "id": "github-1-template-1",
-
-          "route": "https://github.com/wit-ict-summer-school-2017/glitch-template-1.git"
-        },
-        {
-          "properties": {},
-
           "type": "github",
-          "title": "Github Repo 2 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-2-playlist-1/github.jpg",
-
-          "summary": "Another repo in github that captures important lessons from this topic",
-          "id": "github-2-playlist-1",
-
+          "summary": "A repo in github that captures important lessons from this topic",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-1-template-1/github.jpg",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-1-template-1/none",
+          "id": "github-1-template-1",
           "route": "https://github.com/wit-ict-summer-school-2017/glitch-template-1.git"
         },
         {
-          "properties": {},
-
-          "type": "web",
+          "title": "Github Repo 2 ",
+          "type": "github",
+          "summary": "Another repo in github that captures important lessons from this topic",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-2-playlist-1/github.jpg",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-02-varied/github-2-playlist-1/none",
+          "id": "github-2-playlist-1",
+          "route": "https://github.com/wit-ict-summer-school-2017/glitch-template-1.git"
+        },
+        {
           "title": "Web Site ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/web-1/web.png",
-
+          "type": "web",
           "summary": "A web site of interest",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-02-varied/web-1/web.png",
           "id": "web-1",
-
           "route": "https://apiumhub.com/tech-blog-barcelona/definition-of-done-examples-software-projects/"
         }
       ]
     },
     {
-      "properties": {},
-
-      "type": "topic",
       "title": " Media ",
-      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/topic.jpg",
-
+      "type": "topic",
       "summary": "Include 2 type of videos",
+      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/topic.jpg",
       "id": "topic-03-media",
-
       "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-03-media",
-
       "los": [
         {
-          "properties": {},
-
-          "type": "talk",
           "title": "Lecture 5 ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.jpg",
-
-          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/BpwNfye_0Sg",
-
+          "type": "talk",
           "summary": "This is a slide deck + an associated video",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.jpg",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/BpwNfye_0Sg",
           "id": "talk-1",
-
-          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.pdf",
-          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.pdf"
+          "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.pdf",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/talk-1/todo-review.pdf"
         },
         {
-          "properties": {},
-
-          "type": "lab",
           "title": "Lab-04",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/book-a/img/main.jpg",
-
+          "type": "lab",
           "summary": "Just one lab in this topic.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/book-a/img/main.jpg",
           "id": "book-a",
-
           "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-03-media/book-a"
         },
         {
-          "properties": {},
-
-          "type": "panelvideo",
           "title": "01: Overview ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/",
-
-          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/KFzl-Nhe1vs",
-
+          "type": "panelvideo",
           "summary": "01: Overview",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/",
+          "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/KFzl-Nhe1vs",
           "id": "panelvideo",
-
           "route": "#video/wit-tutors.github.io/tutors-starter-public/topic-03-media/panelvideo/KFzl-Nhe1vs"
         },
         {
-          "properties": {},
-
-          "type": "archive",
           "title": "Resource I ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/archive/archive.jpg",
-
+          "type": "archive",
           "summary": "This is not a pdf link, but a zipped archive. If it is selected the archive will be downloaded. Use this to distributed general resources.",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/archive/archive.jpg",
           "id": "archive",
-
-          "route": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/archive/archive.zip"
+          "route": "archive.zip",
+          "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-03-media/archive/archive.zip"
         }
       ]
     },
     {
-      "properties": {},
-
-      "type": "topic",
       "title": " Units ",
-      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/topic.jpg",
-
+      "type": "topic",
       "summary": "This topic has 3 units - each unit has lectures + lab",
+      "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/topic.jpg",
       "id": "topic-04-units",
-
       "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units",
-
       "los": [
         {
-          "properties": {},
-
-          "type": "unit",
           "title": "Unit 1 Title ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
-
+          "type": "unit",
           "summary": "",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
           "id": "unit-1",
-
-          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1",
-
+          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/",
           "los": [
             {
-              "properties": {},
-
-              "type": "talk",
               "title": "Lecture 6 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
-
-              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/BpwNfye_0Sg",
-
-              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-1",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.pdf"
-            },
-            {
-              "properties": {},
-
               "type": "talk",
-              "title": "Lecture 7 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.jpg",
-
-              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/BpwNfye_0Sg",
-
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-2",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.pdf"
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.jpg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/BpwNfye_0Sg",
+              "id": "talk-1",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-1/talk-1.pdf"
             },
             {
-              "properties": {},
-
-              "type": "lab",
+              "title": "Lecture 7 ",
+              "type": "talk",
+              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.jpg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/BpwNfye_0Sg",
+              "id": "talk-2",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/talk-2/talk-2.pdf"
+            },
+            {
               "title": "Lab-05",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/book-a/img/main.png",
-
+              "type": "lab",
               "summary": "A few sentences on the purpose of the lab. Avoid bullet points here for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/book-a/img/main.png",
               "id": "book-a",
-
               "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-1/book-a"
             }
           ]
         },
         {
-          "properties": {},
-
-          "type": "unit",
           "title": "Unit 2 Title ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.jpg",
-
+          "type": "unit",
           "summary": "",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.jpg",
           "id": "unit-2",
-
-          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2",
-
+          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/",
           "los": [
             {
-              "properties": {},
-
-              "type": "talk",
               "title": "Lecture 8 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.jpg",
-
-              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/BpwNfye_0Sg",
-
-              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-1",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.pdf"
-            },
-            {
-              "properties": {},
-
               "type": "talk",
-              "title": "Lecture 9 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.jpg",
-
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-2",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.pdf"
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.jpg",
+              "video": "#video/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/BpwNfye_0Sg",
+              "id": "talk-1",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-1/talk-1.pdf"
             },
             {
-              "properties": {},
-
-              "type": "lab",
+              "title": "Lecture 9 ",
+              "type": "talk",
+              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.jpg",
+              "id": "talk-2",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/talk-2/talk-2.pdf"
+            },
+            {
               "title": "Lab-06",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/book-a/img/main.jpg",
-
+              "type": "lab",
               "summary": "A few sentences on the purpose of the lab. Avoid bullet points here for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/book-a/img/main.jpg",
               "id": "book-a",
-
               "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-2/book-a"
             }
           ]
         },
         {
-          "properties": {},
-
-          "type": "unit",
           "title": "Unit 3 Title ",
-          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.jpg",
-
+          "type": "unit",
           "summary": "",
+          "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.jpg",
           "id": "unit-3",
-
-          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3",
-
+          "route": "#topic/wit-tutors.github.io/tutors-starter-public/topic-04-units/",
           "los": [
             {
-              "properties": {},
-
-              "type": "talk",
               "title": "Lecture 10 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.jpg",
-
-              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-1",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.pdf"
-            },
-            {
-              "properties": {},
-
               "type": "talk",
-              "title": "Lecture 11 ",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.jpg",
-
               "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
-              "id": "talk-2",
-
-              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.pdf",
-              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.pdf"
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.jpg",
+              "id": "talk-1",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-1/talk-1.pdf"
             },
             {
-              "properties": {},
-
-              "type": "lab",
+              "title": "Lecture 11 ",
+              "type": "talk",
+              "summary": "A short summary of the talk, no more than two sentences. Avoid bullet points or links for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.jpg",
+              "id": "talk-2",
+              "route": "#talk/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.pdf",
+              "pdf": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/talk-2/talk-2.pdf"
+            },
+            {
               "title": "Lab-07",
-              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/book-a/img/main.jpg",
-
+              "type": "lab",
               "summary": "A few sentences on the purpose of the lab. Avoid bullet points here for formatting reasons.",
+              "img": "https://wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/book-a/img/main.jpg",
               "id": "book-a",
-
               "route": "#lab/wit-tutors.github.io/tutors-starter-public/topic-04-units/unit-3/book-a"
             }
           ]

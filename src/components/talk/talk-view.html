@@ -1,7 +1,7 @@
 <template>
   <require from="./talk-view.css"></require>
   <require from="../../resources/elements/navigators/main-navigator"></require>
-  <require from="../../resources/elements/cards/video-card"></require>
+  <require from="../../resources/elements/cards/talk-card"></require>
   <require from="../../resources/elements/cards/topic-navigator-card.html"></require>
 
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
@@ -9,8 +9,7 @@
   <div class="uk-container-expand  uk-margin-medium-left uk-margin-medium-right">
     <div uk-grid uk-flex uk-flex-center>
       <div class="uk-width-expand@m uk-animation-scale-up">
-        <input type="hidden" class="inputforfocus">
-        <div id="pdf-placeholder"></div>
+        <talk-card lo.one-way="lo"></talk-card>
       </div>
       <div class="uk-width-1-5@m uk-flex uk-grid">
         <topic-navigator-card topic.one-way="lo.parent"></topic-navigator-card>
