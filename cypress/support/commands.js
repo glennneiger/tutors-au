@@ -74,11 +74,19 @@ Cypress.Commands.add('lo', (index, selector, lo, icon, options = {}) => {
 });
 
 Cypress.Commands.add('carddeck', (los, selector, options = {}) => {
-  const carddeck = los.filter(lo => lo.type != "panelvideo" && lo.type != "unit");
+  const carddeck = los.filter(lo => lo.type != "panelvideo" && lo.type != "unit" && lo.type != "paneltalk");
   for (let [i, lo] of carddeck.entries()) {
     cy.lo(i, selector, lo);
   }
 });
+
+Cypress.Commands.add('paneltalkdeck', (los, selector, options = {}) => {
+  const paneltalkdeck = los.filter(lo => lo.type == "paneltalk");
+  for (let [i, lo] of paneltalkdeck.entries()) {
+    cy.lo(i, selector, lo);
+  }
+});
+
 
 Cypress.Commands.add('videodeck', (los, selector, options = {}) => {
   const videodeck = los.filter(lo => lo.type == "panelvideo");

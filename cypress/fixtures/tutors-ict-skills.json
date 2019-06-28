@@ -1,0 +1,1200 @@
+
+
+
+
+
+
+
+
+
+
+
+  {
+  
+  
+  
+    "properties" : {"highlightstyle":"railscasts","slack":"https://wit-hdip-comp-sci.slack.com/messages/C84S2LQSC/","parent":"https://wit-hdip-comp-sci-2019.github.io/","courseurl":"https://wit-hdip-comp-sci-2019.github.io/ictskills-1/","credits":"Eamonn de Leastar, WIT Computing","ects":"2½","faPanelicon":"fas fa-code-branch","faColour":"#ffd600","basecourseurl":"wit-hdip-comp-sci-2019.github.io/ictskills-1/"}
+  
+,
+  "type" : "course",
+  "title" : " ICT Skills 1 ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1//",
+  
+  
+
+  "summary" : "javascript · node · express · git · github · glitch",
+  "id": "ict-skills-1",
+  
+    "route" : "#course/wit-hdip-comp-sci-2019.github.io/ictskills-1/"
+  
+,
+  "los" : [  {
+  
+  
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "topic",
+  "title" : "0: Overview ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/topic.png",
+  
+  
+
+  "summary" : "Overview of the module + introduction to the Glitch platform",
+  "id": "topic-00-module-overview",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview"
+  
+,
+  "los": [
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Module Overview ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0/talk-1-overview/review.png",
+  
+  
+
+  "summary" : "Module Overview",
+  "id": "unit-0",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {"highlightstyle":"railscasts","panelicon":"newspaper","slack":"https://wit-hdip-comp-sci.slack.com/messages/C84S2LQSC/","parent":"https://wit-hdip-comp-sci-2019.github.io/","courseurl":"https://wit-hdip-comp-sci-2019.github.io/ictskills-1/","credits":"Eamonn de Leastar, WIT Computing","ects":"2½","faPanelicon":"fas fa-code-branch","faColour":"#ffd600","basecourseurl":"wit-hdip-comp-sci-2019.github.io/ictskills-1/"}
+  
+,
+  "type" : "talk",
+  "title" : "Module Overview ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0/talk-1-overview/review.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0/talk-1-overview/TF4NE90hRoo",
+
+  
+
+  "summary" : "Overview of the modules topics",
+  "id": "talk-1-overview",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0/talk-1-overview/review.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-0/talk-1-overview/review.pdf"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Introducing Glitch ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-a-glitch-intro/glitch.png",
+  
+  
+
+  "summary" : "",
+  "id": "unit-1",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Introducing Glitch ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-a-glitch-intro/glitch.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-a-glitch-intro/SHSs4vzk05U",
+
+  
+
+  "summary" : "What is is, what role it plays, why was it built.",
+  "id": "talk-a-glitch-intro",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-a-glitch-intro/glitch.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-a-glitch-intro/glitch.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Glitch Tour ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-b-glitch-tour/glitch-tour.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-b-glitch-tour/h76FPkIO2HU",
+
+  
+
+  "summary" : "A look at at the components of a glitch project. Also types of project will we build?",
+  "id": "talk-b-glitch-tour",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-b-glitch-tour/glitch-tour.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/talk-b-glitch-tour/glitch-tour.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "lab",
+  "title" : "Lab-1 Glitch Intro",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/book-a-glitch-intro/img/main.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/book-a-glitch-intro/DZrMAjxNxOY",
+
+  
+
+  "summary" : "Create, modify and view your first Glitch project.",
+  "id": "book-a-glitch-intro",
+  
+    "route" : "#lab/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/unit-1/book-a-glitch-intro"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "00: Overview ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/panelvideo/-wLpQfNMy3s",
+
+  
+
+  "summary" : "00: Overview",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-00-module-overview/panelvideo/-wLpQfNMy3s"
+  
+
+    
+  
+
+    } 
+   ]
+
+  },
+ {
+  
+  
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "topic",
+  "title" : "1: Introducing Javascript ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/topic.png",
+  
+  
+
+  "summary" : "An introduction to the very basics of the Javascript Language",
+  "id": "topic-01-js-intro",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro"
+  
+,
+  "los": [
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Introducing Javascript ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-c-js-background/js-background.png",
+  
+  
+
+  "summary" : "",
+  "id": "unit-1",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "JS Introduction ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-c-js-background/js-background.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-c-js-background/FpTU2DSagwE",
+
+  
+
+  "summary" : "Place javascript in its proper context, and explore its relationship to the browser.",
+  "id": "talk-c-js-background",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-c-js-background/js-background.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-c-js-background/js-background.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Variables & Logic ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-d-js-varialbes-boolean/js-variables.jpg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-d-js-varialbes-boolean/nQg97wMuviE",
+
+  
+
+  "summary" : "Explore the javascript variables, including the basic types, conversion and usage",
+  "id": "talk-d-js-varialbes-boolean",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-d-js-varialbes-boolean/js-variables.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-d-js-varialbes-boolean/js-variables.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Const, Let & Objects ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-e-js-variables-&-objects/js-variables-&-objects.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-e-js-variables-&-objects/ux6LSDfZ3EA",
+
+  
+
+  "summary" : "Using const & let. Declaring and using objects.",
+  "id": "talk-e-js-variables-&-objects",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-e-js-variables-&-objects/js-variables-&-objects.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/talk-e-js-variables-&-objects/js-variables-&-objects.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "lab",
+  "title" : "Lab-2 JS Intro",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/book-b-js-introduction/img/main.jpg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/book-b-js-introduction/Hr6jefN0f0c",
+
+  
+
+  "summary" : "Background & Tools, Variables & Boolean Logic",
+  "id": "book-b-js-introduction",
+  
+    "route" : "#lab/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/unit-1/book-b-js-introduction"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "01: Javascript Introduction ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/panelvideo/KtlSKs5J8EQ",
+
+  
+
+  "summary" : "01: Javascript Introduction",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-01-js-intro/panelvideo/KtlSKs5J8EQ"
+  
+
+    
+  
+
+    } 
+   ]
+
+  },
+ {
+  
+  
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "topic",
+  "title" : "2: Javascript Arrays ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/topic.png",
+  
+  
+
+  "summary" : "Exploring Javascript arrays in detail",
+  "id": "topic-02-arrays",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays"
+  
+,
+  "los": [
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Javascript Variables, Objects & Methods ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-e-variables-&-objects/variables-&-objects-review.png",
+  
+  
+
+  "summary" : "Javascript Variables, Objects & Methods",
+  "id": "unit-0",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Variables & Objects Review ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-e-variables-&-objects/variables-&-objects-review.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-e-variables-&-objects/lyaw5a_Ckls",
+
+  
+
+  "summary" : "A concise tour of the structure of variables & objects in Javascript",
+  "id": "talk-e-variables-&-objects",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-e-variables-&-objects/variables-&-objects-review.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-e-variables-&-objects/variables-&-objects-review.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Methods & Arrays Review ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-f-methods-&-arrays/methods-&-arrays.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-f-methods-&-arrays/UWsq4PH32eE",
+
+  
+
+  "summary" : "A concise look at methods & Arrays",
+  "id": "talk-f-methods-&-arrays",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-f-methods-&-arrays/methods-&-arrays.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-0/talk-f-methods-&-arrays/methods-&-arrays.pdf"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Javascript Arrays ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-a-arrays-basics/arrays-basics.png",
+  
+  
+
+  "summary" : "Javascript Arrays",
+  "id": "unit-1",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Arrays: Basics ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-a-arrays-basics/arrays-basics.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-a-arrays-basics/uUE9oMSh_qU",
+
+  
+
+  "summary" : "Creating, accessing, adding to and removing from arrays.",
+  "id": "talk-a-arrays-basics",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-a-arrays-basics/arrays-basics.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-a-arrays-basics/arrays-basics.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Array Methods ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-b-array-methods/array-methods.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-b-array-methods/yYPmBd3ABYk",
+
+  
+
+  "summary" : "Exploring length, slice, concat, join, indexOf, lastIndexOf",
+  "id": "talk-b-array-methods",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-b-array-methods/array-methods.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-b-array-methods/array-methods.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Array Iteration ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-c-array-iteration/array-iteration.jpeg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-c-array-iteration/0stQce74AJw",
+
+  
+
+  "summary" : "Using for, while and do-while to iterate over an array",
+  "id": "talk-c-array-iteration",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-c-array-iteration/array-iteration.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-c-array-iteration/array-iteration.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Arrays of Objects ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-d-arrays-of-objects/arrays-of-objects.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-d-arrays-of-objects/yXrGZzbTbkQ",
+
+  
+
+  "summary" : "Arrays of more complex data structures, including nested objects.",
+  "id": "talk-d-arrays-of-objects",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-d-arrays-of-objects/arrays-of-objects.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/talk-d-arrays-of-objects/arrays-of-objects.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "lab",
+  "title" : "Lab-3 JS Arrays",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/book-a-js-arrays/img/main.png",
+  
+  
+
+  "summary" : "Array Basics, Array Methods & Iteration",
+  "id": "book-a-js-arrays",
+  
+    "route" : "#lab/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/unit-1/book-a-js-arrays"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "02: Javascript Arrays ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/panelvideo/doTi4_51VR8",
+
+  
+
+  "summary" : "02: Javascript Arrays",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-02-arrays/panelvideo/doTi4_51VR8"
+  
+
+    
+  
+
+    } 
+   ]
+
+  },
+ {
+  
+  
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "topic",
+  "title" : "3: Web Applications ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/topic.png",
+  
+  
+
+  "summary" : "Build your first Glitch app, a simple static playlist web site.",
+  "id": "topic-03-web-apps",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps"
+  
+,
+  "los": [
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Play Gym Web App ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/talk-1-gym-v1-solution/gym-web.png",
+  
+  
+
+  "summary" : "",
+  "id": "unit-1",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Assignment 2 Solution: PlayGymWeb ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/talk-1-gym-v1-solution/gym-web.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/talk-1-gym-v1-solution/wGFbDk4DfCg",
+
+  
+
+  "summary" : "A detailed walkthtough of the Solution to the PlayGymWeb assignment",
+  "id": "talk-1-gym-v1-solution",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/talk-1-gym-v1-solution/gym-web.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/talk-1-gym-v1-solution/gym-web.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "03a: Play Gym Web Solution ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/panelvideo/PDAcA5VMG1g",
+
+  
+
+  "summary" : "03a: Play Gym Web Solution",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/panelvideo/PDAcA5VMG1g"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "github",
+  "title" : "PlayGymWeb Repo ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/github-play-gym-web/github.jpg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-1/github-play-gym-web/AZ-seW3gfaw",
+
+  
+
+  "summary" : "A sample solution to the Web Development Assignment 2: PlayGymWeb",
+  "id": "github-play-gym-web",
+  
+    "route" : "https://github.com/wit-hdip-comp-sci-2019/play-gym-web"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Playlist 1 ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-3-web-app-intro/web-app-intro.png",
+  
+  
+
+  "summary" : "",
+  "id": "unit-2",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Web App Introduction ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-3-web-app-intro/web-app-intro.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-3-web-app-intro/OS7IHd8W98U",
+
+  
+
+  "summary" : "Structure of a web app: Front-end Vs Backend. Routers, Models, Views, Controllers",
+  "id": "talk-3-web-app-intro",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-3-web-app-intro/web-app-intro.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-3-web-app-intro/web-app-intro.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Front-end ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-4-front-end/front-end.jpg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-4-front-end/hh5kvZ9oUF0",
+
+  
+
+  "summary" : "Views: Handlebars layouts, partials and templates",
+  "id": "talk-4-front-end",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-4-front-end/front-end.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-4-front-end/front-end.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Modules ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-5-modules/modules.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-5-modules/f7I5RMkaoGQ",
+
+  
+
+  "summary" : "The backend will use a modular approach, relying on specific mechanism to import/export shared objects",
+  "id": "talk-5-modules",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-5-modules/modules.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-5-modules/modules.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Back-end ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-6-back-end/back-end.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-6-back-end/Zz5fIVOKFC8",
+
+  
+
+  "summary" : "Server, routes + controllers",
+  "id": "talk-6-back-end",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-6-back-end/back-end.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/talk-6-back-end/back-end.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "lab",
+  "title" : "Lab-4 Playlist 1",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/book-a-glitch-playlist-1/img/main.jpg",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/book-a-glitch-playlist-1/LKZk7mqk6Jc",
+
+  
+
+  "summary" : "Import and run a new starter project. Extend this project to include multiple 'views'. Explore the handlebars templating library.",
+  "id": "book-a-glitch-playlist-1",
+  
+    "route" : "#lab/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/book-a-glitch-playlist-1"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "03b: Glitch Web Application Introduction ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/panelvideo/5GBwQ2GuFlo",
+
+  
+
+  "summary" : "03b: Glitch Web Application Introduction",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-03-web-apps/unit-2/panelvideo/5GBwQ2GuFlo"
+  
+
+      } 
+     ]
+  
+
+    } 
+   ]
+
+  },
+ {
+  
+  
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "topic",
+  "title" : "4: Templates & Routes ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/templates.png",
+  
+  
+
+  "summary" : "Explore templating in more detail. Enhanced the routing behaviour",
+  "id": "topic-04-app-templates+views",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views"
+  
+,
+  "los": [
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Views, templating + JSON Models ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/templates.png",
+  
+  
+
+  "summary" : "",
+  "id": "unit-0",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Templates ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/templates.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/bGR2kfeS4PA",
+
+  
+
+  "summary" : "Templates enable dynamic composition of views from layouts, partials and expressions.",
+  "id": "talk-a-templates",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/templates.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-a-templates/templates.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Json ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-b-templates+json/templates+json.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-b-templates+json/FkFNAwl_QCA",
+
+  
+
+  "summary" : "JSON is notation for representing javascript objects in a simple literal format.",
+  "id": "talk-b-templates+json",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-b-templates+json/templates+json.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-0/talk-b-templates+json/templates+json.pdf"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "unit",
+  "title" : "Controller, Routes & Models ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-c-dashboard/dashboard.png",
+  
+  
+
+  "summary" : "Controller, Routes & Models",
+  "id": "unit-1",
+  
+    "route" : "#topic/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1"
+  
+
+    
+  
+    ,"los" : [
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Dashboard ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-c-dashboard/dashboard.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-c-dashboard/Q5WPB0WcAOw",
+
+  
+
+  "summary" : "Review thee dashboard controller in detail.",
+  "id": "talk-c-dashboard",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-c-dashboard/dashboard.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-c-dashboard/dashboard.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "Playlist ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-d-playlist/playlist.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-d-playlist/WQ3p7uQl_wU",
+
+  
+
+  "summary" : "Revise the Dashboard to render playlist without their contents. Use a new playlist view renders individual playlists",
+  "id": "talk-d-playlist",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-d-playlist/playlist.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-d-playlist/playlist.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "talk",
+  "title" : "MVC ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-e-mvc/mvc.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-e-mvc/msWsxn1sffM",
+
+  
+
+  "summary" : "Explore the MVC Pattern in action in Playlist 2",
+  "id": "talk-e-mvc",
+  
+    "pdf" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-e-mvc/mvc.pdf",
+    "route" : "#talk/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/talk-e-mvc/mvc.pdf"
+  
+
+      } ,
+     {
+      
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "lab",
+  "title" : "Lab-5 Playlist 2",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/book-a-playlist-2/img/main.png",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/book-a-playlist-2/T3JfDS05FG4",
+
+  
+
+  "summary" : "Refactor the dashboard controller to show summary on of the playlists + link to show playlist details.",
+  "id": "book-a-playlist-2",
+  
+    "route" : "#lab/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/unit-1/book-a-playlist-2"
+  
+
+      } 
+     ]
+  
+
+    } ,
+   {
+    
+  
+  
+    "properties" : {}
+  
+,
+  "type" : "panelvideo",
+  "title" : "04: Templates & Views ",
+  "img" : "https://wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/panelvideo/",
+  
+  
+    "video" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/panelvideo/Iz3oj7hVgUw",
+
+  
+
+  "summary" : "04: Templates & Views",
+  "id": "panelvideo",
+  
+    "route" : "#video/wit-hdip-comp-sci-2019.github.io/ictskills-1/topic-04-app-templates+views/panelvideo/Iz3oj7hVgUw"
+  
+
+    
+  
+
+    } 
+   ]
+
+  }
+ ]
+  }
+
