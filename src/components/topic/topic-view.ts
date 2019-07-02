@@ -1,6 +1,6 @@
 import { CourseRepo } from "../../services/course-repo";
 import { Topic } from "../../services/topic";
-import { icons, NavigatorProperties } from "../../services/styles";
+import { icons, NavigatorProperties } from "../../resources/elements/iconography/styles";
 import environment from "../../environment";
 import { autoinject } from "aurelia-framework";
 
@@ -18,7 +18,7 @@ export class TopicView {
     this.navigatorProperties.title = this.topic.lo.title;
     this.navigatorProperties.subtitle = course.lo.title;
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
-    this.navigatorProperties.parentIcon = icons["moduleHome"];
+    this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
   }
 

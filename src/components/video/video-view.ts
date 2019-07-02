@@ -1,6 +1,6 @@
 import { CourseRepo } from "../../services/course-repo";
 import { Lo } from "../../services/lo";
-import { icons, NavigatorProperties } from "../../services/styles";
+import { icons, NavigatorProperties } from "../../resources/elements/iconography/styles";
 import { autoinject } from "aurelia-framework";
 import environment from "../../environment";
 
@@ -18,7 +18,7 @@ export class VideoView {
     this.navigatorProperties.subtitle = this.lo.title;
     this.navigatorProperties.title = this.lo.parent.lo.title;;
     this.navigatorProperties.parentLink = this.lo.parent.lo.route;
-    this.navigatorProperties.parentIcon = icons["topic"];
+    this.navigatorProperties.parentIcon = "topic";
     this.navigatorProperties.parentIconTip = "To parent topic...";
   }
 

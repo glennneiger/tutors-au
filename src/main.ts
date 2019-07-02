@@ -3,13 +3,13 @@ import { Aurelia } from 'aurelia-framework';
 import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
-
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .plugin(PLATFORM.moduleName('aurelia-fontawesome'))
     .feature(PLATFORM.moduleName('resources/index'));
 
   // Uncomment the line below to enable animation.

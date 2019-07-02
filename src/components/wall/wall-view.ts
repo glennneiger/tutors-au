@@ -1,6 +1,6 @@
 import { CourseRepo } from '../../services/course-repo';
 import { Lo } from '../../services/lo';
-import { icons, NavigatorProperties } from '../../services/styles';
+import { icons, NavigatorProperties } from '../../resources/elements/iconography/styles';
 import environment from '../../environment';
 import { autoinject } from 'aurelia-framework';
 
@@ -19,7 +19,7 @@ export class WallView {
     this.navigatorProperties.title = `All ${route.name}'s in ${course.lo.title}`;
     this.navigatorProperties.subtitle = course.lo.properties.credits;
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
-    this.navigatorProperties.parentIcon = icons['moduleHome'];
+    this.navigatorProperties.parentIcon = 'moduleHome';
   }
 
   determineActivationStrategy() {

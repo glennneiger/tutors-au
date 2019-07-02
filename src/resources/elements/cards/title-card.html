@@ -1,7 +1,10 @@
-<template bindable="maintitle, subtitle, icon, colour">
+<template bindable="maintitle, subtitle, img">
+
+  <require from="../iconography/icon"></require>
+
   <div uk-grid>
     <div class="uk-width-1-5@m">
-      <i class="${icon} fa-4x" style="color:${colour}"></i>
+      <img src="${img}" width="60">
     </div>
     <div class="uk-width-expand@m uk-text-left">
       <div class="course-title"> ${maintitle}</div>
@@ -13,7 +16,7 @@
       <div class="uk-card uk-card-small uk-card-hover uk-text-center uk-padding-remove">
         <a target=”_blank” href="https://github.com/edeleastar/tutors-au">
           <div>
-            <i class="fas fa-chalkboard-teacher fa-2x"></i>
+            <icon type="tutors" size="2x"></icon>
           </div>
           <div class="uk-width-expand@m uk-text-left">
             <div class="uk-text-muted uk-text-center" style="font-size:xx-small">

@@ -5,7 +5,7 @@ import { Lab } from "./lab";
 import { findCourseUrls, lastSegment } from "./utils";
 import { AuthService } from "./auth-service";
 import { Topic } from "./topic";
-import { NavigatorProperties } from "./styles";
+import { NavigatorProperties } from "../resources/elements/iconography/styles";
 import { autoinject } from "aurelia-framework";
 
 @autoinject

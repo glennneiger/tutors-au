@@ -1,10 +1,11 @@
-import { Course } from "./course";
+import { Course } from "../../../services/course";
 
 export class NavigatorProperties {
   title: string;
   subtitle: string;
   icon: string;
   iconColour: string;
+  img: string;
   parentLink: string;
   parentIcon: string;
   parentIconColour: string;
@@ -13,11 +14,12 @@ export class NavigatorProperties {
   init(course: Course) {
     this.title = course.lo.title;
     this.subtitle = course.lo.properties.credits;
-    this.icon = course.lo.properties.faPanelicon;
+    this.icon = course.lo.properties.icon;
+    this.img = course.lo.img;
     this.iconColour = course.lo.properties.faColour;
     this.parentLink = course.lo.properties.parent;
-    this.parentIcon = icons["programHome"];
-    this.parentIconTip = "To programme home..."
+    this.parentIcon = "programHome";
+    this.parentIconTip = "To programme home...";
     this.parentIconColour = "";
   }
 }
@@ -62,7 +64,8 @@ export const iconColours = {
   programHome: "",
   toc: "",
   film: "red",
-  web: ""
+  web: "",
+  unit: ""
 };
 
 export interface IconNav {

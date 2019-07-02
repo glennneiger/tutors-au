@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
 import { CourseRepo } from "../../../services/course-repo";
-import { IconNav, NavigatorProperties } from "../../../services/styles";
+import { IconNav, NavigatorProperties } from "../iconography/styles";
 import environment from "../../../environment";
 import { bindable } from "aurelia-framework";
 

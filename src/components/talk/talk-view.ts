@@ -3,7 +3,7 @@ import { CourseRepo } from "../../services/course-repo";
 import { Lo } from "../../services/lo";
 import environment from "../../environment";
 import * as pdfobject from "pdfobject";
-import { icons, NavigatorProperties } from "../../services/styles";
+import { icons, NavigatorProperties } from "../../resources/elements/iconography/styles";
 import { autoinject } from "aurelia-framework";
 
 @autoinject
@@ -20,7 +20,7 @@ export class TalkView {
     this.navigatorProperties.subtitle = this.lo.title;
     this.navigatorProperties.title = this.lo.parent.lo.title;;
     this.navigatorProperties.parentLink = this.lo.parent.lo.route;
-    this.navigatorProperties.parentIcon = icons["topic"];
+    this.navigatorProperties.parentIcon = "topic";
     this.navigatorProperties.parentIconTip = "To parent topic...";
   }
 
