@@ -1,4 +1,4 @@
-import { iconColours, icons } from "./styles";
+import { iconColours } from "./styles";
 import { bindable } from "aurelia-framework";
 
 import {
