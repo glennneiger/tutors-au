@@ -5,7 +5,7 @@ tutors-au
 A reader for the tutors-ts static site generator:
 
 - <https://github.com/edeleastar/tutors-ts>
-
+- <https://github.com/edeleastar/tutors-js>
 
 The reader is an [Aurelia](https://aurelia.io/) application, which consumes JSON output from [tutors-ts](https://github.com/edeleastar/tutors-ts), rendering a
  more a interactive version of the site. 

@@ -15,6 +15,8 @@ export class MainNavigator {
 
   companions: IconNav[] = [];
   walls: IconNav[] = [];
+  @bindable
+  searchroute = '';
 
   secured = false;
 
@@ -24,6 +26,7 @@ export class MainNavigator {
     this.secured = this.courseRepo.course.secured;
     this.createCompanionBar(this.courseRepo.course.lo.properties);
     this.createWallBar();
+    this.searchroute = `${environment.urlPrefix}search/${this.courseRepo.courseUrl}`;
   }
 
   createCompanionBar(properties: Properties) {

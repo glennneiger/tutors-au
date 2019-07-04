@@ -26,6 +26,7 @@ export class App {
       { route: 'videos/*courseurl',         moduleId: PLATFORM.moduleName('./components/wall/wall-view'),     name: 'video',   title: 'Videos' },
       { route: 'archives/*courseurl',       moduleId: PLATFORM.moduleName('./components/wall/wall-view'),     name: 'archive', title: 'Archives' },
       { route: 'githubs/*courseurl',        moduleId: PLATFORM.moduleName('./components/wall/wall-view'),     name: 'github',  title: 'Repos' },
+      { route: 'search/*courseurl',         moduleId: PLATFORM.moduleName('./components/search/search-view'), name: 'search',  title: 'Search' },
       { route: 'callback',                  moduleId: PLATFORM.moduleName('./components/auth/callback'),      name: 'callback' },
       { route: 'logout',                    moduleId: PLATFORM.moduleName('./components/auth/logout'),        name: 'logout',  }
     ]);
