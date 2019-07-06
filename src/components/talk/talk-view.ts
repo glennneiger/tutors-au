@@ -3,7 +3,7 @@ import { CourseRepo } from "../../services/course-repo";
 import { Lo } from "../../services/lo";
 import environment from "../../environment";
 import * as pdfobject from "pdfobject";
-import { icons, NavigatorProperties } from "../../resources/elements/iconography/styles";
+import { NavigatorProperties } from "../../resources/elements/iconography/styles";
 import { autoinject } from "aurelia-framework";
 
 @autoinject
