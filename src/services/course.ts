@@ -1,13 +1,13 @@
 import { Lo } from "./lo";
 import { Topic } from "./topic";
 import { HttpClient } from "aurelia-fetch-client";
-import { allLos, allVideoLos, findLos } from "./utils";
-import environment from "../environment";
+import { allLos, allVideoLos, findLos, fixRoutes, injectCourseUrl } from "./utils";
 
 export class Course {
   lo: Lo;
   topics: Topic[] = [];
   topicIndex = new Map();
+  labIndex = new Map<string, Lo>();
   url: string;
   walls = new Map<string, Lo[]>();
   videos = new Map<string, Lo>();
@@ -40,17 +40,27 @@ export class Course {
     });
   }
 
+  createLabIndex() {
+    const labs = allLos("lab", this.lo.los);
+    labs.forEach(lo => {
+      fixRoutes(lo);
+      this.labIndex.set(lo.route, lo);
+    });
+  }
+
   populateWalls() {
     this.addWall("talk");
     this.addWall("lab");
     this.addVideoWall();
     this.addWall("github");
     this.addWall("archive");
+    this.createLabIndex();
   }
 
   async fetch(url: string) {
     const response = await this.http.fetch("https://" + url + "/tutors.json");
     const lo = await response.json();
+    injectCourseUrl(lo, url);
     return lo;
   }
 

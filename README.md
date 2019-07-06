@@ -16,6 +16,7 @@ The reader is intended for educational content, some representative examples:
  - <https://tutors.design/course/wit-comp-sci-2019-web-dev.netlify.com>
  - <https://tutors.design/course/wit-hdip-comp-sci-2019-programming.netlify.com>
  - <https://tutors.design/course/tutors-starter.netlify.com>
+ - <https://tutors.design/course/wit-hdip-comp-sci-2019.github.io/ictskills-1/>
  
  The application identifies the published course from the url, recovers the json version 
  of the static site and then renders using Aurelia.

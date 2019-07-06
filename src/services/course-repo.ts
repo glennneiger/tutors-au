@@ -1,18 +1,19 @@
 import { HttpClient } from "aurelia-fetch-client";
 import { Course } from "./course";
 import * as path from "path";
-import { Lab } from "./lab";
 import { findCourseUrls, lastSegment } from "./utils";
 import { AuthService } from "./auth-service";
 import { Topic } from "./topic";
 import { NavigatorProperties } from "../resources/elements/iconography/styles";
 import { autoinject } from "aurelia-framework";
+import { Lo } from "./lo";
+import environment from "../environment";
 
 @autoinject
 export class CourseRepo {
   course: Course;
   topic: Topic;
-  lab: Lab;
+  lab: Lo;
   courseUrl = "";
   topicUrl = "";
 
@@ -57,12 +58,15 @@ export class CourseRepo {
   async fetchLab(url: string) {
     const urls = findCourseUrls(url);
     await this.fetchCourse(urls[0]);
-    const lab = new Lab(this.http, url);
-    await lab.fetchLab();
     const topic = await this.fetchTopic(urls[1]);
-    lab.topic = topic;
-    this.lab = lab;
-    return lab;
+    let labprefix = "#lab/";
+    if (environment.pushState) {
+      labprefix = "lab/";
+    }
+    this.lab = this.course.labIndex.get(labprefix + url);
+    this.lab.parent = topic;
+    console.log('aboout to return this');
+    return this.lab;
   }
 
   async fetchWall(url: string, type: string) {

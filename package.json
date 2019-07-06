@@ -60,7 +60,7 @@
     "ts-jest": "^24.0.0",
     "ts-loader": "^5.2.1",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.2",
+    "typescript": "^3.5.0",
     "url-loader": "^1.1.2",
     "vinyl-fs": "^3.0.3",
     "webpack": "^4.27.0",
