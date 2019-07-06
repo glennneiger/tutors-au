@@ -3,6 +3,7 @@ import { CourseRepo } from "../../../services/course-repo";
 import { IconNav, NavigatorProperties } from "../iconography/styles";
 import environment from "../../../environment";
 import { bindable } from "aurelia-framework";
+const tutorsVersion = require('../../../../package.json').version
 
 interface Properties {
   [key: string]: any;
@@ -19,6 +20,8 @@ export class MainNavigator {
   searchroute = '';
 
   secured = false;
+  @bindable
+  version = tutorsVersion;
 
   constructor(private courseRepo: CourseRepo) {}
 
