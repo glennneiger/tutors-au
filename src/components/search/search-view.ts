@@ -4,6 +4,7 @@ import { autoinject } from "aurelia-framework";
 import { Course } from "../../services/course";
 import environment from "../../environment";
 import { searchStrings } from "../../services/search-util";
+import { allLos } from "../../services/utils";
 
 @autoinject
 export class SearchView {
@@ -24,7 +25,9 @@ export class SearchView {
   }
 
   setSearchStrings() {
-    this.search_strings = searchStrings(this.course.lo.los);
+    const labs = allLos("lab", this.course.lo.los);
+    console.log(labs);
+    this.search_strings = searchStrings(labs);
   }
 
   click() {

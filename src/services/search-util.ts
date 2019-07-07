@@ -4,7 +4,8 @@ export function searchStrings(los: Lo[]) {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
-    result.push(`<a href="${lo.route}"><icon type="${lo.type}" size="fa-lg"></icon> ${lo.title} ${lo.summary} </a>`);
+      console.log("lab ", lo);
+      result.push(`<a href="${lo.route}">" ${lo.shortTitle} </a>`);  
   });
   return result;
 }
