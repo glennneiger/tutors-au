@@ -15,13 +15,13 @@
           type="text" 
           placeholder="Enter search terms..." 
           value.bind="searchTerm"
-          click.delegate="click()" 
+          change.delegate="valueChanged()" ;
         >
       </div>
 
       <div class="ui divided list">
-        <div class="item" repeat.for="search_string of search_strings | filter:searchTerm">
-          <div innerhtml.bind="search_string | searchBold:searchTerm | highlight"></div><br>
+        <div class="item" repeat.for="search_string of search_strings">
+          <div innerhtml.bind="search_string"></div><br>
         </div>
       </div>
 

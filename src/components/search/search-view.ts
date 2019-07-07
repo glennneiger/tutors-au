@@ -3,13 +3,14 @@ import { NavigatorProperties } from "../../resources/elements/iconography/styles
 import { autoinject } from "aurelia-framework";
 import { Course } from "../../services/course";
 import environment from "../../environment";
-import { searchStrings } from "../../services/search-util";
+import { search } from "../../services/search-util";
 import { allLos } from "../../services/utils";
 
 @autoinject
 export class SearchView {
   course: Course;
   search_strings: string[] = [];
+  searchTerm: string ='';
 
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
@@ -21,16 +22,16 @@ export class SearchView {
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
-
+    //this.setSearchStrings();
   }
 
-  setSearchStrings() {
+  valueChanged() {
+    console.log("searchString changed: ", this.searchTerm);
+
     const labs = allLos("lab", this.course.lo.los);
     console.log(labs);
-    this.search_strings = searchStrings(labs);
+
+    this.search_strings = search(labs, this.searchTerm);
   }
 
-  click() {
-    this.setSearchStrings() ;
-  }
 }

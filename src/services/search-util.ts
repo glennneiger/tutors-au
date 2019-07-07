@@ -1,6 +1,6 @@
 import { Lo } from "./lo";
 
-export function searchStrings(los: Lo[]) {
+function searchStrings(los: Lo[]) {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
@@ -25,3 +25,28 @@ function flatten(arr, result = []) {
   }
   return result;
 }
+
+
+export function filter(array, searchTerm) {
+  return array.filter(item => {
+      return searchTerm && searchTerm.length > 0 ? this.itemMatches(searchTerm, item) : true;
+    });
+}
+
+  function itemMatches(searchTerm, value) {
+    let itemValue = value;
+    if (!itemValue) return false;
+    return itemValue.toUpperCase().indexOf(searchTerm.toUpperCase()) !== -1;
+  }
+
+  export function search(los: Lo[], searchTerm: string) {
+    let search_strings: string[];
+    search_strings = searchStrings(los);
+    search_strings.filter(item => {
+      let found = searchTerm && searchTerm.length > 0 ? itemMatches(searchTerm, item) : true;
+      if(found) {
+        search_strings.push(item);
+      }
+    });
+    return search_strings;
+  }
