@@ -64,8 +64,11 @@ export class Course {
     return lo;
   }
 
-  async fetchCourse() {
+  async fetchCourse(complete = false) {
     this.lo = await this.fetch(this.url);
+    if (!complete) {
+      this.lo.los = this.lo.los.filter(lo => lo.hide != true);
+    }
     for (let lo of this.lo.los) {
       const topic = new Topic(lo, this.url);
       this.topics.push(topic);

@@ -23,12 +23,12 @@ export class CourseRepo {
     private navigatorProperties: NavigatorProperties
   ) {}
 
-  async getCourse(url) {
+  async getCourse(url, complete = false) {
     if (!this.course || this.course.url !== url) {
       this.courseUrl = url;
       this.course = new Course(this.http, url);
       try {
-        await this.course.fetchCourse();
+        await this.course.fetchCourse(complete);
         this.navigatorProperties.init(this.course);
       } catch (e) {
         this.courseUrl = "";
@@ -37,8 +37,8 @@ export class CourseRepo {
     }
   }
 
-  async fetchCourse(url: string) {
-    await this.getCourse(url);
+  async fetchCourse(url: string, complete = false) {
+    await this.getCourse(url, complete);
     // if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
     //   this.course.secured = true;
     //   if (!this.authService.isAuthenticated()) {

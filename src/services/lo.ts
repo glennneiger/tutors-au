@@ -12,6 +12,7 @@ export interface Lo {
   contentMd : string;
   route: string;
   id: string;
+  hide:boolean;
   los: Lo[];
   parent: Topic;
 }
