@@ -10,7 +10,13 @@
     <fieldset class="uk-fieldset">
 <!--      <legend class="uk-legend">Search terms</legend>-->
       <div class="uk-margin">
-        <input class="uk-input" type="text" placeholder="Enter search terms..." value.bind="searchTerm">
+        <input 
+          class="uk-input" 
+          type="text" 
+          placeholder="Enter search terms..." 
+          value.bind="searchTerm"
+          click.delegate="click()" 
+        >
       </div>
 
       <div class="ui divided list">
