@@ -8,9 +8,15 @@
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
   <div class="uk-container uk-padding-small">
     <fieldset class="uk-fieldset">
-<!--      <legend class="uk-legend">Search terms</legend>-->
+      <!--      <legend class="uk-legend">Search terms</legend>-->
       <div class="uk-margin">
-        <input class="uk-input" type="text" placeholder="Enter search terms..." value.bind="searchTerm">
+        <input
+          class="uk-input"
+          type="text"
+          placeholder="Enter search terms..."
+          value.bind="searchTerm"
+          click.delegate="click()"
+        >
       </div>
 
       <div class="ui divided list">
@@ -22,3 +28,4 @@
     </fieldset>
   </div>
 </template>
+

@@ -2,6 +2,7 @@ import { Lo } from "./lo";
 import { Topic } from "./topic";
 import { HttpClient } from "aurelia-fetch-client";
 import { allLos, allVideoLos, findLos, fixRoutes, injectCourseUrl } from "./utils";
+import environment from "../environment";
 
 export class Course {
   lo: Lo;
@@ -57,16 +58,16 @@ export class Course {
     this.createLabIndex();
   }
 
-  async fetch(url: string) {
+  async fetch(url: string, complete = false) {
     const response = await this.http.fetch("https://" + url + "/tutors.json");
     const lo = await response.json();
     injectCourseUrl(lo, url);
     return lo;
   }
 
-  async fetchCourse(complete = false) {
+  async fetchCourse() {
     this.lo = await this.fetch(this.url);
-    if (!complete) {
+    if (environment.pushState) {
       this.lo.los = this.lo.los.filter(lo => lo.hide != true);
     }
     for (let lo of this.lo.los) {

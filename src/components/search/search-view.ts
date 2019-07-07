@@ -8,7 +8,7 @@ import { searchStrings } from "../../services/search-util";
 @autoinject
 export class SearchView {
   course: Course;
-  search_strings: string[];
+  search_strings: string[] = [];
 
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
@@ -21,6 +21,13 @@ export class SearchView {
     this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
 
+  }
+
+  setSearchStrings() {
     this.search_strings = searchStrings(this.course.lo.los);
+  }
+
+  click() {
+    this.setSearchStrings() ;
   }
 }

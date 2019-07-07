@@ -37,8 +37,8 @@ export class CourseRepo {
     }
   }
 
-  async fetchCourse(url: string, complete = false) {
-    await this.getCourse(url, complete);
+  async fetchCourse(url: string) {
+    await this.getCourse(url);
     // if (this.course.lo.properties.hasOwnProperty('auth') && this.course.lo.properties.auth == 'true') {
     //   this.course.secured = true;
     //   if (!this.authService.isAuthenticated()) {
