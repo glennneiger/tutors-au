@@ -1,6 +1,6 @@
 import { Lo } from "./lo";
 
-function searchStrings(los: Lo[]) : string[] {
+function flattenedLos(los: Lo[]) : string[] {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
@@ -39,9 +39,17 @@ function itemMatches(searchTerm: string, value: string) {
     return itemValue.toUpperCase().indexOf(searchTerm.toUpperCase()) !== -1;
 }
 
+/**
+ * Flattens a tree of learning objects. Then searches for the presence of
+ * a search term. Creates an array of strings comprising the content of the
+ * learning objects containing the search term.
+ * @param los The array learning objects, assumed nested.
+ * @param searchTerm The string being searched for.
+ * @returns An array of strings each element of which contains the search term.
+ */
 export function search(los: Lo[], searchTerm: string) {
   let search_strings: string[] = [];
-  let all_strings = searchStrings(los);
+  let all_strings = flattenedLos(los);
   all_strings.filter(item => {
     let found = searchTerm && searchTerm.length > 0 ? itemMatches(searchTerm, item) : true;
     if(found) {
