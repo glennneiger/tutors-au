@@ -52,7 +52,7 @@ function removeLastDirectory(the_url) {
 
 export function findCourseUrls(labUrl: string): string[] {
   let topicUrl = removeLastDirectory(labUrl);
-  if (path.basename(topicUrl).startsWith("unit")) {
+  if (path.basename(topicUrl).startsWith("unit") && topicUrl.includes('topic')) {
     topicUrl = removeLastDirectory(topicUrl);
   }
   const courseUrl = removeLastDirectory(topicUrl);
@@ -89,4 +89,21 @@ export function injectCourseUrl(lo: Lo, url) {
     lo.los.forEach(lo => {
       injectCourseUrl(lo, url);
     });
+}
+
+export function getSortedUnits(los : Lo[]) {
+  const allUnits = los.filter(lo => lo.type == "unit");
+  for (let unit of allUnits) {
+    const panelVideos = unit.los.filter(lo => lo.type == "panelvideo");
+    const panelTalks = unit.los.filter(lo => lo.type == "paneltalk");
+    const standardLos = unit.los.filter(
+      lo => lo.type !== "unit" && lo.type !== "panelvideo" && lo.type !== "paneltalk"
+    );
+    const sortedLos: Lo[] = [];
+    sortedLos.push(...panelVideos);
+    sortedLos.push(...panelTalks);
+    sortedLos.push(...standardLos);
+    unit.los = sortedLos;
+  }
+  return allUnits;
 }

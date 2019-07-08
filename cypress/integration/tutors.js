@@ -17,7 +17,7 @@ let labs = null;
 
 describe("User page", () => {
   before(function() {
-    cy.fixture("tutors-ent-web").then(c => {
+    cy.fixture("ict-skills.json").then(c => {
       course = c;
       talks = allLos("talk", course);
       labs = allLos("lab", course);
@@ -25,19 +25,7 @@ describe("User page", () => {
   });
 
   beforeEach(function() {
-    //cy.visit("https://wit-tutors.github.io/#course/wit-tutors.github.io/tutors-starter-public/");
-    //cy.visit("http://localhost:8080/#course/wit-tutors.github.io/tutors-starter-public/");
-    //cy.visit("https://tutors.design/course/wit-tutors.github.io/tutors-starter-public/");
-    //cy.visit("http://localhost:8080/#/course/wit-tutors.github.io/tutors-demo");
-    //cy.visit("https://wit-tutors.github.io/#/course/wit-tutors.github.io/tutors-demo");
-    //cy.visit("http://localhost:8080/#/course/wit-hdip-comp-sci-2019.github.io/web-development");
-    //cy.visit("https://tutors.design/course/wit-tutors.github.io/tutors-starter-public");
-    //cy.visit("https://tutors.design/course/wit-hdip-comp-sci-2018.github.io/ent-web");
-    //cy.visit (course.properties.courseurl);
-
-    //cy.visit("http://localhost:8080/#/course/wit-hdip-comp-sci-2019.github.io/ictskills-1");
-    //cy.visit("http://localhost:8080/#course/wit-hdip-comp-sci-2018.github.io/ent-web/");
-    cy.visit("http://tutors.design/course/wit-hdip-comp-sci-2018.github.io/ent-web/");
+    cy.visit("https://wit-tutors.github.io/#/course/wit-hdip-comp-sci-2019-ict-skills-1.netlify.com/");
   });
 
   it("HomePage", function() {
@@ -49,7 +37,7 @@ describe("User page", () => {
   it("Topics", function() {
     for (let topic of course.los) {
       cy.contains(topic.title).click({ force: true });
-      cy.wait(400);
+      cy.wait(100);
       cy.carddeck(topic.los, "card-deck card");
       cy.videodeck(topic.los, "video-deck video-card");
       cy.unitdeck(topic.los);
@@ -65,6 +53,7 @@ describe("User page", () => {
       cy.wait(500);
       cy.wall(talks);
     });
+    cy.wait(500);
     cy.get("#lab").then(function($a) {
       const href = $a.prop("href");
       cy.visit(href);

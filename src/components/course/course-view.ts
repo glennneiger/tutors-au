@@ -10,7 +10,7 @@ export class CourseView {
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
   async activate(params) {
-    this.course = await this.courseRepo.fetchCourse(params.courseurl, params.complete);
+    this.course = await this.courseRepo.fetchCourse(params.courseurl);
     this.navigatorProperties.init(this.course);
   }
 }

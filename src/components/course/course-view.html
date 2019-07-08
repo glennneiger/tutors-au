@@ -1,9 +1,13 @@
 <template>
   <require from="../../resources/elements/navigators/main-navigator"></require>
   <require from="../../resources/elements/card-decks/card-deck.html"></require>
+  <require from="../../resources/elements/card-decks/unit-deck.html"></require>
+  <require from="../../resources/elements/card-decks/video-deck.html"></require>
+  <require from="../../resources/elements/card-decks/panel-talk-deck.html"></require>
 
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
   <div class="uk-container uk-padding-small">
-    <card-deck los.one-way="course.lo.los"></card-deck>
+    <unit-deck if.bind="course.units.length>0" units.one-way="course.units"></unit-deck>
+    <card-deck los.one-way="course.standardLos"></card-deck>
   </div>
 </template>

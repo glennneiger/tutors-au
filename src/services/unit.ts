@@ -1,7 +1,7 @@
 import { Lo } from "./lo";
 import {fixRoutes, getSortedUnits} from "./utils";
 
-export class Topic {
+export class Unit {
   lo: Lo;
   units: Lo[];
   panelVideos: Lo[];
@@ -25,12 +25,6 @@ export class Topic {
     this.toc.forEach(lo => {
       lo.parent = this;
       fixRoutes(lo);
-      if (lo.type === "unit") {
-        lo.los.forEach(subLo => {
-          subLo.parent = this;
-          fixRoutes(subLo);
-        });
-      }
     });
     fixRoutes(lo);
   }
