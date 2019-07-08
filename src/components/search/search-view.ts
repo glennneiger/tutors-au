@@ -3,7 +3,7 @@ import { NavigatorProperties } from "../../resources/elements/iconography/styles
 import { autoinject } from "aurelia-framework";
 import { Course } from "../../services/course";
 import environment from "../../environment";
-import { search } from "../../services/search-util";
+import { flattenedLos } from "../../services/search-util";
 import { allLos } from "../../services/utils";
 
 @autoinject
@@ -22,16 +22,18 @@ export class SearchView {
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
-    //this.setSearchStrings();
+    this.setSearchStrings();
   }
 
-  valueChanged() {
+  setSearchStrings() {
     console.log("searchString changed: ", this.searchTerm);
 
     const labs = allLos("lab", this.course.lo.los);
-    console.log(labs);
+    //console.log(labs);
 
-    this.search_strings = search(labs, this.searchTerm);
+    //this.search_strings = search(labs, this.searchTerm);
+    this.search_strings = flattenedLos(labs);
+    //console.log("search strings", this.search_strings);
   }
 
 }
