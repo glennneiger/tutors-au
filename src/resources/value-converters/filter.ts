@@ -1,11 +1,13 @@
+import { isValid } from "../../services/search-util";
 export class FilterValueConverter {
   toView(array, searchTerm) {
-    return array.filter(item => {
-      return searchTerm && searchTerm.length > 0 ? this.itemMaches(searchTerm, item) : true;
+    if(isValid(searchTerm))
+      return array.filter(item => {
+        return searchTerm && searchTerm.length > 0 ? this.itemMatches(searchTerm, item) : true;
     });
   }
 
-  itemMaches(searchTerm, value) {
+  itemMatches(searchTerm, value) {
     let itemValue = value;
     if (!itemValue) return false;
     return itemValue.toUpperCase().indexOf(searchTerm.toUpperCase()) !== -1;

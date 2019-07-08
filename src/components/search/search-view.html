@@ -10,18 +10,18 @@
     <fieldset class="uk-fieldset">
       <!--      <legend class="uk-legend">Search terms</legend>-->
       <div class="uk-margin">
-        <input
-          class="uk-input"
-          type="text"
-          placeholder="Enter search terms..."
+        <input 
+          class="uk-input" 
+          type="text" 
+          placeholder="Enter search terms..." 
           value.bind="searchTerm"
-          click.delegate="click()"
         >
       </div>
 
       <div class="ui divided list">
         <div class="item" repeat.for="search_string of search_strings | filter:searchTerm">
-          <div innerhtml.bind="search_string | searchBold:searchTerm | highlight"></div><br>
+          <div innerhtml.bind="search_string"></div><br>    
+          <!-- <div innerhtml.bind="search_string | searchBold:searchTerm | highlight"></div><br>     -->
         </div>
       </div>
 
