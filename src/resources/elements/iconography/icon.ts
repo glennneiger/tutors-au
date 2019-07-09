@@ -14,7 +14,8 @@ import {
   faFilm,
   faBookmark,
   faChalkboardTeacher,
-  faSearch
+  faSearch,
+  faFilePdf
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faYoutube, faSlack, faGithub, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
@@ -49,7 +50,8 @@ export class Icon {
     web: faBookmark,
     unit: faBookmark,
     tutors: faChalkboardTeacher,
-    search: faSearch
+    search: faSearch,
+    pdf: faFilePdf
   };
 
   icon(type: string) {
