@@ -10,10 +10,10 @@ export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
-    //let url: string = removeFirstLastDirectories(lo.route);
-    //let chapterHtml = markdownParser.parse(lo.contentMd, url);
     let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
-    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${substring}</a>`);  
+    let url: string = removeFirstLastDirectories(lo.route);
+    let html = markdownParser.parse(substring, url);
+    result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
   });
   return result;
 }
