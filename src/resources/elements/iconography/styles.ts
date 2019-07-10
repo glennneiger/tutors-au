@@ -19,7 +19,8 @@ export const iconColours = {
   toc: "",
   film: "red",
   web: "",
-  unit: ""
+  unit: "",
+  pdf: "red"
 };
 
 export interface IconNav {
