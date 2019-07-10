@@ -7,8 +7,8 @@ export function flattenedLos(los: Lo[]) : string[] {
   let result: string[] = [];
   flatLos.forEach(lo => {
     let url: string = findChapterUrl(lo.route);
-    let chapterHtml = markdownParser.parse(lo.contentMd, url);
-    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${chapterHtml}</a>`);  
+    //let chapterHtml = markdownParser.parse(lo.contentMd, url);
+    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${lo.contentMd}</a>`);  
   });
   return result;
 }
