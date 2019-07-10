@@ -13,7 +13,7 @@ import { MarkdownParser } from "../../services/markdown-parser";
 export class SearchView {
   course: Course;
   search_strings: string[] = [];
-  searchTerm: string ='';
+  searchTerm: string = "";
 
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties, private markdownParser: MarkdownParser) {}
 

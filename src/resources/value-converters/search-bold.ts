@@ -3,6 +3,6 @@ export class SearchBoldValueConverter {
   toView(value, searchTerm) {
     if (!isValid(searchTerm)) 
       return value;
-    return value.replace(new RegExp(searchTerm, "gi"), `<b>$&</b>`);
+    return value.replace(searchTerm, `<b>`+searchTerm+`</b>`);
   }
 }

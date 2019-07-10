@@ -10,7 +10,7 @@ export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
-    let url: string = findChapterUrl(lo.route);
+    //let url: string = removeFirstLastDirectories(lo.route);
     //let chapterHtml = markdownParser.parse(lo.contentMd, url);
     let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
     result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${substring}</a>`);  
@@ -77,10 +77,10 @@ export function isValid(str: string) {
  return str != undefined && /\S/.test(str) == true;
 }
 
-function findChapterUrl(url: string) {
-  //return removeFirstDirectory(removeLastDirectory(url));
-  return removeFirstLastDirectories(url);
-}
+// function findChapterUrl(url: string) {
+//   //return removeFirstDirectory(removeLastDirectory(url));
+//   return removeFirstLastDirectories(url);
+// }
 
 function removeFirstLastDirectories(the_url: string) {
   let the_arr = the_url.split("/");
