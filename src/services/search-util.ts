@@ -1,14 +1,19 @@
+import { Configuration } from 'aurelia-cli';
 import { MarkdownParser } from './markdown-parser';
 import { Lo } from "./lo";
+import { arrayExpression } from '@babel/types';
 
-export function flattenedLos(los: Lo[]) : string[] {
+const extraChars: number = 160;
+
+export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let markdownParser = new MarkdownParser();
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
     let url: string = findChapterUrl(lo.route);
     //let chapterHtml = markdownParser.parse(lo.contentMd, url);
-    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${lo.contentMd}</a>`);  
+    let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
+    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${substring}</a>`);  
   });
   return result;
 }
@@ -73,17 +78,40 @@ export function isValid(str: string) {
 }
 
 function findChapterUrl(url: string) {
-  return removeFirstDirectory(removeLastDirectory(url));
+  //return removeFirstDirectory(removeLastDirectory(url));
+  return removeFirstLastDirectories(url);
 }
 
-function removeLastDirectory(the_url) {
-  var the_arr = the_url.split("/");
+function removeFirstLastDirectories(the_url: string) {
+  let the_arr = the_url.split("/");
   the_arr.pop();
-  return the_arr.join("/");
-}
-
-function removeFirstDirectory(the_url) {
-  var the_arr = the_url.split("/");
   the_arr.shift();
   return the_arr.join("/");
+}
+
+// function removeLastDirectory(the_url) {
+//   var the_arr = the_url.split("/");
+//   the_arr.pop();
+//   return the_arr.join("/");
+// }
+
+// function removeFirstDirectory(the_url) {
+//   var the_arr = the_url.split("/");
+//   the_arr.shift();
+//   return the_arr.join("/");
+// }
+
+/**
+ * Constructs a substring of targetString comprising searchTerm and 
+ * extraChars on either side of searchTerm.
+ * A precondition is that searchTerm is a substring of targetString.
+ * @param targetString 
+ * @param searchTerm 
+ * @param extraChars 
+ */
+function augmentedString(targetString: string, searchTerm: string, extraChars: number) {
+	let index = targetString.indexOf(searchTerm);
+	let startIndex = index - extraChars > 0 ? index - extraChars : 0;
+	let endIndex = index + searchTerm.length + extraChars;
+	return targetString.slice(startIndex, endIndex);
 }

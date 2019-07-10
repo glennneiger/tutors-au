@@ -36,7 +36,7 @@ export class SearchView {
     //console.log(labs);
 
     //this.search_strings = search(labs, this.searchTerm);
-    this.search_strings = flattenedLos(labs);
+    this.search_strings = flattenedLos(labs, this.searchTerm);
     //console.log("search strings", this.search_strings);
   }
 
