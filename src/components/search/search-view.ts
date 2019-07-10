@@ -10,10 +10,7 @@ import { allLos } from "../../services/utils";
 export class SearchView {
   course: Course;
   search_strings: string[] = [];
-<<<<<<< HEAD
-=======
   searchTerm: string ='';
->>>>>>> search3
 
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
