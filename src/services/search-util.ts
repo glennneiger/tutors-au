@@ -1,10 +1,14 @@
+import { MarkdownParser } from './markdown-parser';
 import { Lo } from "./lo";
 
 export function flattenedLos(los: Lo[]) : string[] {
+  let markdownParser = new MarkdownParser();
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
-      result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>`);  
+    let url: string = findChapterUrl(lo.route);
+    let chapterHtml = markdownParser.parse(lo.contentMd, url);
+    result.push(`<a href="${lo.route}"> ${lo.shortTitle} ${chapterHtml}</a>`);  
   });
   return result;
 }
@@ -66,4 +70,20 @@ function flatten(arr: Lo[], result = []) {
  */
 export function isValid(str: string) {
  return str != undefined && /\S/.test(str) == true;
+}
+
+function findChapterUrl(url: string) {
+  return removeFirstDirectory(removeLastDirectory(url));
+}
+
+function removeLastDirectory(the_url) {
+  var the_arr = the_url.split("/");
+  the_arr.pop();
+  return the_arr.join("/");
+}
+
+function removeFirstDirectory(the_url) {
+  var the_arr = the_url.split("/");
+  the_arr.shift();
+  return the_arr.join("/");
 }
