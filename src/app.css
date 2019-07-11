@@ -13,11 +13,18 @@ body {
 .card-title {
   font-size: 20px;
   line-height: 30px;
-  color : #333333
+  color : #333333;
 }
 
 .card-body {
   font-size: 16px;
   line-height: 24px;
   color : #333333
+}
+
+.unit-title {
+  font-size: 22px;
+  line-height: 30px;
+  color : #333333;
+  border-bottom: thin solid lightgrey;
 }
