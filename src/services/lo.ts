@@ -2,6 +2,7 @@ import { Topic } from "./topic";
 
 export interface Lo {
   properties: { [prop: string]: string };
+  version : string;
   type: string;
   shortTitle: string;
   title: string;
