@@ -3,7 +3,7 @@ import { CourseRepo } from "../../../services/course-repo";
 import { IconNav, NavigatorProperties } from "../iconography/styles";
 import environment from "../../../environment";
 import { bindable } from "aurelia-framework";
-const tutorsVersion = require('../../../../package.json').version
+const readerVersion = require('../../../../package.json').version
 
 interface Properties {
   [key: string]: any;
@@ -21,7 +21,7 @@ export class MainNavigator {
 
   secured = false;
   @bindable
-  version = tutorsVersion;
+  version = '0.0.0 (0.0.0)';
 
   constructor(private courseRepo: CourseRepo) {}
 
@@ -30,6 +30,7 @@ export class MainNavigator {
     this.createCompanionBar(this.courseRepo.course.lo.properties);
     this.createWallBar();
     this.searchroute = `${environment.urlPrefix}search/${this.courseRepo.courseUrl}`;
+    this.version = `${readerVersion} (${this.courseRepo.course.lo.version})`
   }
 
   createCompanionBar(properties: Properties) {
