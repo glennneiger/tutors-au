@@ -9,7 +9,7 @@ export class CourseView {
 
   portfolio = false;
   private myKeypressCallback: any;
-  pinBuffer = ""
+  pinBuffer = "";
   ignorePin = "1234";
 
   constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {
@@ -38,7 +38,7 @@ export class CourseView {
   keypressInput(e) {
     this.pinBuffer = this.pinBuffer.concat(e.key);
     if (this.pinBuffer === this.ignorePin) {
-      this.pinBuffer = '';
+      this.pinBuffer = "";
       this.course.showAllLos();
     }
   }
