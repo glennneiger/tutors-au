@@ -9,6 +9,7 @@ export class Course {
   topics: Topic[] = [];
   units: Lo[];
   standardLos : Lo[];
+  allLos : Lo[];
 
   topicIndex = new Map();
   labIndex = new Map<string, Lo>();
@@ -68,11 +69,7 @@ export class Course {
     return lo;
   }
 
-  async fetchCourse() {
-    this.lo = await this.fetch(this.url);
-    if (environment.pushState) {
-      this.lo.los = this.lo.los.filter(lo => lo.hide != true);
-    }
+  populate() {
     for (let lo of this.lo.los) {
       const topic = new Topic(lo, this.url);
       if (lo.type == 'unit') {
@@ -85,5 +82,17 @@ export class Course {
     this.units = getSortedUnits(this.lo.los);
     this.standardLos = this.lo.los.filter(lo => lo.type !== "unit" && lo.type !== "panelvideo" && lo.type !== "paneltalk");
 
+  }
+
+  async fetchCourse() {
+    this.lo = await this.fetch(this.url);
+    this.allLos = this.lo.los;
+    this.lo.los = this.lo.los.filter(lo => lo.hide != true);
+    this.populate();
+  }
+
+  showAllLos() {
+    this.lo.los = this.allLos;
+    this.populate();
   }
 }
