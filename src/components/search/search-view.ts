@@ -22,12 +22,43 @@ export class SearchView {
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
+    
+    this.setSearchTerm();
     this.setSearchStrings();
   }
 
+  /**
+   * The searchTerm is initially obtained from the http url query string should it exist. 
+   * TODO: Fix required - if the default searchTerm empty string is used a non-fatal error occurs.
+   */
+  setSearchTerm() {
+    let href = window.location.href;
+    const x = href.lastIndexOf("=");
+    let value = x != - 1 ? href.slice(x + 1) : "";
+    this.searchTerm = value.replace(/%20/g, " ");
+  }
+
+  /**
+   * Live update the http url query string
+   * If the searchTerm key:value pair does not exist, create the key.
+   * Then add a value or replace an existing value with that obtained from the search page dialog.
+   */
+  searchTermChanged() {
+    let href = window.location.href;
+    const x = href.lastIndexOf("=");
+    if(x == -1) {
+      href += "?searchTerm=''";
+    }
+    href = href.replace(/(searchTerm=)[^\&]+/, '$1' + this.searchTerm);
+    window.location.href = href;
+  }
+
+  /**
+   * Populate an array with the search results.
+   * Note: labs only searched.
+   */
   setSearchStrings() {
     const labs = allLos("lab", this.course.lo.los);
     this.search_strings = flattenedLos(labs, this.searchTerm);
   }
-
 }

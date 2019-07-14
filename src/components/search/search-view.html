@@ -1,14 +1,12 @@
 <template>
   <require from="../../resources/elements/navigators/main-navigator"></require>
-
   <require from="../../resources/value-converters/filter"></require>
   <require from="../../resources/value-converters/highlight"></require>
-
   <require from="../../resources/elements/navigators/side-navigator"></require>
 
   <side-navigator></side-navigator>
-
   <main-navigator navigator-properties.one-way="navigatorProperties"></main-navigator>
+  
   <div class="uk-container uk-padding-small">
     <fieldset class="uk-fieldset">
       <div class="uk-margin">
@@ -16,6 +14,7 @@
           class="uk-input" 
           type="text" 
           placeholder="Enter search terms..." 
+          change.delegate="searchTermChanged()"
           value.bind="searchTerm">
       </div>
       <div class="ui divided list">
