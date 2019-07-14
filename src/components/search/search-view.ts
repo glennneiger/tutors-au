@@ -5,17 +5,14 @@ import { Course } from "../../services/course";
 import environment from "../../environment";
 import { flattenedLos } from "../../services/search-util";
 import { allLos } from "../../services/utils";
-import { Lo } from "../../services/lo";
-const path = require("path");
-import { MarkdownParser } from "../../services/markdown-parser";
 
 @autoinject
 export class SearchView {
   course: Course;
   search_strings: string[] = [];
-  searchTerm: string ='';
+  searchTerm: string = "";
 
-  constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties, private markdownParser: MarkdownParser) {}
+  constructor(private courseRepo: CourseRepo, private navigatorProperties: NavigatorProperties) {}
 
   async activate(params) {
     this.course = await this.courseRepo.fetchCourse(params.courseurl);
@@ -25,39 +22,43 @@ export class SearchView {
     this.navigatorProperties.parentLink = `${environment.urlPrefix}/course/${this.courseRepo.courseUrl}`;
     this.navigatorProperties.parentIcon = "moduleHome";
     this.navigatorProperties.parentIconTip = "To module home ...";
+    
+    this.setSearchTerm();
     this.setSearchStrings();
-    //this.currentChapter(params);
   }
 
-  setSearchStrings() {
-    console.log("searchString changed: ", this.searchTerm);
-
-    const labs = allLos("lab", this.course.lo.los);
-    //console.log(labs);
-
-    //this.search_strings = search(labs, this.searchTerm);
-    this.search_strings = flattenedLos(labs);
-    //console.log("search strings", this.search_strings);
+  /**
+   * The searchTerm is initially obtained from the http url query string should it exist. 
+   * TODO: Fix required - if the default searchTerm empty string is used a non-fatal error occurs.
+   */
+  setSearchTerm() {
+    let href = window.location.href;
+    const x = href.lastIndexOf("=");
+    let value = x != - 1 ? href.slice(x + 1) : "";
+    this.searchTerm = value.replace(/%20/g, " ");
   }
 
-  async currentChapter(params) {
-    const lastSegment = params.laburl.substr(params.laburl.lastIndexOf("/") + 1);
-    let chapter: Lo = null;
-    let currentChapter: Lo = null;
-    let url: string = "";
-    let lab: Lo = null;
-    if (lastSegment.startsWith("book")) {
-      url = params.laburl;
-      lab = await this.courseRepo.fetchLab(url);
-      console.log("lab retrieved");
-      currentChapter = lab.los[0];
-    } else {
-      url = path.dirname(params.laburl);
-      lab = await this.courseRepo.fetchLab(url);
-      currentChapter = lab.los.find(ch => ch.shortTitle == lastSegment);
+  /**
+   * Live update the http url query string
+   * If the searchTerm key:value pair does not exist, create the key.
+   * Then add a value or replace an existing value with that obtained from the search page dialog.
+   */
+  searchTermChanged() {
+    let href = window.location.href;
+    const x = href.lastIndexOf("=");
+    if(x == -1) {
+      href += "?searchTerm=''";
     }
-
-    let content = this.markdownParser.parse(currentChapter.contentMd, url);
+    href = href.replace(/(searchTerm=)[^\&]+/, '$1' + this.searchTerm);
+    window.location.href = href;
   }
 
+  /**
+   * Populate an array with the search results.
+   * Note: labs only searched.
+   */
+  setSearchStrings() {
+    const labs = allLos("lab", this.course.lo.los);
+    this.search_strings = flattenedLos(labs, this.searchTerm);
+  }
 }
