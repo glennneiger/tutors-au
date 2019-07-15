@@ -32,7 +32,7 @@ export class SearchView {
    * TODO: Fix required - if the default searchTerm empty string is used a non-fatal error occurs.
    */
   setSearchTerm() {
-    let href = window.location.href;
+    const href = window.location.href;
     const x = href.lastIndexOf("=");
     let value = x != - 1 ? href.slice(x + 1) : "";
     this.searchTerm = value.replace(/%20/g, " ");
