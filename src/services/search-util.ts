@@ -8,7 +8,8 @@ const extraChars: number = +`${environment.search}`;
 /**
  * Searches an array of nested Lo arrays for presence of searchTerm.
  * When a string containing the searchTerm is found, it is augmented by
- * adding extraChars/2 either side. The term extraChars is set as an environment property, key search.
+ * adding extraChars number characters of target.
+ * The term extraChars is set as an environment property, key search.
  * @param los The nested arrays of Lo objects.
  * @param searchTerm The term whose presence is searched for.
  */
@@ -62,13 +63,14 @@ function removeFirstLastDirectories(the_url: string) {
  * Constructs a substring of targetString comprising searchTerm and 
  * extraChars on either side of searchTerm.
  * A precondition is that searchTerm is a substring of targetString.
- * @param targetString 
- * @param searchTerm 
- * @param extraChars 
+ * @param targetString The string being searched.
+ * @param searchTerm The term being sought in targetString.
+ * @param extraChars The extra chars added to length searchTerm determines total length returned sring.
  */
 function augmentedString(targetString: string, searchTerm: string, extraChars: number) {
-	let index = targetString.indexOf(searchTerm);
-	let startIndex = index - extraChars > 0 ? index - extraChars : 0;
-	let endIndex = index + searchTerm.length + extraChars;
+	let startIndex = targetString.indexOf(searchTerm);
+  startIndex = startIndex > 0 ? startIndex : 0;
+  let endIndex = startIndex + searchTerm.length + extraChars;
+	endIndex = endIndex < targetString.length ? endIndex : targetString.length;
 	return targetString.slice(startIndex, endIndex);
 }
