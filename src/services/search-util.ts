@@ -1,10 +1,17 @@
-import { Configuration } from 'aurelia-cli';
 import { MarkdownParser } from './markdown-parser';
 import { Lo } from "./lo";
 import { arrayExpression } from '@babel/types';
+import environment from 'environment';
 
-const extraChars: number = 160;
+const extraChars: number = +`${environment.search}`;
 
+/**
+ * Searches an array of nested Lo arrays for presence of searchTerm.
+ * When a string containing the searchTerm is found, it is augmented by
+ * adding extraChars/2 either side. The term extraChars is set as an environment property, key search.
+ * @param los The nested arrays of Lo objects.
+ * @param searchTerm The term whose presence is searched for.
+ */
 export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let markdownParser = new MarkdownParser();
   let flatLos = flattenNestedLosArrays(los);
@@ -34,39 +41,6 @@ function flatten(arr: Lo[], result = []) {
   return result;
 }
 
-
-// function filter(array: string[], searchTerm: string) {
-//   return array.filter(item => {
-//       return searchTerm && searchTerm.length > 0 ? this.itemMatches(searchTerm, item) : true;
-//     });
-// }
-
-// function itemMatches(searchTerm: string, value: string) {
-//   let itemValue = value;
-//   if (!itemValue) return false;
-//     return itemValue.toUpperCase().indexOf(searchTerm.toUpperCase()) !== -1;
-// }
-
-/**
- * Flattens a tree of learning objects. Then searches for the presence of
- * a search term. Creates an array of strings comprising the content of the
- * learning objects containing the search term.
- * @param los The array learning objects, assumed nested.
- * @param searchTerm The string being searched for.
- * @returns An array of strings each element of which contains the search term.
- */
-// function search(los: Lo[], searchTerm: string) {
-//   let search_strings: string[] = [];
-//   let all_strings = flattenedLos(los);
-//   all_strings.filter(item => {
-//     let found = searchTerm && searchTerm.length > 0 ? itemMatches(searchTerm, item) : true;
-//     if(found) {
-//       search_strings.push(item);
-//     }
-//   });
-//   return search_strings;
-// }
-
 /**
  * Validate a string: is valid if it is not undefined and 
  * does not comprise only whitespace else it is invalid.
@@ -77,29 +51,12 @@ export function isValid(str: string) {
  return str != undefined && /\S/.test(str) == true;
 }
 
-// function findChapterUrl(url: string) {
-//   //return removeFirstDirectory(removeLastDirectory(url));
-//   return removeFirstLastDirectories(url);
-// }
-
 function removeFirstLastDirectories(the_url: string) {
   let the_arr = the_url.split("/");
   the_arr.pop();
   the_arr.shift();
   return the_arr.join("/");
 }
-
-// function removeLastDirectory(the_url) {
-//   var the_arr = the_url.split("/");
-//   the_arr.pop();
-//   return the_arr.join("/");
-// }
-
-// function removeFirstDirectory(the_url) {
-//   var the_arr = the_url.split("/");
-//   the_arr.shift();
-//   return the_arr.join("/");
-// }
 
 /**
  * Constructs a substring of targetString comprising searchTerm and 
