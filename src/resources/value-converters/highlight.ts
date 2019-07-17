@@ -1,4 +1,4 @@
-import { isValid } from "../../services/search-util";
+import { isValid } from "../../services/utils-search";
 export class HighlightValueConverter {
   toView(value) {
     if (isValid(value) ) { //&& value.indexOf("<b>") !== -1) {

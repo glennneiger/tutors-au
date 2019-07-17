@@ -2,6 +2,7 @@ import { MarkdownParser } from './markdown-parser';
 import { Lo } from "./lo";
 import { arrayExpression } from '@babel/types';
 import environment from 'environment';
+import { fencedMarkdown, adjustForFencing } from './utils-fencing';
 
 const extraChars: number = +`${environment.search}`;
 
@@ -69,8 +70,8 @@ function removeFirstLastDirectories(the_url: string) {
  */
 function augmentedString(targetString: string, searchTerm: string, extraChars: number) {
 	let startIndex = targetString.indexOf(searchTerm);
-  startIndex = startIndex > 0 ? startIndex : 0;
+  startIndex = startIndex > 0 ? adjustForFencing(targetString, startIndex, "start") : 0;
   let endIndex = startIndex + searchTerm.length + extraChars;
-	endIndex = endIndex < targetString.length ? endIndex : targetString.length;
+  endIndex = endIndex < targetString.length ? adjustForFencing(targetString, endIndex, "end") : targetString.length;
 	return targetString.slice(startIndex, endIndex);
 }

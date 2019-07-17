@@ -3,7 +3,7 @@ import { NavigatorProperties } from "../../resources/elements/iconography/styles
 import { autoinject } from "aurelia-framework";
 import { Course } from "../../services/course";
 import environment from "../../environment";
-import { flattenedLos } from "../../services/search-util";
+import { flattenedLos } from "../../services/utils-search";
 import { allLos } from "../../services/utils";
 
 @autoinject
