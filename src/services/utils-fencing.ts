@@ -1,3 +1,24 @@
+interface Fence {
+  top: number,
+  bottom: number
+}
+
+
+export function adjustForFencing(md: string, index: number, position: string) {
+  let fences = fencedMarkdown(md);
+  if(fences != undefined || fences.length == 0) {
+    return index; // incoming string md not fenced.
+  }
+  let adjustedIndex: number = index;
+  let fence = isFenced(index, fences) 
+  if(position == 'top') {
+    adjustedIndex = fence.top - 1;
+  } else if (position == 'bottom') {
+    adjustedIndex = fence.bottom + 1;
+  }
+  return adjustedIndex;
+}
+
 function fencedMarkdown(md: string) {
   let fence: string = '~~~';
   let fences = indicesFenced(md, md.length, fence);
@@ -5,9 +26,15 @@ function fencedMarkdown(md: string) {
   return fences;
 }
 
-interface Fence {
-  top: number,
-  bottom: number
+function indicesFenced(md: string, endIndx: number, fence: string, fenced = []) : number [] {
+  let indxOf = md.indexOf(fence);
+  if(indxOf == -1) 
+    return fenced;
+  let currentFenceIndx = indxOf + (fenced.length > 0 ? fenced[fenced.length -1] + fence.length : 0);
+  fenced.push(currentFenceIndx);
+
+  let nextSubStr = md.substring(indxOf + fence.length, endIndx);
+  return indicesFenced(nextSubStr, endIndx, fence, fenced);
 }
 
 /**
@@ -25,35 +52,11 @@ function isFenced(index: number, fences) : Fence {
   return null;
 }
 
-function indicesFenced(md: string, endIndx: number, fence: string, fenced = []) : number [] {
-  let indxOf = md.indexOf(fence);
-  if(indxOf == -1) 
-    return fenced;
-  let currentFenceIndx = indxOf + (fenced.length > 0 ? fenced[fenced.length -1] + fence.length : 0);
-  fenced.push(currentFenceIndx);
 
-  let nextSubStr = md.substring(indxOf + fence.length, endIndx);
-  return indicesFenced(nextSubStr, endIndx, fence, fenced);
-}
-
-function fenceTuples(fenceIndices: number[]) {
-  let pairs = [];
-  for (let i = 0; i < fenceIndices.length; i += 2) {
-    pairs.push({top: fenceIndices[i], bottom: fenceIndices[i+1]});
-  }
-  return pairs;
-}
-
-export function adjustForFencing(md: string, index: number, position: string) {
-  let adjustedIndex: number = index;
-  let fences = fencedMarkdown(md);
-  let fence = isFenced(index, fences) 
-  if(fence != null) {
-    if(position == 'start') {
-      adjustedIndex = fence.top - 1;
-    } else if (position == 'end') {
-      adjustedIndex = fence.bottom + 1;
-    }
-  }
-  return adjustedIndex;
-}
+// function fenceTuples(fenceIndices: number[]) {
+//   let pairs = [];
+//   for (let i = 0; i < fenceIndices.length; i += 2) {
+//     pairs.push({top: fenceIndices[i], bottom: fenceIndices[i+1]});
+//   }
+//   return pairs;
+// }

@@ -2,7 +2,7 @@ import { MarkdownParser } from './markdown-parser';
 import { Lo } from "./lo";
 import { arrayExpression } from '@babel/types';
 import environment from 'environment';
-import { fencedMarkdown, adjustForFencing } from './utils-fencing';
+import { adjustForFencing } from './utils-fencing';
 
 const extraChars: number = +`${environment.search}`;
 
@@ -20,9 +20,11 @@ export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let result: string[] = [];
   flatLos.forEach(lo => {
     let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
-    let url: string = removeFirstLastDirectories(lo.route);
-    let html = markdownParser.parse(substring, url);
-    result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
+    if(substring != "not found") {
+      let url: string = removeFirstLastDirectories(lo.route);
+      let html = markdownParser.parse(substring, url);
+      result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
+    }
   });
   return result;
 }
@@ -69,9 +71,10 @@ function removeFirstLastDirectories(the_url: string) {
  * @param extraChars The extra chars added to length searchTerm determines total length returned sring.
  */
 function augmentedString(targetString: string, searchTerm: string, extraChars: number) {
-	let startIndex = targetString.indexOf(searchTerm);
-  startIndex = startIndex > 0 ? adjustForFencing(targetString, startIndex, "start") : 0;
+  let startIndex = targetString.indexOf(searchTerm);
+  if(startIndex == -1) return "not found"; 
+  startIndex = adjustForFencing(targetString, startIndex, "top");
   let endIndex = startIndex + searchTerm.length + extraChars;
-  endIndex = endIndex < targetString.length ? adjustForFencing(targetString, endIndex, "end") : targetString.length;
+  endIndex = endIndex < targetString.length ? adjustForFencing(targetString, endIndex, "bottom") : targetString.length;
 	return targetString.slice(startIndex, endIndex);
 }
