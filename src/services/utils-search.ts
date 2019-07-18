@@ -70,6 +70,6 @@ function removeFirstLastDirectories(the_url: string) {
 function clippedContent(targetString: string, searchTerm: string, extraChars: number) {
 	let index = targetString.indexOf(searchTerm);
 	let startIndex = index - extraChars > 0 ? index - extraChars : 0;
-	let endIndex = index + searchTerm.length + extraChars;
+	let endIndex = index + searchTerm.length + extraChars <= targetString.length ? index + searchTerm.length + extraChars : targetString.length;
 	return targetString.slice(startIndex, endIndex);
 }
