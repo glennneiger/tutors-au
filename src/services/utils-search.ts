@@ -8,9 +8,9 @@ const extraChars: number = +`${environment.search}`;
 const removeMd = require('remove-markdown');
 /**
  * Searches an array of nested Lo arrays for presence of searchTerm.
- * When a string containing the searchTerm is found, it is augmented by
- * adding extraChars number characters of target.
- * The term extraChars is set as an environment property, key search.
+ * When a string containing the searchTerm is found it is converted to text.
+ * It is clipped to a length obtained by adding extraChars number characters,
+ * which is an environment variable, to the length of the searchTerm.
  * @param los The nested arrays of Lo objects.
  * @param searchTerm The term whose presence is searched for.
  */
@@ -22,12 +22,6 @@ export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
     let text = removeMd(lo.contentMd);
     let content = clippedContent(text, searchTerm, extraChars);
     result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${content}`); 
-    //let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
-    //if(substring != "not found") {
-      //let url: string = removeFirstLastDirectories(lo.route);
-      //let html = markdownParser.parse(substring, url);
-      //result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
-    //}
   });
   return result;
 }
