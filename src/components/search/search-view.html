@@ -2,6 +2,7 @@
   <require from="../../resources/elements/navigators/main-navigator"></require>
   <require from="../../resources/value-converters/filter"></require>
   <require from="../../resources/value-converters/highlight"></require>
+  <require from="../../resources/value-converters/search-bold"></require>
   <require from="../../resources/elements/navigators/side-navigator"></require>
 
   <side-navigator></side-navigator>
@@ -19,7 +20,7 @@
       </div>
       <div class="ui divided list">
         <div class="item" repeat.for="search_string of search_strings | filter:searchTerm">
-          <div innerhtml.bind="search_string | highlight"></div><br>    
+          <div innerhtml.bind="search_string | searchBold:searchTerm | highlight"></div><br>
         </div>
       </div>
     </fieldset>
