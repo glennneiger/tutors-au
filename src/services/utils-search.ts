@@ -5,7 +5,7 @@ import environment from 'environment';
 import { adjustForFencing } from './utils-fencing';
 
 const extraChars: number = +`${environment.search}`;
-
+const removeMd = require('remove-markdown');
 /**
  * Searches an array of nested Lo arrays for presence of searchTerm.
  * When a string containing the searchTerm is found, it is augmented by
@@ -19,12 +19,15 @@ export function flattenedLos(los: Lo[], searchTerm: string) : string[] {
   let flatLos = flattenNestedLosArrays(los);
   let result: string[] = [];
   flatLos.forEach(lo => {
-    let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
-    if(substring != "not found") {
-      let url: string = removeFirstLastDirectories(lo.route);
-      let html = markdownParser.parse(substring, url);
-      result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
-    }
+    let text = removeMd(lo.contentMd);
+    let content = clippedContent(text, searchTerm, extraChars);
+    result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${content}`); 
+    //let substring = augmentedString(lo.contentMd, searchTerm, extraChars);
+    //if(substring != "not found") {
+      //let url: string = removeFirstLastDirectories(lo.route);
+      //let html = markdownParser.parse(substring, url);
+      //result.push(`<a href="${lo.route}"> ${lo.shortTitle}</a>  ${html}`);  
+    //}
   });
   return result;
 }
@@ -66,15 +69,13 @@ function removeFirstLastDirectories(the_url: string) {
  * Constructs a substring of targetString comprising searchTerm and 
  * extraChars on either side of searchTerm.
  * A precondition is that searchTerm is a substring of targetString.
- * @param targetString The string being searched.
- * @param searchTerm The term being sought in targetString.
- * @param extraChars The extra chars added to length searchTerm determines total length returned sring.
+ * @param targetString 
+ * @param searchTerm 
+ * @param extraChars 
  */
-function augmentedString(targetString: string, searchTerm: string, extraChars: number) {
-  let startIndex = targetString.indexOf(searchTerm);
-  if(startIndex == -1) return "not found"; 
-  startIndex = adjustForFencing(targetString, startIndex, "top");
-  let endIndex = startIndex + searchTerm.length + extraChars;
-  endIndex = endIndex < targetString.length ? adjustForFencing(targetString, endIndex, "bottom") : targetString.length;
+function clippedContent(targetString: string, searchTerm: string, extraChars: number) {
+	let index = targetString.indexOf(searchTerm);
+	let startIndex = index - extraChars > 0 ? index - extraChars : 0;
+	let endIndex = index + searchTerm.length + extraChars;
 	return targetString.slice(startIndex, endIndex);
 }
