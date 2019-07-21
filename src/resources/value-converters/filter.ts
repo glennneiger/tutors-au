@@ -1,4 +1,4 @@
-import { isValid } from "../../services/search-util";
+import { isValid } from "../../services/utils-search";
 export class FilterValueConverter {
   toView(array, searchTerm) {
     if(isValid(searchTerm))
